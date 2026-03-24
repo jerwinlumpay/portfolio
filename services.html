@@ -13,25 +13,17 @@
         
         /* LOGO STYLE WITH GOLD FILTER */
         .logo-style { 
-            width: 160px;
-            height: auto;
-            transition: 0.3s;
+            width: 160px; height: auto; transition: 0.3s;
             filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
         }
-        .logo-style:hover { 
-            filter: brightness(0) saturate(100%) invert(100%);
-            opacity: 1; 
-        }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
 
         /* SIDEBAR - Desktop Only */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        
-        /* MOBILE HEADER - Mobile Only */
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
 
         /* MAIN CONTENT AREA */
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
         @media (min-width: 1024px) {
@@ -44,19 +36,39 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Button Styles */
         .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-whatsapp:hover { background-color: #1eb954; transform: translateY(-2px); }
         .btn-linkedin { background-color: var(--linkedin); }
-        .btn-linkedin:hover { background-color: #005a8a; transform: translateY(-2px); }
         
         .gold-text { color: var(--champagne); }
 
-        /* SERVICE CARDS */
-        .service-card { background: #111113; border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; transition: 0.4s; height: 100%; }
-        .service-card:hover { border-color: var(--champagne); background: #161618; transform: translateY(-5px); }
-        .service-card i { color: var(--champagne); font-size: 1.5rem; margin-bottom: 20px; display: block; }
+        /* INTERACTIVE SERVICE CARDS */
+        .service-card { 
+            background: #111113; border: 1px solid rgba(255,255,255,0.05); 
+            padding: 35px; border-radius: 24px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            height: 100%; position: relative; overflow: hidden;
+        }
+        .service-card:hover { 
+            border-color: var(--champagne); 
+            background: #161618; 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* COLORED ICON BOXES */
+        .icon-container {
+            width: 55px; height: 55px; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 25px; transition: 0.4s;
+            background: rgba(255,255,255,0.03); color: #555;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Hover Color States */
+        .service-card:hover .icon-admin { color: #3b82f6; background: rgba(59, 130, 246, 0.1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+        .service-card:hover .icon-support { color: var(--whatsapp); background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.2); }
+        .service-card:hover .icon-sales { color: var(--champagne); background: rgba(216, 178, 74, 0.1); box-shadow: 0 0 20px rgba(216, 178, 74, 0.2); }
+        .service-card:hover .icon-ops { color: #a855f7; background: rgba(168, 85, 247, 0.1); box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
 
         /* Mobile Menu */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
@@ -69,9 +81,7 @@
 
     <aside class="sidebar">
         <div class="mb-20">
-            <a href="index.html">
-                <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style">
-            </a>
+            <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style"></a>
         </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
@@ -83,24 +93,17 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html">
-            <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;">
-        </a>
+        <a href="index.html"><img src="logo1.png" alt="Jerwin" class="logo-style" style="width: 80px;"></a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-    
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
              <span class="text-white font-black italic">MENU</span>
@@ -115,61 +118,53 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <div class="space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
     </div>
 
     <main class="main-content">
         <div class="section-container">
             <header class="mb-12 lg:mb-16">
                 <h2 class="text-[#D8B24A] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Core Solutions</h2>
-                <h1 class="text-5xl md:text-7xl font-black italic uppercase mb-4 leading-none text-white">Top Service <br><span class="gold-text">Offerings.</span></h1>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase mb-4 leading-none text-white tracking-tighter">Top Service <br><span class="gold-text">Offerings.</span></h1>
             </header>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 <div class="service-card">
-                    <i class="fas fa-briefcase"></i>
+                    <div class="icon-container icon-admin"><i class="fas fa-briefcase"></i></div>
                     <h3 class="text-xl font-bold uppercase mb-4 text-white">1. Executive & Admin Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3 font-light">
-                        <li class="flex gap-2"><span>•</span> Calendar and email management</li>
-                        <li class="flex gap-2"><span>•</span> Scheduling, reports, and documentation</li>
-                        <li class="flex gap-2"><span>•</span> Travel and coordination tasks</li>
+                    <ul class="text-slate-400 text-sm space-y-3 font-medium">
+                        <li class="flex gap-3"> <span class="text-blue-500">•</span> Calendar and email management</li>
+                        <li class="flex gap-3"> <span class="text-blue-500">•</span> Scheduling, reports, and documentation</li>
+                        <li class="flex gap-3"> <span class="text-blue-500">•</span> Travel and coordination tasks</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <i class="fas fa-headset"></i>
+                    <div class="icon-container icon-support"><i class="fas fa-headset"></i></div>
                     <h3 class="text-xl font-bold uppercase mb-4 text-white">2. Customer Service Operations</h3>
-                    <ul class="text-slate-400 text-sm space-y-3 font-light">
-                        <li class="flex gap-2"><span>•</span> Chat, email, and phone support</li>
-                        <li class="flex gap-2"><span>•</span> Complaint resolution and escalation</li>
-                        <li class="flex gap-2"><span>•</span> CRM updates and customer tracking</li>
+                    <ul class="text-slate-400 text-sm space-y-3 font-medium">
+                        <li class="flex gap-3"> <span class="text-emerald-500">•</span> Chat, email, and phone support</li>
+                        <li class="flex gap-3"> <span class="text-emerald-500">•</span> Complaint resolution and escalation</li>
+                        <li class="flex gap-3"> <span class="text-emerald-500">•</span> CRM updates and customer tracking</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <i class="fas fa-piggy-bank"></i>
+                    <div class="icon-container icon-sales"><i class="fas fa-piggy-bank"></i></div>
                     <h3 class="text-xl font-bold uppercase mb-4 text-white">3. Sales & Booking Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3 font-light">
-                        <li class="flex gap-2"><span>•</span> Lead follow-ups and client onboarding</li>
-                        <li class="flex gap-2"><span>•</span> Upselling and booking management</li>
-                        <li class="flex gap-2"><span>•</span> Revenue tracking and coordination</li>
+                    <ul class="text-slate-400 text-sm space-y-3 font-medium">
+                        <li class="flex gap-3"> <span class="text-[#D8B24A]">•</span> Lead follow-ups and client onboarding</li>
+                        <li class="flex gap-3"> <span class="text-[#D8B24A]">•</span> Upselling and booking management</li>
+                        <li class="flex gap-3"> <span class="text-[#D8B24A]">•</span> Revenue tracking and coordination</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <i class="fas fa-layer-group"></i>
+                    <div class="icon-container icon-ops"><i class="fas fa-layer-group"></i></div>
                     <h3 class="text-xl font-bold uppercase mb-4 text-white">4. Operations & Process Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3 font-light">
-                        <li class="flex gap-2"><span>•</span> Workflow organization and task tracking</li>
-                        <li class="flex gap-2"><span>•</span> SOP creation and process improvement</li>
-                        <li class="flex gap-2"><span>•</span> Data entry and inventory management</li>
+                    <ul class="text-slate-400 text-sm space-y-3 font-medium">
+                        <li class="flex gap-3"> <span class="text-purple-500">•</span> Workflow organization and task tracking</li>
+                        <li class="flex gap-3"> <span class="text-purple-500">•</span> SOP creation and process improvement</li>
+                        <li class="flex gap-3"> <span class="text-purple-500">•</span> Data entry and inventory management</li>
                     </ul>
                 </div>
             </div>
