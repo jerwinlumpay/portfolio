@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerwin Lumpay | Executive Operations Specialist</title>
+    <title>J.Lumpay | Office Administration & Operations Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
@@ -11,117 +11,204 @@
     <style>
         :root { 
             --p22: 'P22 Underground', sans-serif; 
-            --luxury-gold: #D4AF37; 
+            --charcoal: #1A1A1A;
+            --paper: #F8F9FA;
         }
         body { 
-            background-color: #0A0A0B; 
-            color: #FFFFFF; 
+            background-color: var(--paper); 
+            color: var(--charcoal); 
             font-family: var(--p22);
             overflow-x: hidden;
         }
-        .gold-text { color: var(--luxury-gold); }
-        .bg-gold { background-color: var(--luxury-gold); }
-        .border-gold { border-color: var(--luxury-gold); }
+        .nav-link { position: relative; transition: color 0.3s; color: #64748b; }
+        .nav-link:hover { color: var(--charcoal); }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px; bottom: -4px; left: 0;
+            background-color: var(--charcoal);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
         
-        .glass-card { 
-            background: #161618; 
-            border: 1px solid rgba(212, 175, 55, 0.1); 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .section-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
         }
-        .glass-card:hover { 
-            border-color: var(--luxury-gold); 
-            transform: translateY(-5px); 
+        .section-card:hover {
+            border-color: #CBD5E1;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
         }
-        @media (min-width: 768px) { .min-h-custom { min-height: 100vh; } }
+        .tech-badge {
+            background: #F1F5F9;
+            color: #475569;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/5 px-8 py-5">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 px-8 py-5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold tracking-[0.3em] uppercase">LUMPAY<span class="gold-text">.</span></span>
-            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
-                <a href="#summary" class="hover:text-white transition">Summary</a>
-                <a href="#expertise" class="hover:text-white transition">Expertise</a>
-                <a href="#experience" class="hover:text-white transition">Experience</a>
+            <span class="text-xl font-bold tracking-[0.2em] uppercase">J.LUMPAY<span class="text-slate-400">.</span></span>
+            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+                <a href="#summary" class="nav-link">Summary</a>
+                <a href="#competencies" class="nav-link">Competencies</a>
+                <a href="#tech" class="nav-link">Technical</a>
+                <a href="#experience" class="nav-link">Experience</a>
             </div>
-            <a href="mailto:support@jerwinlumpay.com" class="text-[10px] font-bold uppercase tracking-widest border border-gold/30 px-6 py-2 rounded-full hover:bg-gold hover:text-black transition">Inquire</a>
+            <a href="mailto:support@jerwinlumpay.com" class="text-[10px] font-bold uppercase tracking-widest bg-charcoal text-white px-6 py-2 rounded-sm hover:opacity-90 transition">Contact</a>
         </div>
     </nav>
 
     <main class="flex flex-col md:flex-row min-h-custom w-full pt-20">
         
-        <div class="w-full md:w-5/12 bg-[#050505] flex flex-col justify-center items-center p-12 text-center border-b md:border-b-0 md:border-r border-white/5 lg:sticky lg:top-20 lg:h-[calc(100vh-80px)]">
-            <div class="relative mb-10">
-                <div class="absolute inset-0 border border-gold/20 rounded-full scale-110"></div>
+        <div class="w-full md:w-5/12 bg-white flex flex-col justify-center items-center p-12 text-center border-b md:border-b-0 md:border-r border-slate-100 lg:sticky lg:top-20 lg:h-[calc(100vh-80px)]">
+            <div class="relative mb-8">
                 <img src="jerwindp.jpg" alt="Jerwin Lumpay" 
-                     class="relative w-56 h-56 md:w-72 md:h-72 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                     class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-8 border-slate-50 shadow-sm">
             </div>
             
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">Jerwin <span class="gold-text font-light">Lumpay</span></h1>
-            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-[0.4em] leading-relaxed mb-12">
+            <h1 class="text-4xl font-bold mb-4 tracking-tighter uppercase">Jerwin Lumpay</h1>
+            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em] leading-relaxed mb-10">
                 Office Administration | Customer Experience <br> Operations Specialist
             </p>
 
-            <div class="flex flex-col gap-4 w-full max-w-xs">
-                <a href="mailto:support@jerwinlumpay.com" class="bg-gold px-10 py-4 rounded-full font-bold text-black transition hover:brightness-110 text-[11px] uppercase tracking-widest">
-                    Contact Specialist
+            <div class="flex flex-col gap-3 w-full max-w-xs">
+                <a href="Jerwin_Lumpay_CV.pdf" download class="border border-slate-200 px-8 py-4 rounded-sm font-bold transition hover:bg-slate-50 text-[11px] uppercase tracking-widest flex items-center justify-center gap-2">
+                    <i class="fas fa-file-pdf"></i> Download CV
                 </a>
-                <a href="Jerwin_Lumpay_CV.pdf" download class="glass-card px-10 py-4 rounded-full font-bold transition flex items-center justify-center gap-3 text-[11px] uppercase tracking-widest">
-                    <i class="fas fa-file-pdf gold-text"></i> Curriculum Vitae
-                </a>
+            </div>
+
+            <div class="mt-12 flex gap-8 text-xl text-slate-300">
+                <a href="https://linkedin.com/in/jerwin-lumpay" class="hover:text-charcoal transition"><i class="fab fa-linkedin"></i></a>
+                <a href="tel:+971544609927" class="hover:text-charcoal transition"><i class="fas fa-phone"></i></a>
             </div>
         </div>
 
-        <div class="w-full md:w-7/12 p-10 md:p-20 lg:p-32">
+        <div class="w-full md:w-7/12 p-8 md:p-16 lg:p-24">
             
-            <section id="summary" class="mb-32">
-                <h2 class="gold-text text-[9px] font-bold uppercase tracking-[0.5em] mb-8">Professional Overview</h2>
-                <h3 class="text-3xl font-light mb-10 text-white leading-tight">Strategic Partnership in <br><span class="font-bold">Operational Excellence.</span></h3>
-                <p class="text-gray-400 text-lg leading-relaxed font-light">
-                    With over **10 years of cross-functional experience** , I bridge the gap between complex office administration and superior customer service[cite: 4, 9]. My approach combines rigorous compliance management with a data-driven mindset to optimize organizational efficiency[cite: 4, 6].
+            <section id="summary" class="mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-6">Professional Summary</h2>
+                <p class="text-xl md:text-2xl font-light leading-relaxed text-slate-700">
+                    Highly organized and versatile professional with over **10 years of experience** in **Office Administration**, **Compliance**, and **Customer Operations**.
+                </p>
+                <p class="mt-6 text-slate-500 leading-relaxed font-light">
+                    Proven track record in managing high-volume front-desk operations, executive-level support, and leading teams of 15+ agents to exceed KPIs. Expert in navigating complex CRM/ERP systems and AI-driven productivity tools to optimize operational efficiency.
                 </p>
             </section>
 
-            <section id="expertise" class="mb-32">
-                <h2 class="gold-text text-[9px] font-bold uppercase tracking-[0.5em] mb-12">Core Capabilities</h2>
-                <div class="grid grid-cols-1 gap-8">
-                    <div class="glass-card p-10 rounded-2xl">
-                        <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-4">Operations & Compliance</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Oversaw **E-Verify** and **USCIS Form I-9** protocols for industry leaders like Sodexo and Siemens, ensuring zero-defect audit readiness[cite: 23, 24].
+            <section id="competencies" class="mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-10">Core Competencies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="section-card p-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Administration</h4>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li>• Executive Support</li>
+                            <li>• Calendar Management</li>
+                            <li>• Travel Coordination</li>
+                            <li>• Meeting Minutes</li>
+                        </ul>
+                    </div>
+                    <div class="section-card p-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Operations</h4>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li>• E-Verify/I-9 Compliance</li>
+                            <li>• Workflow Optimization</li>
+                            <li>• Resource Allocation</li>
+                        </ul>
+                    </div>
+                    <div class="section-card p-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Customer Experience</h4>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li>• Escalation Management</li>
+                            <li>• Multi-channel Support</li>
+                            <li>• Inbound/Outbound Sales</li>
+                        </ul>
+                    </div>
+                    <div class="section-card p-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Leadership</h4>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li>• Team Coaching</li>
+                            <li>• Performance Monitoring</li>
+                            <li>• Business Reviews (MBR)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tech" class="mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-10">Technical Proficiencies</h2>
+                
+                <div class="mb-8">
+                    <h4 class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-4">CRM & Project Management</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Salesforce</span>
+                        <span class="tech-badge">Roller</span>
+                        <span class="tech-badge">JIRA</span>
+                        <span class="tech-badge">Monday.com</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-4">AI & Productivity</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Microsoft 365 Expert</span>
+                        <span class="tech-badge">Google Workspace</span>
+                        <span class="tech-badge">ChatGPT</span>
+                        <span class="tech-badge">CoPilot</span>
+                        <span class="tech-badge">Otter.ai</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-4">Systems & Analysis</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Avaya/OneX</span>
+                        <span class="tech-badge">Tableau</span>
+                        <span class="tech-badge">RingCentral</span>
+                        <span class="tech-badge">GenCloud</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-10">Career Roadmap</h2>
+                <div class="space-y-12">
+                    <div class="group">
+                        <h4 class="text-lg font-bold">Purple Desk</h4>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Front Desk Representative | 2025 – 2026</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Handled 10,000+ calls and contributed $80K in revenue while managing end-to-end booking logistics.
                         </p>
                     </div>
-                    <div class="glass-card p-10 rounded-2xl">
-                        <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-4">Leadership & Performance</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Directed teams of **15+ agents** to exceed performance benchmarks, resulting in an Average Handle Time of 3:41 and \$80K in operational revenue[cite: 5, 20, 27].
+                    <div class="group">
+                        <h4 class="text-lg font-bold">ADP</h4>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Compliance Specialist | 2022 – 2025</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Oversaw E-Verify and USCIS Form I-9 compliance for major US clients like Sodexo and Siemens.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h4 class="text-lg font-bold">ibex</h4>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Team Lead | 2018 – 2022</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Managed 10-15 staff for GoDaddy and AT&T; recipient of the VIP Award 2021.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section id="experience" class="mb-32">
-                <h2 class="gold-text text-[9px] font-bold uppercase tracking-[0.5em] mb-12">Career Roadmap</h2>
-                <div class="space-y-16">
-                    <div>
-                        <span class="text-gray-600 text-[10px] font-bold tracking-widest uppercase">2025 — 2026</span>
-                        <h4 class="text-white font-bold text-xl mt-2 italic">Purple Desk</h4>
-                        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">Front Desk Representative | Dubai, UAE [cite: 18]</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Directing end-to-end booking logistics and membership workflows via Roller CRM[cite: 19].</p>
-                    </div>
-                    <div>
-                        <span class="text-gray-600 text-[10px] font-bold tracking-widest uppercase">2022 — 2025</span>
-                        <h4 class="text-white font-bold text-xl mt-2 italic">ADP</h4>
-                        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">Compliance Specialist [cite: 22]</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Mitigated legal risks through meticulous data privacy and strict regulatory adherence[cite: 25].</p>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="pt-20 border-t border-white/5">
-                <p class="text-gray-700 text-[8px] tracking-[0.4em] uppercase">
-                    © 2026 Jerwin Lumpay • Specialized Operations • Dubai, UAE
+            <footer class="pt-12 border-t border-slate-100">
+                <p class="text-slate-300 text-[8px] tracking-[0.4em] uppercase">
+                    © 2026 Jerwin Lumpay • Dubai, UAE
                 </p>
             </footer>
         </div>
