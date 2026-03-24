@@ -3,139 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Executive/Virtual Assistant, Office operation & Administration & Customer Service</title>
+    <title>Executive/Virtual Assistant, Office operation & Administration & Customer Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
-        :root { 
-            --onyx: #0D0D0F; 
-            --champagne: #D8B24A; 
-            --ivory: #FFF4DE; 
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; }
+        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; }
+        .gold-text { color: var(--champagne); }
+        .btn-luxury {
+            background: linear-gradient(135deg, #D8B24A 0%, #B8860B 100%);
+            color: #000; padding: 14px 30px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; font-size: 10px;
+            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
         }
-        body { 
-            background: var(--onyx); 
-            color: var(--ivory); 
-            font-family: 'P22 Underground', sans-serif; 
-            line-height: 1.6;
-        }
-        .gold-border { border-left: 1px solid rgba(216, 178, 74, 0.2); transition: 0.3s; margin-bottom: 2.5rem; }
-        .gold-border:hover { border-left: 1px solid var(--champagne); background: rgba(216, 178, 74, 0.03); }
-        .nav-link:hover { color: var(--champagne); }
-        
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-luxury:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(216, 178, 74, 0.2); }
+        nav.scrolled { background-color: rgba(13, 13, 15, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(216, 178, 74, 0.2); }
     </style>
 </head>
-<body class="pt-32 pb-40 px-6">
-
-    <nav class="fixed top-0 left-0 w-full z-50 p-8 bg-[#0D0D0F]/95 backdrop-blur-md border-b border-white/5">
+<body>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8 transition-all">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-black tracking-tighter uppercase italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
-            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
-                <a href="index.html" class="nav-link transition">Home</a>
-                <a href="services.html" class="nav-link transition">Services</a>
-                <a href="portfolio.html" class="text-[#D8B24A]">Portfolio</a>
+            <span class="text-xl font-black uppercase tracking-widest">J.LUMPAY<span class="gold-text">.</span></span>
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="text-[10px] font-bold uppercase gold-text">Home</a>
+                <a href="services.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Services</a>
+                <a href="portfolio.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Portfolio</a>
             </div>
+            <a href="https://wa.me/971544609927" class="btn-luxury">WhatsApp</a>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto fade-in">
-        <header class="mb-20">
-            <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[11px] font-extrabold mb-4">Professional Record</h2>
-            <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">Complete <br>Experience.</h1>
-        </header>
-
-        <div class="space-y-12">
-            
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Front Desk Representative</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">Purple Desk (Dubai, UAE) | May 2025 – April 2026</span>
+    <section class="min-h-screen flex items-center pt-20 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="rounded-2xl w-full border border-white/10 shadow-2xl">
+            </div>
+            <div class="lg:col-span-7 space-y-8">
+                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em]">Executive & Operations Specialist</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none">Operational <br><span class="gold-text">Excellence.</span></h1>
+                <p class="text-xl text-slate-400 font-light max-w-2xl">Over 10 years of multi-disciplinary experience in Office Administration, US Compliance (ADP), and High-Performance Leadership[cite: 4, 17].</p>
+                <div class="flex gap-4">
+                    <a href="portfolio.html" class="btn-luxury">View Portfolio</a>
+                    <a href="services.html" class="border border-[#D8B24A] text-[#D8B24A] px-8 py-4 rounded-full text-[10px] font-bold uppercase">Our Services</a>
                 </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Orchestrated end-to-end booking schedules, ticketing, and memberships using **Roller CRM**.</li>
-                    <li>• Managed 10,000+ calls with a 3:41 AHT, generating approximately **$80K in revenue**.</li>
-                    <li>• Spearheaded operational training for new hires on internal resources and booking systems.</li>
-                </ul>
-            </div>
-
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Client Services & Compliance Specialist</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ADP | Sept 2022 – March 2025</span>
-                </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Managed USCIS Form I-9 and **E-Verify compliance** for major clients like Sodexo and Siemens.</li>
-                    <li>• Maintained audit-ready records and resolved documentation discrepancies with precision.</li>
-                    <li>• Ensured strict data privacy and regulatory adherence to mitigate legal risks.</li>
-                </ul>
-            </div>
-
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Customer Service Team Lead</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ibex | April 2018 – August 2022</span>
-                </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Promoted to Team Lead, overseeing 10-15 staff for AT&T US and GoDaddy US accounts.</li>
-                    <li>• Awarded **VIP Award 2021** and **Top Team Q1 2021** for metric excellence.</li>
-                    <li>• Conducted performance coaching and business reviews to drive team KPIs.</li>
-                </ul>
-            </div>
-
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Sales Associate</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ResultsCX | Nov 2016 – March 2018</span>
-                </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Engaged customers via inbound/outbound calls for leading US telecom products.</li>
-                    <li>• Recommended tailored solutions to consistently meet and exceed sales targets.</li>
-                    <li>• Built rapid client rapport to resolve inquiries and drive sales success.</li>
-                </ul>
-            </div>
-
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Customer Service Representative</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">Sutherland | April 2015 – Oct 2016</span>
-                </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Managed **merchant disputes and chargebacks**, defending transactions with financial institutions.</li>
-                    <li>• Provided end-to-end support for refunds and real-time transaction monitoring.</li>
-                    <li>• Maintained high accuracy and compliance in resolving payment processing issues.</li>
-                </ul>
-            </div>
-
-            <div class="gold-border pl-8 py-4">
-                <div class="flex flex-col md:flex-row md:justify-between mb-2">
-                    <h3 class="text-xl font-bold uppercase italic">Executive Administrative Assistant</h3>
-                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">PSAA International Academy | March 2012 – March 2015</span>
-                </div>
-                <ul class="text-sm text-slate-400 space-y-2 font-light">
-                    <li>• Delivered high-level support to the President, managing international travel and complex calendars.</li>
-                    <li>• Served as primary liaison for government officials (TESDA) and partner institutions.</li>
-                    <li>• Optimized digital filing systems using OneDrive and Google Drive for remote access.</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="mt-24 pt-10 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h4 class="text-[#D8B24A] uppercase font-bold text-xs tracking-widest mb-4">Education</h4>
-                <p class="text-white text-sm font-bold">BS in Business Administration & Management</p>
-                <p class="text-slate-400 text-xs italic">Concordia College - Manila</p>
-            </div>
-            <div>
-                <h4 class="text-[#D8B24A] uppercase font-bold text-xs tracking-widest mb-4">Core Awards</h4>
-                <ul class="text-slate-400 text-[11px] uppercase tracking-tighter space-y-1">
-                    <li>• ADP Core Value Award Winner</li>
-                    <li>• ibex R.I.T.E VIP Award Recipient</li>
-                </ul>
             </div>
         </div>
-    </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
 </body>
 </html>
