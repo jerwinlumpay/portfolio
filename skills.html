@@ -43,9 +43,27 @@
 
         /* SKILL SPECIFIC STYLES */
         .skill-group { margin-bottom: 4rem; }
-        .skill-tag { background: rgba(216, 178, 74, 0.05); border: 1px solid rgba(216, 178, 74, 0.2); padding: 10px 20px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .skill-tag:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.1); }
+        .skill-tag { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 10px 18px; 
+            border-radius: 12px; 
+            font-size: 11px; 
+            font-weight: 700; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            transition: 0.3s ease;
+        }
+        .skill-tag:hover { transform: translateY(-3px); border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); }
         .icon-box { color: var(--champagne); margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* ICON COLORS */
+        .ic-word { color: #2B579A; } .ic-excel { color: #217346; } .ic-ppt { color: #D24726; }
+        .ic-outlook { color: #0078D4; } .ic-teams { color: #6264A7; } .ic-one-drive { color: #0078D4; }
+        .ic-gdrive { color: #34A853; } .ic-gmail { color: #EA4335; } .ic-canva { color: #00C4CC; }
+        .ic-slack { color: #4A154B; } .ic-monday { color: #FF3D57; } .ic-aws { color: #FF9900; }
+        .ic-gpt { color: #10a37f; } .ic-notion { color: #ffffff; }
 
         /* MOBILE MENU OVERLAY */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
@@ -117,65 +135,47 @@
                         <h4 class="font-bold mb-2 uppercase text-sm tracking-widest">Operations</h4>
                         <p class="text-xs text-slate-400 font-light leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization, and Resource Allocation. [cite: 8]</p>
                     </div>
-                    <div>
-                        <div class="icon-box"><i class="fas fa-headset"></i></div>
-                        <h4 class="font-bold mb-2 uppercase text-sm tracking-widest">Customer Experience</h4>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">Escalation Management, Inbound/Outbound Sales, and Multi-channel Support. [cite: 9]</p>
-                    </div>
-                    <div>
-                        <div class="icon-box"><i class="fas fa-users-cog"></i></div>
-                        <h4 class="font-bold mb-2 uppercase text-sm tracking-widest">Leadership</h4>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">Team Coaching, Performance Monitoring (AHT, CSAT), and Business Reviews (MBR). [cite: 9]</p>
-                    </div>
                 </div>
             </div>
 
             <div class="skill-group">
                 <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">Technical Proficiencies [cite: 10]</h3>
                 <div class="space-y-12">
-                    <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">CRM & Sales Tools [cite: 11]</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">Salesforce</span>
-                            <span class="skill-tag">Roller (POS/Inventory)</span>
-                            <span class="skill-tag">OPUS</span>
-                            <span class="skill-tag">Telegence</span>
-                        </div>
-                    </div>
                     
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">AI & Productivity [cite: 14]</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">Microsoft 365 (Expert)</span>
-                            <span class="skill-tag">Google Workspace</span>
-                            <span class="skill-tag">ChatGPT</span>
-                            <span class="skill-tag">CoPilot</span>
-                            <span class="skill-tag">Grammarly</span>
-                            <span class="skill-tag">Otter.ai</span>
+                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">Microsoft 365 Ecosystem </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="skill-tag"><i class="fas fa-file-word ic-word"></i> Word</div>
+                            <div class="skill-tag"><i class="fas fa-file-excel ic-excel"></i> Excel</div>
+                            <div class="skill-tag"><i class="fas fa-file-powerpoint ic-ppt"></i> PowerPoint</div>
+                            <div class="skill-tag"><i class="fas fa-envelope ic-outlook"></i> Outlook</div>
+                            <div class="skill-tag"><i class="fas fa-users ic-teams"></i> Teams</div>
+                            <div class="skill-tag"><i class="fas fa-cloud ic-one-drive"></i> OneDrive</div>
                         </div>
                     </div>
 
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">Operations & Project Management [cite: 12, 16]</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">JIRA</span>
-                            <span class="skill-tag">Monday.com</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Tableau</span>
-                            <span class="skill-tag">Calabrio (WFM)</span>
+                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">AI & Global Productivity </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="skill-tag"><i class="fas fa-robot ic-gpt"></i> ChatGPT / CoPilot</div>
+                            <div class="skill-tag"><i class="fas fa-th-large ic-gdrive"></i> Google Workspace</div>
+                            <div class="skill-tag"><i class="fas fa-sticky-note ic-notion"></i> Notion</div>
+                            <div class="skill-tag"><i class="fas fa-check-circle ic-gpt"></i> Grammarly</div>
+                            <div class="skill-tag"><i class="fas fa-paint-brush ic-canva"></i> Canva [cite: 15]</div>
                         </div>
                     </div>
 
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">Communication & Design [cite: 13, 15]</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-tag">WhatsApp Business</span>
-                            <span class="skill-tag">Slack</span>
-                            <span class="skill-tag">Canva</span>
-                            <span class="skill-tag">Zoom</span>
-                            <span class="skill-tag">Microsoft Teams</span>
+                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">Operations & Infrastructure [cite: 12]</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="skill-tag"><i class="fas fa-tasks ic-monday"></i> Monday.com</div>
+                            <div class="skill-tag"><i class="fas fa-project-diagram"></i> JIRA</div>
+                            <div class="skill-tag"><i class="fab fa-aws ic-aws"></i> AWS Workspaces</div>
+                            <div class="skill-tag"><i class="fab fa-slack ic-slack"></i> Slack [cite: 15]</div>
+                            <div class="skill-tag"><i class="fab fa-whatsapp text-green-500"></i> WhatsApp Business</div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
