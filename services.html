@@ -1,52 +1,80 @@
-<main class="main-content pt-32 px-20">
-    <div class="max-w-5xl">
-        <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Strategic Solutions</h2>
-        <h1 class="text-5xl md:text-7xl font-black italic uppercase mb-20 leading-none">Top Service <br>Offerings.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Jerwin Lumpay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    <style>
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
+        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; display: flex; margin: 0; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: flex; flex-direction: column; padding: 40px; z-index: 100; }
+        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; padding: 80px 60px; }
+        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { color: var(--champagne); }
+        .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; text-decoration: none; }
+        .service-card { background: #111113; border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; transition: 0.4s; }
+        .service-card:hover { border-color: var(--champagne); background: #161618; }
+        .service-card i { color: var(--champagne); font-size: 1.5rem; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="mb-20"><a href="index.html" class="text-xl font-black italic text-white" style="text-decoration: none;">J.LUMPAY<span style="color: var(--champagne);">.</span></a></div>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="services.html" class="nav-link active">Services</a>
+            <a href="feedback.html" class="nav-link">Feedback</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <a href="https://wa.me/971544609927" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </aside>
+
+    <main class="main-content">
+        <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Core Solutions</h2>
+        <h1 class="text-5xl font-black italic uppercase mb-16 leading-none text-white">Top Service <br>Offerings.</h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-[#D8B24A] transition group">
-                <div class="w-12 h-12 rounded-lg bg-[#D8B24A]/10 flex items-center justify-center text-[#D8B24A] mb-6 group-hover:bg-[#D8B24A] group-hover:text-black transition">
-                    <i class="fas fa-user-tie text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold uppercase mb-4">Executive & Admin Support</h3>
+            <div class="service-card">
+                <i class="fas fa-briefcase"></i>
+                <h3 class="text-xl font-bold uppercase mb-4">1. Executive & Admin Support</h3>
                 <ul class="text-slate-400 text-sm space-y-2 font-light">
-                    <li>• Calendar and email management [cite: 8]</li>
+                    <li>• Calendar and email management [cite: 8, 38]</li>
                     <li>• Scheduling, reports, and documentation [cite: 8]</li>
-                    <li>• Travel and coordination tasks [cite: 8]</li>
+                    <li>• Travel and coordination tasks [cite: 8, 38]</li>
                 </ul>
             </div>
-            <div class="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-[#D8B24A] transition group">
-                <div class="w-12 h-12 rounded-lg bg-[#D8B24A]/10 flex items-center justify-center text-[#D8B24A] mb-6 group-hover:bg-[#D8B24A] group-hover:text-black transition">
-                    <i class="fas fa-headset text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold uppercase mb-4">Customer Service Operations</h3>
+            <div class="service-card">
+                <i class="fas fa-headset"></i>
+                <h3 class="text-xl font-bold uppercase mb-4">2. Customer Service Operations</h3>
                 <ul class="text-slate-400 text-sm space-y-2 font-light">
                     <li>• Chat, email, and phone support [cite: 9]</li>
-                    <li>• Complaint resolution and escalation [cite: 9]</li>
-                    <li>• CRM updates and customer tracking [cite: 6, 11]</li>
+                    <li>• Complaint resolution and escalation [cite: 9, 35]</li>
+                    <li>• CRM updates and customer tracking [cite: 11]</li>
                 </ul>
             </div>
-            <div class="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-[#D8B24A] transition group">
-                <div class="w-12 h-12 rounded-lg bg-[#D8B24A]/10 flex items-center justify-center text-[#D8B24A] mb-6 group-hover:bg-[#D8B24A] group-hover:text-black transition">
-                    <i class="fas fa-chart-line text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold uppercase mb-4">Sales & Booking Support</h3>
+            <div class="service-card">
+                <i class="fas fa-piggy-bank"></i>
+                <h3 class="text-xl font-bold uppercase mb-4">3. Sales & Booking Support</h3>
                 <ul class="text-slate-400 text-sm space-y-2 font-light">
-                    <li>• Lead follow-ups and client onboarding [cite: 31, 33]</li>
-                    <li>• Upselling and booking management [cite: 19, 32]</li>
+                    <li>• Lead follow-ups and client onboarding [cite: 32]</li>
+                    <li>• Upselling and booking management [cite: 19]</li>
                     <li>• Revenue tracking and coordination [cite: 20]</li>
                 </ul>
             </div>
-            <div class="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-[#D8B24A] transition group">
-                <div class="w-12 h-12 rounded-lg bg-[#D8B24A]/10 flex items-center justify-center text-[#D8B24A] mb-6 group-hover:bg-[#D8B24A] group-hover:text-black transition">
-                    <i class="fas fa-cogs text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold uppercase mb-4">Operations & Process Support</h3>
+            <div class="service-card">
+                <i class="fas fa-layer-group"></i>
+                <h3 class="text-xl font-bold uppercase mb-4">4. Operations & Process Support</h3>
                 <ul class="text-slate-400 text-sm space-y-2 font-light">
-                    <li>• Workflow organization and task tracking [cite: 8, 12]</li>
-                    <li>• SOP creation and process improvement [cite: 21, 29]</li>
+                    <li>• Workflow organization and task tracking [cite: 8]</li>
+                    <li>• SOP creation and process improvement [cite: 40]</li>
                 </ul>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+</body>
+</html>
