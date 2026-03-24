@@ -1,121 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive/Virtual Asisstant, Customer Service, Office Administration andoperation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
-    
-    <style>
-        :root { 
-            --p22: 'P22 Underground', sans-serif; 
-            --gold: #D4AF37;
-            --obsidian: #0A0A0A;
-        }
-        body { 
-            background-color: var(--obsidian); 
-            color: #FFFFFF; 
-            font-family: var(--p22);
-            scroll-behavior: smooth;
-        }
-        .gold-text { color: var(--gold); }
-        .section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5em; color: var(--gold); }
-        
-        nav { transition: all 0.4s ease; background-color: transparent; }
-        nav.scrolled { background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 1rem 2rem !important; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.Lumpay | Executive/Virtual Assistant, Office operation & Administration & Customer Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --p22: 'P22 Underground', sans-serif; 
+            --gold: #D4AF37;
+            --obsidian: #0A0A0A;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+        body { 
+            background-color: var(--obsidian); 
+            color: #FFFFFF; 
+            font-family: var(--p22);
+            scroll-behavior: smooth;
+        }
+        .gold-text { color: var(--gold); }
+        .section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5em; color: var(--gold); }
+        
+        /* Navigation Styles */
+        nav {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+        }
+        nav.scrolled {
+            background-color: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
 
-        .page-container { min-height: 100vh; padding-top: 140px; padding-bottom: 100px; }
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            background: var(--gold);
+            color: black;
+            transform: translateY(-5px);
+        }
 
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-        }
-        .service-card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(212, 175, 55, 0.03); }
+        /* Fixed Bottom Marquee */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-fixed-bottom {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-blur: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            z-index: 100; padding: 20px 0;
+            overflow: hidden; white-space: nowrap;
+        }
+        .marquee-content { display: inline-block; animation: scroll 35s linear infinite; }
+        .marquee-item { display: inline-block; font-size: 1rem; font-weight: 800; text-transform: uppercase; margin: 0 45px; color: #FFFFFF; letter-spacing: 2px; }
+        .marquee-item span { color: var(--gold); margin-right: 12px; }
 
-        .tool-badge {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-        .tool-badge:hover { border-color: var(--gold); color: var(--gold); background: rgba(212, 175, 55, 0.05); }
+        .nav-link { transition: all 0.3s ease; color: #FFFFFF; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
+        .nav-link:hover { color: var(--gold); }
+        
+        .page-container { min-height: 100vh; padding-top: 140px; padding-bottom: 120px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        .btn-luxury {
-            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
-            color: black; padding: 14px 36px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
-            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
-        }
-        
-        .btn-outline-gold {
-            border: 1px solid var(--gold);
-            color: var(--gold); padding: 14px 36px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
-            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
-        }
-        .btn-outline-gold:hover { background: rgba(212, 175, 55, 0.1); transform: scale(1.05); }
+        .glass-card { 
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.02); }
 
-        #backToTop {
-            position: fixed; bottom: 100px; right: 30px; width: 50px; height: 50px;
-            background: rgba(10, 10, 10, 0.8); border: 1px solid var(--gold); border-radius: 50%; color: var(--gold);
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden; transition: 0.4s;
-        }
-        #backToTop.show { opacity: 1; visibility: visible; }
-        
-        .marquee-fixed-bottom {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.98); border-top: 1px solid rgba(212, 175, 55, 0.3);
-            z-index: 100; padding: 15px 0; overflow: hidden; white-space: nowrap;
-        }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-content { display: inline-block; animation: scroll 30s linear infinite; }
-        .marquee-item { display: inline-block; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin: 0 40px; color: #FFF; letter-spacing: 2px; }
-    </style>
+        .btn-luxury {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+            color: black; padding: 12px 30px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
+            transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-whatsapp {
+            background: #25D366; color: white; padding: 12px 30px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
+            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fas fa-chevron-up"></i></button>
+    <button id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-black tracking-widest uppercase">J.LUMPAY<span class="gold-text">.</span></span>
-            <div class="hidden md:flex gap-8">
-                <a href="#services" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Expertise</a>
-                <a href="#tools" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Technology</a>
-                <a href="#contact" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Inquiry</a>
-            </div>
-            <a href="https://wa.me/971544609927" target="_blank" class="btn-luxury">WhatsApp Chat</a>
-        </div>
-    </nav>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="text-xl font-black tracking-widest uppercase">J.LUMPAY<span class="gold-text">.</span></span>
+            <div class="hidden md:flex gap-8">
+                <a href="#profile" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">About</a>
+                <a href="#milestones" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Milestones</a>
+                <a href="#feedback" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Feedback</a>
+                <a href="#contact" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Contact</a>
+            </div>
+            <a href="https://wa.me/971544609927" target="_blank" class="btn-luxury">WhatsApp Chat</a>
+        </div>
+    </nav>
 
-    <section class="page-container px-6 lg:px-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+    <section id="profile" class="page-container px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
             <div class="lg:col-span-5">
-                <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="rounded-2xl w-full shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition duration-700">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-gold rounded-2xl blur-3xl opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+                    <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full shadow-2xl border border-white/10 object-cover aspect-[4/5] grayscale-0 transition duration-700">
+                </div>
             </div>
             <div class="lg:col-span-7 space-y-10">
-                <h2 class="section-title">Dubai-Based Executive Lead</h2>
+                <h2 class="section-title">Executive/Virtual Assistant, Office operation & Administration & Customer Service</h2>
                 <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">
-                    Operations <br><span class="gold-text">Architect.</span>
+                    Precision <br><span class="gold-text">Efficiency.</span>
                 </h1>
                 <p class="text-xl text-slate-400 font-light max-w-2xl leading-relaxed">
-                    A decade of multi-disciplinary experience in **Office Administration, US Compliance (ADP), and High-Performance Customer Service Leadership.**
+                    A decade of multi-disciplinary experience. Currently operating from **Dubai, UAE**, I bridge the gap between high-level executive vision and daily operational reality.
                 </p>
-                
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 pt-4">
                     <a href="https://www.linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-luxury">
                         <i class="fab fa-linkedin"></i> LinkedIn Profile
                     </a>
@@ -127,63 +161,262 @@
         </div>
     </section>
 
-    <section id="services" class="py-20 px-6 lg:px-20 bg-[#070707]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="section-title">Professional suites</h2>
-                <h3 class="text-4xl md:text-6xl font-black italic uppercase">Core <span class="gold-text">Services</span></h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card">
-                    <i class="fas fa-tasks gold-text text-3xl mb-6"></i>
-                    <h4 class="text-xl font-bold uppercase mb-4">Office Administration</h4>
-                    <p class="text-slate-400 text-sm">Managing complex scheduling, revenue-critical bookings, and executive-level digital organization.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-file-contract gold-text text-3xl mb-6"></i>
-                    <h4 class="text-xl font-bold uppercase mb-4">Operation & Compliance</h4>
-                    <p class="text-slate-400 text-sm">Expertise in USCIS E-Verify and Form I-9 management for global workforce compliance via ADP systems.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-users-cog gold-text text-3xl mb-6"></i>
-                    <h4 class="text-xl font-bold uppercase mb-4">Customer Service</h4>
-                    <p class="text-slate-400 text-sm">Leadership of support teams for high-tier accounts, optimizing CSAT and resolving complex disputes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="py-20 px-6 lg:px-20 border-y border-white/5">
+    <section id="tools" class="py-20 px-6 lg:px-20 border-y border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
                 <div class="lg:col-span-1">
                     <h2 class="section-title mb-4">Technical Proficiency</h2>
-                    <h3 class="text-3xl font-black italic uppercase">Digital <br><span class="gold-text">Tool Stack</span></h3>
+                    <h3 class="text-3xl font-bold uppercase italic">Digital <br><span class="gold-text">Tool Stack.</span></h3>
                 </div>
                 <div class="lg:col-span-3 flex flex-wrap gap-4">
-                    <div class="tool-badge"><i class="fas fa-database gold-text"></i> Roller CRM</div>
-                    <div class="tool-badge"><i class="fas fa-cloud gold-text"></i> Salesforce</div>
-                    <div class="tool-badge"><i class="fas fa-id-card gold-text"></i> USCIS E-Verify</div>
-                    <div class="tool-badge"><i class="fas fa-file-invoice gold-text"></i> ADP Workforce</div>
-                    <div class="tool-badge"><i class="fab fa-microsoft gold-text"></i> Microsoft 365</div>
-                    <div class="tool-badge"><i class="fab fa-google gold-text"></i> Google Workspace</div>
-                    <div class="tool-badge"><i class="fas fa-project-diagram gold-text"></i> Jira / Monday.com</div>
-                    <div class="tool-badge"><i class="fab fa-slack gold-text"></i> Slack & Zoom</div>
+                    <div class="tool-badge">Roller CRM</div>
+                    <div class="tool-badge">Salesforce</div>
+                    <div class="tool-badge">USCIS E-Verify</div>
+                    <div class="tool-badge">ADP Workforce</div>
+                    <div class="tool-badge">Jira / Monday.com</div>
+                    <div class="tool-badge">Microsoft 365</div>
+                    <div class="tool-badge">Google Workspace</div>
+                    <div class="tool-badge">Slack / Zoom</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="page-container px-6 lg:px-20 bg-[#070707]">
+    <section id="milestones" class="page-container px-6 lg:px-20 bg-[#0B0B0B]">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="section-title">Multipage Portfolio</h2>
+                <h3 class="text-4xl md:text-6xl font-black italic uppercase italic">Professional <span class="gold-text">Journey.</span></h3>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto font-light">Explore a decade of operational excellence. Click any card to view detailed case studies of my impact.</p>
+            </div>
+
+            <div class="space-y-6">
+                <a href="portfolio.html#purpledesk" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">Purple Desk | Dubai, UAE</h4>
+                        <span class="gold-text font-bold text-xs uppercase">May 2025 - April 2026</span>
+                    </div>
+                    <ul class="text-slate-400 text-sm space-y-1 list-inside list-disc font-light">
+                        <li>Managed end-to-end booking schedules and ticketing (Roller CRM).</li>
+                        <li>Handled $80K revenue operations.</li>
+                    </ul>
+                    <span class="text-[10px] text-slate-600 mt-4 block">Click to view deep dive →</span>
+                </a>
+
+                <a href="portfolio.html#adp" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">ADP | Compliance Specialist</h4>
+                        <span class="gold-text font-bold text-xs uppercase">Sept 2022 - March 2025</span>
+                    </div>
+                    <ul class="text-slate-400 text-sm space-y-1 list-inside list-disc font-light">
+                        <li>Led E-Verify/I-9 compliance for Sodexo and Siemens.</li>
+                        <li>Maintained 100% audit accuracy.</li>
+                    </ul>
+                </div>
+
+                <a href="portfolio.html#ibex" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">ibex | Team Lead</h4>
+                        <span class="gold-text font-bold text-xs uppercase">April 2018 - August 2022</span>
+                    </div>
+                    <ul class="text-slate-400 text-sm space-y-1 list-inside list-disc font-light">
+                        <li>Managed 15+ agents for GoDaddy and AT&T.</li>
+                        <li>Awarded VIP Award 2021.</li>
+                    </ul>
+                </div>
+
+                <a href="portfolio.html#resultscx" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">ResultsCX | Sales Associate</h4>
+                        <span class="gold-text font-bold text-xs uppercase">Nov 2016 - March 2018</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-light">Telecom solution recommendations and sales support.</p>
+                </div>
+
+                <a href="portfolio.html#sutherland" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">Sutherland | CSR Specialist</h4>
+                        <span class="gold-text font-bold text-xs uppercase">Sept 2015 - Sept 2016</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-light">Financial merchant dispute resolution and chargebacks.</p>
+                </div>
+
+                <a href="portfolio.html#psaa" class="block glass-card hover:border-gold transition">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h4 class="text-xl font-bold uppercase">PSAA International | Executive Assistant</h4>
+                        <span class="gold-text font-bold text-xs uppercase">Aug 2012 - April 2015</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-light">Direct support to the President and government liaison.</p>
+                </div>
+
+                <div class="text-center pt-10">
+                    <a href="portfolio.html" class="btn-outline-gold">View Detailed Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="page-container px-6 lg:px-20 bg-[#080808]">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="section-title">Strategic Offering</h2>
+                <h3 class="text-4xl md:text-6xl font-black italic uppercase italic">Multifunctional <span class="gold-text">Support.</span></h3>
+                <p class="text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">Leveraging my diverse portfolio to provide elite administrative and customer experience strategy. Click to view detailed services.html.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10">
+                <a href="services.html#va" class="p-8 border border-white/5 rounded-3xl group hover:border-gold transition">
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold"><i class="fas fa-crown"></i></div>
+                        <h4 class="text-2xl font-bold uppercase">Administrative Architecture</h4>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Complex calendar, inbox, and CRM management.</p>
+                    <span class="text-xs gold-text uppercase tracking-widest font-bold">Explore Service Pages →</span>
+                </a>
+                <a href="services.html#cx" class="p-8 border border-white/5 rounded-3xl group hover:border-gold transition">
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold"><i class="fas fa-comments"></i></div>
+                        <h4 class="text-2xl font-bold uppercase">CX Strategy & Team Lead</h4>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Optimizing support metrics and agent coaching.</p>
+                    <span class="text-xs gold-text uppercase tracking-widest font-bold">Explore Service Pages →</span>
+                </a>
+            </div>
+            <div class="text-center pt-10">
+                <a href="services.html" class="btn-outline-gold">Detailed Service Pages</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="page-container px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="section-title">Verified Trust</h2>
+                <h3 class="text-4xl md:text-6xl font-black italic uppercase">Client <span class="gold-text">Feedback</span></h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-user-secret"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Highly efficient and always ahead of schedule - an invaluable part of our team."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">E. Granada</h4>
+                        <p class="text-xs text-slate-500">Account Manager</p>
+                    </div>
+                </div>
+
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-user-circle"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Keeps my calendar, emails, and tasks perfectly organized every single day."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">K. Judan</h4>
+                        <p class="text-xs text-slate-500">Employee Support</p>
+                    </div>
+                </div>
+
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-briefcase"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Professional, proactive, and consistently delivers top-quality work."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">C. Alpajaro</h4>
+                        <p class="text-xs text-slate-500">Micro-Business Owner</p>
+                    </div>
+                </div>
+
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition lg:mt-16">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-user-clock"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Handles complex projects with ease and keeps everything running smoothly."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">P. Eranista</h4>
+                        <p class="text-xs text-slate-500">Training Manager</p>
+                    </div>
+                </div>
+
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition lg:mt-16">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-lightbulb"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Responsive, detail-oriented, and a true problem-solver."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">K. Castillon</h4>
+                        <p class="text-xs text-slate-500">Instructor</p>
+                    </div>
+                </div>
+
+                <div class="p-8 border border-white/5 rounded-2xl flex flex-col hover:border-gold group transition lg:mt-16">
+                    <div class="w-20 h-20 rounded-full border border-gold/30 p-1 flex items-center justify-center -mt-16 bg-obsidian mx-auto mb-6">
+                        <div class="w-full h-full rounded-full bg-gold/5 flex items-center justify-center text-gold text-2xl"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="flex text-gold gap-1 text-xs mb-4 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-300 italic mb-6 font-light leading-relaxed flex-grow">
+                        "Has transformed the way I work by taking care of all the details I used to stress over."
+                    </p>
+                    <div class="text-center border-t border-white/5 pt-4">
+                        <h4 class="font-bold uppercase text-sm">J. Mulvaney</h4>
+                        <p class="text-xs text-slate-500">Real Estate Broker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-container px-6 lg:px-20 bg-[#070707]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div class="space-y-12">
-                <h3 class="text-6xl font-black uppercase italic italic leading-none">Global <br><span class="gold-text">Connectivity.</span></h3>
-                <div class="space-y-6">
+                <div class="space-y-4">
+                    <h2 class="section-title">Connectivity</h2>
+                    <h3 class="text-5xl font-black uppercase italic leading-none">Global <br><span class="gold-text">HQ Presence.</span></h3>
+                    <p class="text-slate-400 font-light max-w-lg leading-relaxed pt-2">Based in Dubai, UAE (GST). Reach out directly via WhatsApp for immediate consultation.</p>
+                </div>
+                
+                <div class="space-y-4">
                     <div class="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold transition">
                         <i class="fab fa-whatsapp text-3xl gold-text"></i>
                         <div>
-                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest">WhatsApp Direct</p>
+                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest">Fast Response (Dubai)</p>
                             <p class="text-xl font-bold">+971 54 460 9927</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold transition">
+                        <i class="far fa-envelope text-3xl gold-text"></i>
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest">Corporate Inquiry</p>
+                            <p class="text-xl font-bold">support@jerwinlumpay.com</p>
                         </div>
                     </div>
                 </div>
@@ -192,37 +425,48 @@
             <div class="service-card border-white/10">
                 <h4 class="text-2xl font-bold uppercase italic mb-6">Service Inquiry</h4>
                 <div class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm">
+                        <input type="email" placeholder="Corporate Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm">
+                    </div>
                     <select class="w-full bg-black border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm text-slate-400">
                         <option>Target Service Area...</option>
-                        <option>Office Administration</option>
-                        <option>Operation & Compliance</option>
-                        <option>Customer Service</option>
+                        <option>Office Administration / VA</option>
+                        <option>Operational Compliance</option>
+                        <option>Customer Experience Strategy</option>
+                        <option>Coaching & Leadership</option>
                     </select>
-                    <textarea placeholder="How can I support your project?" rows="4" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm"></textarea>
+                    <textarea placeholder="Tell me about your project requirements..." rows="4" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm"></textarea>
                     <button class="btn-luxury w-full justify-center">Send Message</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="marquee-fixed-bottom">
+    <div class="marquee-fixed-bottom">
         <div class="marquee-content">
-            <div class="marquee-item"><span class="gold-text">//</span> DUBAI, UAE BASED</div>
-            <div class="marquee-item"><span class="gold-text">//</span> ROLLER CRM SPECIALIST</div>
-            <div class="marquee-item"><span class="gold-text">//</span> E-VERIFY COMPLIANCE</div>
+            <div class="marquee-item"><span class="gold-text">//</span> DUBAI, UAE BASED (GST Zone)</div>
             <div class="marquee-item"><span class="gold-text">//</span> 10+ YEARS EXPERIENCE</div>
-            <div class="marquee-item"><span class="gold-text">//</span> SALESFORCE MASTER</div>
+            <div class="marquee-item"><span class="gold-text">//</span> ROLLER CRM SPECIALIST</div>
+            <div class="marquee-item"><span class="gold-text">//</span> E-VERIFY / I-9 COMPLIANCE</div>
+            <div class="marquee-item"><span class="gold-text">//</span> SALESFORCE CUSTOMER STRATEGY</div>
+            <div class="marquee-item"><span class="gold-text">//</span> JIRA & MONDAY.COM OPS</div>
+            <div class="marquee-item"><span class="gold-text">//</span> WHATSAPP: +971 54 460 9927</div>
         </div>
     </div>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const btt = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) { navbar.classList.add('scrolled'); btt.classList.add('show'); }
-            else { navbar.classList.remove('scrolled'); btt.classList.remove('show'); }
-        });
-    </script>
+    <script>
+        const navbar = document.getElementById('navbar');
+        const btt = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); btt.classList.add('show'); }
+            else { navbar.classList.remove('scrolled'); btt.classList.remove('show'); }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
