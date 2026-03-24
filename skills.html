@@ -22,7 +22,6 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
 
-        /* CONTACT BUTTONS */
         .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-whatsapp { background-color: var(--whatsapp); }
         .btn-linkedin { background-color: var(--linkedin); }
@@ -32,7 +31,7 @@
         
         /* CONTENT AREA */
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1000px; margin: 0 auto; width: 100%; padding: 40px 25px; }
+        .section-container { max-width: 1100px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
@@ -41,32 +40,58 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* SKILL SPECIFIC STYLES */
-        .skill-group { margin-bottom: 4rem; }
+        /* CORE ICON HIGHLIGHTS */
+        .core-icon {
+            width: 70px; height: 70px;
+            background: rgba(216, 178, 74, 0.1);
+            color: var(--champagne);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin-bottom: 1.5rem;
+            border: 1px solid rgba(216, 178, 74, 0.2);
+        }
+
+        /* TOOL TAG ARCHITECTURE */
+        .skill-group { margin-bottom: 5rem; }
         .skill-tag { 
             background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            padding: 10px 18px; 
-            border-radius: 12px; 
-            font-size: 11px; 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 12px 20px; 
+            border-radius: 14px; 
+            font-size: 12px; 
             font-weight: 700; 
             display: flex; 
             align-items: center; 
-            gap: 10px; 
+            gap: 12px; 
             transition: 0.3s ease;
+            color: #ddd;
         }
-        .skill-tag:hover { transform: translateY(-3px); border-color: var(--champagne); background: rgba(216, 178, 74, 0.08); }
-        .icon-box { color: var(--champagne); margin-bottom: 1rem; font-size: 1.5rem; }
+        .skill-tag:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.06); border-color: var(--champagne); }
+        
+        /* STABLE PERMANENT ICON BOXES */
+        .ic-box {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+        }
 
-        /* BRAND COLORS FOR ICONS */
-        .ic-word { color: #2B579A; } .ic-excel { color: #217346; } .ic-ppt { color: #D24726; }
-        .ic-outlook { color: #0078D4; } .ic-teams { color: #6264A7; } .ic-one-drive { color: #0078D4; }
-        .ic-gdrive { color: #34A853; } .ic-canva { color: #00C4CC; } .ic-slack { color: #4A154B; } 
-        .ic-monday { color: #FF3D57; } .ic-aws { color: #FF9900; } .ic-gpt { color: #10a37f; } 
-        .ic-salesforce { color: #00A1E0; } .ic-jira { color: #0052CC; } .ic-whatsapp { color: #25D366; }
-        .ic-notion { color: #ffffff; } .ic-roller { color: #f47b20; } .ic-at { color: #D8B24A; }
+        /* PALETTE INTEGRATION */
+        .bg-word { background: rgba(43, 87, 154, 0.15); color: #4b89dc; }
+        .bg-excel { background: rgba(33, 115, 70, 0.15); color: #40c07d; }
+        .bg-ppt { background: rgba(210, 71, 38, 0.15); color: #ff6b4a; }
+        .bg-outlook { background: rgba(0, 120, 212, 0.15); color: #4db3ff; }
+        .bg-teams { background: rgba(98, 100, 167, 0.15); color: #9294e3; }
+        .bg-google { background: rgba(52, 168, 83, 0.15); color: #5cd67d; }
+        .bg-ai { background: rgba(16, 163, 127, 0.15); color: #10a37f; }
+        .bg-canva { background: rgba(0, 196, 204, 0.15); color: #00c4cc; }
+        .bg-crm { background: rgba(216, 178, 74, 0.15); color: var(--champagne); }
+        .bg-slack { background: rgba(74, 21, 75, 0.2); color: #e01e5a; }
+        .bg-monday { background: rgba(255, 61, 87, 0.15); color: #ff3d57; }
+        .bg-jira { background: rgba(0, 82, 204, 0.15); color: #4c9aff; }
+        .bg-wa { background: rgba(37, 211, 102, 0.15); color: var(--whatsapp); }
 
-        /* MOBILE MENU OVERLAY */
+        /* MOBILE MENU */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
@@ -95,7 +120,7 @@
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;"></a>
+        <a href="index.html"><img src="logo1.png" alt="Jerwin" class="logo-style" style="width: 80px;"></a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
@@ -105,7 +130,7 @@
              <span class="text-white font-black italic">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
-        <nav class="mb-10">
+        <nav class="space-y-6">
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link active">Skills</a>
@@ -120,63 +145,58 @@
         <div class="section-container">
             <header class="mb-20">
                 <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Expertise Architecture</h2>
-                <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">Skills & <br><span class="text-[#D8B24A]">Tools.</span></h1>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Skills & <br><span class="text-[#D8B24A]">Tools.</span></h1>
             </header>
 
             <div class="skill-group">
                 <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">Core Competencies</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <div class="icon-box"><i class="fas fa-user-tie"></i></div>
-                        <h4 class="font-bold mb-2 uppercase text-sm tracking-widest">Administration</h4>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">Executive Support, Calendar Management, Travel Coordination, and Meeting Minutes.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div class="flex flex-col items-start">
+                        <div class="core-icon"><i class="fas fa-user-tie"></i></div>
+                        <h4 class="font-bold mb-3 uppercase text-lg tracking-widest text-white">Administration</h4>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">High-level Executive Support, Calendar Management, Travel Coordination, and Strategic Meeting Minutes.</p>
                     </div>
-                    <div>
-                        <div class="icon-box"><i class="fas fa-cogs"></i></div>
-                        <h4 class="font-bold mb-2 uppercase text-sm tracking-widest">Operations</h4>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization, and Resource Allocation.</p>
+                    <div class="flex flex-col items-start">
+                        <div class="core-icon"><i class="fas fa-cogs"></i></div>
+                        <h4 class="font-bold mb-3 uppercase text-lg tracking-widest text-white">Operations</h4>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Expertise in E-Verify/I-9 Compliance, Workflow Optimization, and Scalable Resource Allocation.</p>
                     </div>
                 </div>
             </div>
 
             <div class="skill-group">
                 <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">Technical Proficiencies</h3>
-                <div class="space-y-12">
+                <div class="space-y-16">
                     
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">Microsoft 365 Ecosystem</p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="skill-tag"><i class="fas fa-file-word ic-word"></i> Word</div>
-                            <div class="skill-tag"><i class="fas fa-file-excel ic-excel"></i> Excel</div>
-                            <div class="skill-tag"><i class="fas fa-file-powerpoint ic-ppt"></i> PowerPoint</div>
-                            <div class="skill-tag"><i class="fas fa-envelope ic-outlook"></i> Outlook</div>
-                            <div class="skill-tag"><i class="fas fa-users ic-teams"></i> Teams</div>
-                            <div class="skill-tag"><i class="fas fa-cloud ic-one-drive"></i> OneDrive</div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] mb-8">Microsoft 365 Ecosystem</p>
+                        <div class="flex flex-wrap gap-5">
+                            <div class="skill-tag"><div class="ic-box bg-word"><i class="fas fa-file-word"></i></div> Word</div>
+                            <div class="skill-tag"><div class="ic-box bg-excel"><i class="fas fa-file-excel"></i></div> Excel</div>
+                            <div class="skill-tag"><div class="ic-box bg-ppt"><i class="fas fa-file-powerpoint"></i></div> PPT</div>
+                            <div class="skill-tag"><div class="ic-box bg-outlook"><i class="fas fa-envelope"></i></div> Outlook</div>
+                            <div class="skill-tag"><div class="ic-box bg-teams"><i class="fas fa-users"></i></div> Teams</div>
                         </div>
                     </div>
 
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">AI & Global Productivity</p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="skill-tag"><i class="fas fa-robot ic-gpt"></i> ChatGPT / CoPilot</div>
-                            <div class="skill-tag"><i class="fab fa-google ic-gdrive"></i> Google Workspace</div>
-                            <div class="skill-tag"><i class="fas fa-sticky-note ic-notion"></i> Notion</div>
-                            <div class="skill-tag"><i class="fas fa-check-circle ic-gpt"></i> Grammarly</div>
-                            <div class="skill-tag"><i class="fas fa-paint-brush ic-canva"></i> Canva</div>
-                            <div class="skill-tag"><i class="fas fa-microphone ic-at"></i> Otter.ai</div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] mb-8">AI & Productivity</p>
+                        <div class="flex flex-wrap gap-5">
+                            <div class="skill-tag"><div class="ic-box bg-ai"><i class="fas fa-robot"></i></div> ChatGPT</div>
+                            <div class="skill-tag"><div class="ic-box bg-google"><i class="fab fa-google"></i></div> Google Workspace</div>
+                            <div class="skill-tag"><div class="ic-box bg-canva"><i class="fas fa-paint-brush"></i></div> Canva</div>
+                            <div class="skill-tag"><div class="ic-box bg-crm" style="background: rgba(255,255,255,0.15); color: white;"><i class="fas fa-sticky-note"></i></div> Notion</div>
                         </div>
                     </div>
 
                     <div>
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-6">CRM & Project Infrastructure</p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="skill-tag"><i class="fab fa-salesforce ic-salesforce"></i> Salesforce</div>
-                            <div class="skill-tag"><i class="fas fa-circle-notch ic-roller"></i> Roller CRM</div>
-                            <div class="skill-tag"><i class="fas fa-tasks ic-monday"></i> Monday.com</div>
-                            <div class="skill-tag"><i class="fab fa-jira ic-jira"></i> JIRA</div>
-                            <div class="skill-tag"><i class="fab fa-aws ic-aws"></i> AWS Workspaces</div>
-                            <div class="skill-tag"><i class="fab fa-slack ic-slack"></i> Slack</div>
-                            <div class="skill-tag"><i class="fab fa-whatsapp ic-whatsapp"></i> WhatsApp Business</div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] mb-8">Management Infrastructure</p>
+                        <div class="flex flex-wrap gap-5">
+                            <div class="skill-tag"><div class="ic-box bg-crm"><i class="fab fa-salesforce"></i></div> Salesforce</div>
+                            <div class="skill-tag"><div class="ic-box bg-monday"><i class="fas fa-tasks"></i></div> Monday.com</div>
+                            <div class="skill-tag"><div class="ic-box bg-jira"><i class="fab fa-jira"></i></div> JIRA</div>
+                            <div class="skill-tag"><div class="ic-box bg-slack"><i class="fab fa-slack"></i></div> Slack</div>
+                            <div class="skill-tag"><div class="ic-box bg-wa"><i class="fab fa-whatsapp"></i></div> WA Business</div>
                         </div>
                     </div>
 
