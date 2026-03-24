@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
-        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; }
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; scroll-behavior: smooth; }
         .gold-text { color: var(--champagne); }
+        
+        /* WhatsApp Button Custom Color */
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: white; padding: 12px 24px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; font-size: 10px;
+            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+
         .btn-luxury {
             background: linear-gradient(135deg, #D8B24A 0%, #B8860B 100%);
             color: #000; padding: 14px 30px; border-radius: 50px;
@@ -18,10 +28,19 @@
             display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
         }
         .btn-luxury:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(216, 178, 74, 0.2); }
+
         nav.scrolled { background: rgba(13, 13, 15, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(216, 178, 74, 0.2); }
         
-        .feedback-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(216, 178, 74, 0.1); transition: 0.3s; }
-        .feedback-card:hover { border-color: var(--champagne); transform: translateY(-5px); }
+        .feedback-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(216, 178, 74, 0.1); transition: 0.3s; position: relative; padding-top: 3rem; }
+        .feedback-card:hover { border-color: var(--champagne); }
+        
+        .user-silhouette {
+            width: 60px; height: 60px; background: rgba(216, 178, 74, 0.1);
+            border: 1px solid var(--champagne); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+            color: var(--champagne); font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -35,7 +54,9 @@
                 <a href="skills.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Skills</a>
                 <a href="contact.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Contact</a>
             </div>
-            <a href="https://wa.me/971544609927" class="btn-luxury">Quick Chat</a>
+            <a href="https://wa.me/971544609927" class="btn-whatsapp">
+                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+            </a>
         </div>
     </nav>
 
@@ -45,47 +66,52 @@
                 <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="rounded-2xl w-full border border-white/10 shadow-2xl">
             </div>
             <div class="lg:col-span-7 space-y-10">
-                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em]">Executive & Operations Specialist</h2>
+                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.2em] leading-relaxed">
+                    Executive/Virtual Assistant, Office operation & Administration & Customer Service
+                </h2>
                 <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Operational <br><span class="gold-text">Excellence.</span></h1>
                 <p class="text-xl text-slate-400 font-light max-w-2xl leading-relaxed">
-                    Over **10 years of experience**  in Office Administration, US Compliance, and High-Performance Leadership. Helping businesses scale with precision.
+                    Over **10 years of mastery** in Office Administration [cite: 4, 18], US Compliance [cite: 23], and High-Performance Leadership[cite: 5, 9]. 
+                    Bridging executive vision with professional execution.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="portfolio.html" class="btn-luxury">View Portfolio</a>
-                    <a href="skills.html" class="border border-[#D8B24A] text-[#D8B24A] px-10 py-4 rounded-full text-[10px] font-bold uppercase hover:bg-[#D8B24A] hover:text-black transition">Technical Skills</a>
+                    <a href="Jerwin_Lumpay_CV (1).pdf" download class="border border-[#D8B24A] text-[#D8B24A] px-10 py-4 rounded-full text-[10px] font-bold uppercase hover:bg-[#D8B24A] hover:text-black transition flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 lg:px-20 bg-white/[0.01]">
+    <section class="py-40 px-6 lg:px-20 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Testimonials</h2>
+            <div class="text-center mb-24">
+                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Endorsements</h2>
                 <h3 class="text-4xl font-black italic uppercase">Client <span class="gold-text">Feedback</span></h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-8">
                 <div class="feedback-card p-8 rounded-2xl text-center">
-                    <div class="text-[#D8B24A] mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="italic text-slate-300 mb-6 text-sm">"Highly efficient and always ahead of schedule – an invaluable part of our team." </p>
+                    <div class="user-silhouette"><i class="fas fa-user-tie"></i></div>
+                    <div class="text-[#D8B24A] mb-4 text-[10px]"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="italic text-slate-300 mb-6 text-sm">"Highly efficient and always ahead of schedule – an invaluable part of our team."</p>
                     <p class="font-bold uppercase text-[10px] tracking-widest">E. Granada</p>
-                    <p class="text-[9px] text-slate-500 uppercase">Account Manager </p>
+                    <p class="text-[9px] text-slate-500 uppercase">Account Manager</p>
                 </div>
                 <div class="feedback-card p-8 rounded-2xl text-center">
-                    <div class="text-[#D8B24A] mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="italic text-slate-300 mb-6 text-sm">"Keeps my calendar, emails, and tasks perfectly organized every single day." </p>
+                    <div class="user-silhouette"><i class="fas fa-user-edit"></i></div>
+                    <div class="text-[#D8B24A] mb-4 text-[10px]"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="italic text-slate-300 mb-6 text-sm">"Keeps my calendar, emails, and tasks perfectly organized every single day."</p>
                     <p class="font-bold uppercase text-[10px] tracking-widest">K. Judan</p>
-                    <p class="text-[9px] text-slate-500 uppercase">Employee Support </p>
+                    <p class="text-[9px] text-slate-500 uppercase">Employee Support</p>
                 </div>
                 <div class="feedback-card p-8 rounded-2xl text-center">
-                    <div class="text-[#D8B24A] mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="italic text-slate-300 mb-6 text-sm">"Professional, proactive, and consistently delivers top-quality work." </p>
+                    <div class="user-silhouette"><i class="fas fa-user-shield"></i></div>
+                    <div class="text-[#D8B24A] mb-4 text-[10px]"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="italic text-slate-300 mb-6 text-sm">"Professional, proactive, and consistently delivers top-quality work."</p>
                     <p class="font-bold uppercase text-[10px] tracking-widest">C. Alpajaro</p>
-                    <p class="text-[9px] text-slate-500 uppercase">Micro-Business Owner </p>
+                    <p class="text-[9px] text-slate-500 uppercase">Micro-Business Owner</p>
                 </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="contact.html" class="text-[#D8B24A] text-[10px] font-bold uppercase tracking-widest border-b border-[#D8B24A] pb-1 hover:text-white hover:border-white transition">Work with me &rarr;</a>
             </div>
         </div>
     </section>
