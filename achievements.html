@@ -11,13 +11,14 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
+        /* LOGO STYLE */
         .logo-style { 
             width: 160px;
             height: auto;
             transition: 0.3s;
-            filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
+            /* Applying white filter to match your reference image */
+            filter: brightness(0) invert(1);
         }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
         /* SIDEBAR - Desktop Left Nav */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
@@ -38,12 +39,12 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Bottom Buttons */
-        .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; }
-        .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-whatsapp:hover { background-color: #1eb954; transform: translateY(-2px); }
-        .btn-linkedin { background-color: var(--linkedin); }
-        .btn-linkedin:hover { background-color: #005a8a; transform: translateY(-2px); }
+        /* Unified Bottom Buttons - Pill Style from Reference */
+        .btn-contact { color: white; padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
+        .btn-whatsapp { background-color: #26D367; } /* Brighter green from image */
+        .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-linkedin { background-color: #0077B5; }
+        .btn-linkedin:hover { opacity: 0.9; transform: translateY(-2px); }
 
         /* Content Styling */
         .edu-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); padding: 35px; border-radius: 20px; border-left: 4px solid var(--champagne); }
@@ -61,7 +62,9 @@
 
     <aside class="sidebar">
         <div class="mb-20">
-            <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style"></a>
+            <a href="index.html">
+                <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style">
+            </a>
         </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
@@ -73,12 +76,12 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         
-        <div class="mt-auto space-y-3">
+        <div class="mt-auto space-y-4">
             <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in text-base"></i> LinkedIn
+                <i class="fab fa-linkedin-in"></i> LINKEDIN
             </a>
             <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp text-base"></i> WhatsApp
+                <i class="fab fa-whatsapp"></i> WHATSAPP
             </a>
         </div>
     </aside>
@@ -91,7 +94,7 @@
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-             <span class="text-white font-black italic">MENU</span>
+             <span class="text-white font-black italic tracking-widest">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
         <nav>
@@ -103,32 +106,40 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <div class="mt-auto space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <div class="mt-auto space-y-4">
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
+                <i class="fab fa-linkedin-in"></i> LINKEDIN
+            </a>
+            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WHATSAPP
+            </a>
         </div>
     </div>
 
     <main class="main-content">
         <div class="section-container">
             <header class="mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Honors & Qualifications</h2>
+                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Academic & Professional</h2>
                 <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-white">
                     Key <br><span class="gold-text">Milestones.</span>
                 </h1>
             </header>
 
             <div class="mb-20">
-                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Education</h3>
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
+                    Education <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span>
+                </h3>
                 <div class="edu-card">
-                    <h4 class="text-2xl md:text-3xl font-black italic uppercase text-white leading-tight">Bachelor of Science in Business Administration</h4>
+                    <h4 class="text-2xl md:text-3xl font-black italic uppercase text-white leading-tight">Bachelor of Science in <br>Business Administration</h4>
                     <p class="gold-text font-black text-xs uppercase tracking-widest mt-2">Management Specialist</p>
                     <p class="text-slate-400 mt-6 font-medium">Concordia College – Manila, Philippines</p>
                 </div>
             </div>
 
             <div>
-                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Awards & Certs</h3>
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
+                    Awards & Certifications <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span>
+                </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="award-card">
                         <div class="icon-box"><i class="fas fa-medal"></i></div>
@@ -139,11 +150,18 @@
                         <div class="icon-box"><i class="fas fa-crown"></i></div>
                         <h4 class="text-white font-black uppercase text-sm mb-1">Ibex R.I.T.E VIP Award</h4>
                         <p class="gold-text text-[9px] font-black uppercase tracking-widest mb-2">Respect • Integrity • Transparency • Excellence</p>
-                        <p class="text-slate-400 text-sm">The highest recognition for professional integrity and performance.</p>
+                        <p class="text-slate-400 text-sm">The highest recognition for professional integrity and performance excellence.</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <script
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
