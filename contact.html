@@ -1,15 +1,96 @@
-<main class="main-content pt-32 px-20 flex items-center">
-    <div class="max-w-2xl w-full">
-        <h1 class="text-6xl font-black italic uppercase mb-12">Connect<span class="text-[#D8B24A]">.</span></h1>
-        <div class="space-y-10">
-            <div class="flex items-center gap-6">
-                <div class="w-12 h-12 rounded-full border border-[#D8B24A] flex items-center justify-center text-[#D8B24A]"><i class="fas fa-envelope"></i></div>
-                <div><p class="text-[10px] uppercase tracking-widest text-slate-500">Email </p><p class="text-xl font-bold">support@jerwinlumpay.com</p></div>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="w-12 h-12 rounded-full border border-[#D8B24A] flex items-center justify-center text-[#D8B24A]"><i class="fab fa-linkedin-in"></i></div>
-                <div><p class="text-[10px] uppercase tracking-widest text-slate-500">LinkedIn </p><a href="https://linkedin.com/in/jerwin-lumpay" class="text-xl font-bold hover:text-[#D8B24A]">linkedin.com/in/jerwin-lumpay</a></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jerwin Lumpay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    <style>
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --navy-card: #0A192F; }
+        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; display: flex; margin: 0; }
+        
+        /* SIDEBAR NAVIGATION */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: flex; flex-direction: column; padding: 40px; z-index: 100; }
+        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; padding: 80px 60px; display: flex; align-items: center; }
+        
+        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { color: var(--champagne); }
+        
+        .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; text-decoration: none; }
+        
+        /* CONTACT INTERACTIVE ELEMENTS */
+        .contact-item { display: flex; align-items: center; gap: 25px; padding: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); border-radius: 20px; transition: 0.4s; text-decoration: none; color: inherit; margin-bottom: 20px; width: 100%; max-width: 600px; }
+        .contact-item:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); transform: translateX(10px); }
+        .icon-box { width: 60px; height: 60px; border-radius: 50%; background: #112240; border: 1px solid var(--champagne); display: flex; align-items: center; justify-content: center; color: var(--champagne); font-size: 1.2rem; flex-shrink: 0; }
+        .label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #555; display: block; margin-bottom: 5px; }
+        .detail { font-size: 1.25rem; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="mb-20">
+            <a href="index.html" class="text-xl font-black italic text-white" style="text-decoration: none;">J.LUMPAY<span style="color: var(--champagne);">.</span></a>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="feedback.html" class="nav-link">Feedback</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <div class="mt-10 flex gap-4 text-slate-500 mb-6">
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="hover:text-[#D8B24A]"><i class="fab fa-linkedin-in text-lg"></i></a>
+            <a href="https://wa.me/971544609927" class="hover:text-[#25D366]"><i class="fab fa-whatsapp text-lg"></i></a>
+        </div>
+        <a href="https://wa.me/971544609927" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </aside>
+
+    <main class="main-content">
+        <div class="w-full">
+            <header class="mb-12">
+                <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Direct Communication</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Get In <br><span style="color: var(--champagne);">Touch.</span></h1>
+            </header>
+
+            <div class="space-y-6">
+                <div class="contact-item">
+                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <span class="label">Location</span>
+                        <p class="detail">Dubai, United Arab Emirates </p>
+                    </div>
+                </div>
+
+                <a href="mailto:support@jerwinlumpay.com" class="contact-item">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <span class="label">Email Me</span>
+                        <p class="detail">support@jerwinlumpay.com </p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/971544609927" class="contact-item">
+                    <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <span class="label">WhatsApp & Call</span>
+                        <p class="detail">+971 54 460 9927 </p>
+                    </div>
+                </a>
+
+                <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
+                    <div>
+                        <span class="label">Professional Network</span>
+                        <p class="detail">linkedin.com/in/jerwin-lumpay </p>
+                    </div>
+                </a>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+
+</body>
+</html>
