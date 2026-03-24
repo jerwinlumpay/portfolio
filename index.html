@@ -3,108 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerwin Lumpay | Executive Support & Operations</title>
+    <title>Jerwin Lumpay | Executive Operations & Client Administration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: ui-sans-serif, system-ui, sans-serif; overflow-x: hidden; }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(51, 65, 85, 0.5); backdrop-filter: blur(10px); }
+        :root {
+            --p22: 'P22 Underground', 'Inter', sans-serif;
+        }
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            font-family: var(--p22);
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+        .gradient-text { 
+            background: linear-gradient(90deg, #38bdf8, #818cf8); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .glass-card { 
+            background: rgba(30, 41, 59, 0.4); 
+            border: 1px solid rgba(51, 65, 85, 0.5); 
+            backdrop-filter: blur(12px); 
+        }
+        .sidebar { background-color: #020617; }
         @media (min-width: 768px) { .min-h-custom { min-height: 100vh; } }
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
     </style>
 </head>
 <body class="antialiased">
 
     <main class="flex flex-col md:flex-row min-h-custom w-full">
         
-        <div class="w-full md:w-5/12 bg-slate-950 flex flex-col justify-center items-center p-12 text-center border-b md:border-b-0 md:border-r border-slate-800">
+        <div class="w-full md:w-5/12 sidebar flex flex-col justify-center items-center p-8 md:p-12 text-center border-b md:border-b-0 md:border-r border-slate-800">
             <div class="relative mb-8">
-                <div class="absolute inset-0 bg-sky-500 rounded-full blur-2xl opacity-20"></div>
+                <div class="absolute inset-0 bg-sky-500 rounded-full blur-3xl opacity-10"></div>
                 <img src="jerwindp.jpg" alt="Jerwin Lumpay" 
                      class="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-sky-400 shadow-2xl object-cover mx-auto">
             </div>
             
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight">Jerwin <br class="hidden md:block"> <span class="gradient-text">Lumpay</span></h1>
-            <p class="text-lg text-slate-400 max-w-sm mb-10 font-light tracking-wide uppercase">
-                Executive Virtual Assistant <br> Operations & Compliance Specialist
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Jerwin <br class="hidden md:block"> <span class="gradient-text">Lumpay</span></h1>
+            <p class="text-sm text-sky-400 font-bold uppercase tracking-[0.4em] mb-10">
+                Executive Operations Specialist
             </p>
 
             <div class="flex flex-col gap-4 w-full max-w-xs">
-                <a href="mailto:support@jerwinlumpay.com" class="bg-sky-500 hover:bg-sky-600 px-8 py-4 rounded-xl font-bold text-white transition-all shadow-lg hover:scale-105 active:scale-95">
-                    <i class="fas fa-envelope mr-2"></i> Hire Me
+                <a href="mailto:support@jerwinlumpay.com" class="bg-sky-500 hover:bg-sky-600 px-8 py-4 rounded-xl font-bold text-white transition-all shadow-lg hover:scale-[1.02]">
+                    <i class="fas fa-envelope mr-2"></i> Contact Me
                 </a>
                 <a href="Jerwin_Lumpay_CV.pdf" download class="glass-card hover:bg-slate-800 px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 border-slate-700">
-                    <i class="fas fa-download"></i> Download CV
+                    <i class="fas fa-file-pdf"></i> Download CV
                 </a>
             </div>
 
-            <div class="mt-12 flex gap-6 text-2xl text-slate-500">
+            <div class="mt-12 flex gap-8 text-2xl text-slate-500">
                 <a href="https://linkedin.com/in/jerwin-lumpay" class="hover:text-sky-400 transition"><i class="fab fa-linkedin"></i></a>
                 <a href="tel:+971544609927" class="hover:text-sky-400 transition"><i class="fas fa-phone"></i></a>
             </div>
         </div>
 
-        <div class="w-full md:w-7/12 p-8 md:p-20 overflow-y-auto bg-slate-900/30">
+        <div class="w-full md:w-7/12 p-8 md:p-16 lg:p-24 overflow-y-auto">
             
-            <section class="mb-16">
-                <h2 class="text-sky-400 text-sm font-bold uppercase tracking-[0.3em] mb-4">The Professional</h2>
-                <h3 class="text-4xl font-bold mb-6 text-white leading-tight">Strategic Partnership <br>& Operational Excellence</h3>
+            <section class="mb-20">
+                <h2 class="text-sky-400 text-xs font-bold uppercase tracking-[0.3em] mb-4">The Professional</h2>
+                <h3 class="text-4xl font-bold mb-8 text-white leading-tight">Strategic Client Administration <br>& Office Operations</h3>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    With over **10 years of experience** supporting high-growth organizations like **ADP** and **ibex**, I specialize in acting as a strategic partner to executives. I don't just manage tasks; I streamline complex operations and ensure 100% regulatory compliance.
+                    With a decade of experience across **ADP** and **ibex**, I deliver high-impact **Office Operations** and **Client Administration** for global organizations. I act as the "engine" behind the executive, ensuring that complex logistics, compliance, and customer relations run flawlessly.
                 </p>
-                <p class="text-slate-400 text-lg leading-relaxed">
-                    Based in Dubai, I navigate international stakeholder relations and multi-timezone coordination, specifically focusing on **E-Verify compliance** and **USCIS Form I-9 management**.
-                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-sky-500">
+                        <span class="block text-white font-bold text-lg">Dubai Based</span>
+                        <span class="text-slate-500 text-sm italic underline">EMEA / APAC / US Ready</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-indigo-500">
+                        <span class="block text-white font-bold text-lg">VIP Awarded</span>
+                        <span class="text-slate-500 text-sm">Service Excellence 2021</span>
+                    </div>
+                </div>
             </section>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
-                <div class="glass-card p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-bold text-sky-400">10+</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Years Exp.</div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-bold text-sky-400">15+</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Leadership</div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl text-center col-span-2 md:col-span-1">
-                    <div class="text-3xl font-bold text-sky-400">VIP</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Awarded</div>
-                </div>
-            </div>
+            <section class="mb-20">
+                <h2 class="text-sky-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">Career Highlights</h2>
+                <div class="space-y-6">
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                            <i class="fas fa-briefcase text-6xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Office Operations & Administration</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Orchestrating daily corporate functions, from international travel logistics and C-Suite calendar management to cross-departmental coordination. Expertise in streamlining internal workflows to reduce operational friction.
+                        </p>
+                    </div>
 
-            <div class="space-y-6">
-                <div class="glass-card p-6 rounded-2xl flex gap-6 items-center">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-calendar-check text-xl text-sky-400"></i>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                            <i class="fas fa-users-gear text-6xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Client Administration & Compliance</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Managed enterprise-level accounts for ADP, specifically focusing on **E-Verify** and **USCIS Form I-9** compliance. Maintained 100% audit readiness and handled sensitive stakeholder data with precision.
+                        </p>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-white">Executive C-Suite Support</h4>
-                        <p class="text-slate-400 text-sm mt-1">Calendar, travel, and high-level project coordination.</p>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl flex gap-6 items-center">
-                    <div class="w-14 h-14 bg-indigo-500/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-shield-halved text-xl text-indigo-400"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white">Global Compliance</h4>
-                        <p class="text-slate-400 text-sm mt-1">Specialist in E-Verify and USCIS auditing standards.</p>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl flex gap-6 items-center">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-bolt text-xl text-emerald-400"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white">Automation & AI</h4>
-                        <p class="text-slate-400 text-sm mt-1">Optimizing workflows with ChatGPT and MS 365.</p>
-                    </div>
-                </div>
-            </div>
 
-            <p class="mt-20 text-slate-600 text-[10px] tracking-[0.2em] uppercase text-center md:text-left">
-                © 2026 Jerwin Lumpay • Dubai, UAE • support@jerwinlumpay.com
-            </p>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                            <i class="fas fa-headset text-6xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Customer Service Excellence</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Led teams of 15+ agents to deliver superior CX for global clients. Leveraged data-driven insights to improve resolution times and earned the VIP Service Award for consistent high-performance results.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <h2 class="text-sky-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">Technical Proficiencies</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">SALESFORCE</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">MICROSOFT 365</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">JIRA</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">MONDAY.COM</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">TABLEAU</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">AI AUTOMATION</span>
+                    <span class="px-5 py-2 glass-card rounded-full text-xs font-bold text-slate-300">GO-TO-MEETING</span>
+                </div>
+            </section>
+
+            <footer class="pt-10 border-t border-slate-800">
+                <p class="text-slate-500 text-xs tracking-[0.2em] uppercase">
+                    © 2026 Jerwin Lumpay • Specialized Executive Support • Dubai, UAE
+                </p>
+            </footer>
         </div>
 
     </main>
