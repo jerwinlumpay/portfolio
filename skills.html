@@ -3,33 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Jerwin Lumpay</title>
+    <title>Skills & Proficiencies | Jerwin Lumpay</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
-        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; }
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
         body { background: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; }
+        .skill-tag { background: rgba(216, 178, 74, 0.05); border: 1px solid rgba(216, 178, 74, 0.2); padding: 10px 20px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .icon-box { color: var(--champagne); font-size: 1.5rem; margin-bottom: 1rem; }
     </style>
 </head>
-<body class="pt-40 px-8">
-    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-8 bg-[#0D0D0F]/95 border-b border-white/5">
+<body class="pt-40 pb-20 px-8">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8 bg-[#0D0D0F]/95 backdrop-blur-md border-b border-white/5 transition-all">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-black uppercase italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
-            <div class="flex gap-8">
-                <a href="index.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Home</a>
-                <a href="portfolio.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Portfolio</a>
-                <a href="skills.html" class="text-[10px] font-bold uppercase text-[#D8B24A]">Skills</a>
-                <a href="services.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Services</a>
-                <a href="contact.html" class="text-[10px] font-bold uppercase hover:text-[#D8B24A]">Contact</a>
+            <a href="index.html" class="text-xl font-black uppercase tracking-widest italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Home</a>
+                <a href="portfolio.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Portfolio</a>
+                <a href="skills.html" class="text-[10px] font-bold uppercase tracking-widest text-[#D8B24A]">Skills</a>
+                <a href="services.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Services</a>
+                <a href="contact.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Contact</a>
             </div>
-            <a href="https://wa.me/971544609927" class="bg-[#25D366] text-white px-6 py-3 rounded-full font-extrabold text-[10px] flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://wa.me/971544609927" class="bg-[#25D366] text-white px-6 py-3 rounded-full font-extrabold uppercase text-[10px] tracking-widest flex items-center gap-2 hover:scale-105 transition">
+                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+            </a>
         </div>
     </nav>
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-6xl font-black italic uppercase mb-16 text-[#D8B24A]">Skills & Tools.</h1>
-        <div class="grid grid-cols-2 gap-8">
-            <div><h4 class="font-bold text-[#D8B24A] uppercase mb-4">CRMs</h4><p class="text-slate-400">Salesforce, Roller, OPUS, Telegence</p></div>
-            <div><h4 class="font-bold text-[#D8B24A] uppercase mb-4">AI Tools</h4><p class="text-slate-400">ChatGPT, CoPilot, Grammarly, Otter.ai</p></div>
+
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-20">
+            <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[11px] font-extrabold mb-4">Technical Architecture</h2>
+            <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">Skills & <br>Tools.</h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <div class="icon-box"><i class="fas fa-database"></i></div>
+                <h3 class="text-xl font-bold uppercase mb-6">CRM & Operations</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Salesforce</span>
+                    <span class="skill-tag">Roller (POS)</span>
+                    <span class="skill-tag">JIRA</span>
+                    <span class="skill-tag">E-Verify</span>
+                </div>
+            </div>
+            <div>
+                <div class="icon-box"><i class="fas fa-robot"></i></div>
+                <h3 class="text-xl font-bold uppercase mb-6">AI & Productivity</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Microsoft 365 (Expert)</span>
+                    <span class="skill-tag">ChatGPT / CoPilot</span>
+                    <span class="skill-tag">Google Workspace</span>
+                    <span class="skill-tag">Otter.ai</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
