@@ -3,188 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive/Virtual Assistant, Office operation & Administration & Customer Service</title>
+    <title>Portfolio | Executive/Virtual Assistant, Office operation & Administration & Customer Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
-    
     <style>
         :root { 
-            --p22: 'P22 Underground', sans-serif; 
-            --onyx: #0D0D0F;
-            --champagne: #D8B24A;
-            --ivory: #FFF4DE;
-            --glass: rgba(255, 244, 222, 0.03);
+            --onyx: #0D0D0F; 
+            --champagne: #D8B24A; 
+            --ivory: #FFF4DE; 
         }
         body { 
-            background-color: var(--onyx); 
+            background: var(--onyx); 
             color: var(--ivory); 
-            font-family: var(--p22);
-            scroll-behavior: smooth;
+            font-family: 'P22 Underground', sans-serif; 
+            line-height: 1.6;
         }
-        .gold-text { color: var(--champagne); }
-        .section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5em; color: var(--champagne); }
+        .gold-border { border-left: 1px solid rgba(216, 178, 74, 0.2); transition: 0.3s; margin-bottom: 2rem; }
+        .gold-border:hover { border-left: 1px solid var(--champagne); background: rgba(216, 178, 74, 0.02); }
+        .nav-link:hover { color: var(--champagne); }
         
-        /* Navigation */
-        nav { transition: all 0.4s ease; }
-        nav.scrolled { background-color: rgba(13, 13, 15, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(216, 178, 74, 0.2); padding: 1rem 2rem !important; }
-
-        /* Luxury Buttons */
-        .btn-luxury {
-            background: linear-gradient(135deg, #D8B24A 0%, #B8860B 100%);
-            color: #000; padding: 14px 30px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px;
-            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
-        }
-        .btn-luxury:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(216, 178, 74, 0.2); }
-
-        .btn-outline-gold {
-            border: 1px solid var(--champagne);
-            color: var(--champagne); padding: 14px 30px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px;
-            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
-        }
-        .btn-outline-gold:hover { background: rgba(216, 178, 74, 0.1); }
-
-        /* Silhouette Avatars */
-        .silhouette-avatar {
-            width: 80px; height: 80px; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(216, 178, 74, 0.1), rgba(216, 178, 74, 0.05));
-            border: 1px solid rgba(216, 178, 74, 0.4);
-            display: flex; align-items: center; justify-content: center;
-            margin: -60px auto 20px auto; color: var(--champagne); font-size: 1.8rem;
-        }
-
-        .feedback-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(216, 178, 74, 0.1);
-            padding: 2.5rem 1.5rem; border-radius: 15px; transition: 0.3s;
-            text-align: center; height: 100%;
-        }
-        .feedback-card:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.03); }
-
-        .marquee-fixed-bottom {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: #08080A; border-top: 1px solid rgba(216, 178, 74, 0.3);
-            z-index: 100; padding: 15px 0; overflow: hidden; white-space: nowrap;
-        }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-content { display: inline-block; animation: scroll 35s linear infinite; }
-        .marquee-item { display: inline-block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; margin: 0 40px; letter-spacing: 2px; }
+        /* Animation */
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body>
+<body class="pt-32 pb-40 px-6">
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8">
+    <nav class="fixed top-0 left-0 w-full z-50 p-8 bg-[#0D0D0F]/95 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-black tracking-widest uppercase">J.LUMPAY<span class="gold-text">.</span></span>
-            <div class="hidden md:flex gap-8">
-                <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest gold-text">Home</a>
-                <a href="#services" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Services</a>
-                <a href="#portfolio" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Portfolio</a>
-                <a href="#contact" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Contact</a>
+            <a href="index.html" class="text-xl font-black tracking-tighter uppercase italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+                <a href="index.html" class="nav-link transition">Home</a>
+                <a href="services.html" class="nav-link transition">Services</a>
+                <a href="portfolio.html" class="text-[#D8B24A]">Portfolio</a>
             </div>
-            <a href="https://wa.me/971544609927" class="btn-luxury">WhatsApp Chat</a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center pt-20 px-6 lg:px-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-5">
-                <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="rounded-2xl w-full shadow-2xl border border-white/10 grayscale-0 shadow-[0_0_50px_rgba(216,178,74,0.1)]">
-            </div>
-            <div class="lg:col-span-7 space-y-10">
-                <h2 class="section-title">Executive/Virtual Assistant, Office operation & Administration & Customer Service</h2>
-                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-[0.85] tracking-tighter">
-                    Operational <br><span class="gold-text">Excellence.</span>
-                </h1>
-                <p class="text-xl text-slate-400 font-light max-w-2xl leading-relaxed">
-                    A decade of multi-disciplinary experience in **Office Administration, US Compliance (ADP), and High-Performance Leadership.**
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="portfolio.html" class="btn-luxury">View Multipage Portfolio</a>
-                    <a href="your-cv.pdf" download class="btn-outline-gold"><i class="fas fa-file-download"></i> Download CV</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="max-w-4xl mx-auto fade-in">
+        <header class="mb-20">
+            <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[11px] font-extrabold mb-4">Professional History</h2>
+            <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">The <br>Portfolio.</h1>
+        </header>
 
-    <section id="feedback" class="py-32 px-6 lg:px-20">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="section-title mb-4">Voice of Experience</h2>
-                <h3 class="text-4xl md:text-6xl font-black italic uppercase">Client <span class="gold-text">Feedback</span></h3>
-            </div>
+        <div class="space-y-12">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-8">
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-user-tie"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Highly efficient and always ahead of schedule – an invaluable part of our team."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">E. Granada</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Account Manager</p>
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Front Desk Representative / Operations</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">Purple Desk | May 2025 – April 2026</span>
                 </div>
-
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-user-circle"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Keeps my calendar, emails, and tasks perfectly organized every single day."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">K. Judan</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Employee Support</p>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-user-shield"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Professional, proactive, and consistently delivers top-quality work."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">C. Alpajaro</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Micro-Business Owner</p>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-user-graduate"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Handles complex projects with ease and keeps everything running smoothly."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">P. Eranista</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Training Manager</p>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Responsive, detail-oriented, and a true problem-solver."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">K. Castillon</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Instructor</p>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="silhouette-avatar"><i class="fas fa-user-astronaut"></i></div>
-                    <p class="text-slate-300 italic mb-6">"Has transformed the way I work by taking care of all the details I used to stress over."</p>
-                    <div class="gold-text text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h4 class="font-bold uppercase text-sm">J. Mulvaney</h4>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Real Estate Broker</p>
-                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Managed end-to-end booking schedules and ticketing using **Roller CRM**[cite: 18, 19].</li>
+                    <li>• Handled 10,000+ calls with an AHT of 3:41, contributing \$80K in revenue[cite: 20].</li>
+                    <li>• Led operational training for new hires on internal booking processes[cite: 21].</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <div class="marquee-fixed-bottom">
-        <div class="marquee-content">
-            <span class="marquee-item"><span class="gold-text">//</span> DUBAI BASED</span>
-            <span class="marquee-item"><span class="gold-text">//</span> ROLLER CRM MASTER</span>
-            <span class="marquee-item"><span class="gold-text">//</span> ADP COMPLIANCE</span>
-            <span class="marquee-item"><span class="gold-text">//</span> 10+ YEARS EXP</span>
-            <span class="marquee-item"><span class="gold-text">//</span> DUBAI BASED</span>
-            <span class="marquee-item"><span class="gold-text">//</span> ROLLER CRM MASTER</span>
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Client Services & Compliance Specialist</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ADP | Sept 2022 – March 2025</span>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Oversaw USCIS Form I-9 and **E-Verify compliance** for major clients like Siemens and Sodexo[cite: 22, 23].</li>
+                    <li>• Maintained audit-ready records and resolved documentation discrepancies with high precision[cite: 24].</li>
+                    <li>• Mitigated legal risks through strict data privacy and regulatory adherence[cite: 25].</li>
+                </ul>
+            </div>
+
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Customer Service Team Lead</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ibex | April 2018 – August 2022</span>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Managed 10-15 staff members for high-profile accounts including AT&T and GoDaddy[cite: 26, 27].</li>
+                    <li>• Awarded the **VIP Award 2021** and **Top Team Q1 2021** for performance excellence[cite: 28].</li>
+                    <li>• Performed data-driven coaching and action planning based on business reviews[cite: 29].</li>
+                </ul>
+            </div>
+
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Sales Associate</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">ResultsCX | Nov 2016 – March 2018</span>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Provided tailored telecom solutions to meet specific sales targets[cite: 30, 31, 32].</li>
+                    <li>• Built rapid rapport with customers to drive overall sales success[cite: 33].</li>
+                </ul>
+            </div>
+
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Customer Service Representative</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">Sutherland | April 2015 – Oct 2016</span>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Managed **merchant disputes and chargebacks**, ensuring transaction defense with financial institutions[cite: 34, 35].</li>
+                    <li>• Provided real-time transaction monitoring and resolved payment processing issues[cite: 36, 37].</li>
+                </ul>
+            </div>
+
+            <div class="gold-border pl-8 py-4">
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-bold uppercase">Executive Administrative Assistant</h3>
+                    <span class="text-[#D8B24A] text-[10px] font-bold tracking-widest uppercase">PSAA Academy | March 2012 – March 2015</span>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2 font-light">
+                    <li>• Provided high-level support to the President, managing complex international travel and calendars[cite: 38].</li>
+                    <li>• Acted as the primary contact for partner institutions and government officials (TESDA)[cite: 39].</li>
+                    <li>• Streamlined digital filing systems for enhanced remote accessibility[cite: 40].</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-24 pt-10 border-t border-white/5 text-center">
+            <h4 class="text-white uppercase font-bold text-sm mb-4">Education & Honors</h4>
+            <p class="text-slate-400 text-xs mb-2">Bachelor of Science in Business Administration & Management [cite: 42]</p>
+            <p class="text-[#D8B24A] text-[10px] font-bold uppercase tracking-widest italic">ADP Core Value Award Winner [cite: 45]</p>
         </div>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    </script>
 </body>
 </html>
