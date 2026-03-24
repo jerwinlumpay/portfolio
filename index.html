@@ -11,6 +11,12 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
+        /* LOGO BLENDING - Removes white background via code */
+        .logo-blend { 
+            mix-blend-mode: screen; 
+            filter: brightness(1.1) contrast(1.1);
+        }
+
         /* SIDEBAR - Desktop */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
         
@@ -33,7 +39,6 @@
         .gold-text { color: var(--champagne); }
         .competency-box { background: rgba(216, 178, 74, 0.03); border: 1px solid rgba(216, 178, 74, 0.1); border-left: 3px solid var(--champagne); padding: 25px; transition: 0.3s; }
 
-        /* Mobile Menu drawer */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
@@ -45,7 +50,7 @@
     <aside class="sidebar">
         <div class="mb-20">
             <a href="index.html">
-                <img src="logo.png" alt="Jerwin Lumpay" class="w-40 h-auto">
+                <img src="logo.png" alt="Jerwin Lumpay" class="w-40 h-auto logo-blend">
             </a>
         </div>
         <nav>
@@ -66,7 +71,7 @@
 
     <div class="mobile-header">
         <a href="index.html">
-            <img src="logo.png" alt="Jerwin Lumpay" class="h-10 w-auto">
+            <img src="logo.png" alt="Jerwin Lumpay" class="h-10 w-auto logo-blend">
         </a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
