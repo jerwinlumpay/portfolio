@@ -45,7 +45,8 @@
         .btn-linkedin:hover { background-color: #005a8a; transform: translateY(-2px); }
 
         .gold-text { color: var(--champagne); }
-        .competency-box { background: rgba(216, 178, 74, 0.03); border: 1px solid rgba(216, 178, 74, 0.1); border-left: 3px solid var(--champagne); padding: 25px; transition: 0.3s; }
+        .competency-box { background: rgba(216, 178, 74, 0.03); border: 1px solid rgba(216, 178, 74, 0.1); border-left: 3px solid var(--champagne); padding: 25px; transition: 0.3s; height: 100%; }
+        .competency-box:hover { background: rgba(216, 178, 74, 0.06); }
 
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
@@ -113,21 +114,21 @@
     <main class="main-content">
         <div class="section-container flex flex-col justify-center" style="min-height: 85vh;">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
-                <div class="lg:col-span-5">
+                <div class="lg:col-span-5 order-2 lg:order-1">
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-[#D8B24A] to-transparent rounded-2xl blur opacity-20 transition"></div>
                         <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-white/10 shadow-2xl">
                     </div>
                 </div>
-                <div class="lg:col-span-7 space-y-6 lg:space-y-8">
+                <div class="lg:col-span-7 space-y-6 lg:space-y-8 order-1 lg:order-2">
                     <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.3em]">
                         Executive Assistant | Operations | Customer Service
                     </h2>
                     <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-white">
                         Jerwin <br><span class="gold-text">Lumpay.</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
-                        Over <strong>10 years of experience</strong> in Administration and Operations. Proven track record leading teams of 15+ agents to exceed KPIs.
+                    <p class="text-base md:text-lg text-slate-300 font-light leading-relaxed max-w-2xl">
+                        Highly organized and versatile professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and Customer Operations. Proven track record in managing high-volume front-desk operations, executive-level support, and leading teams of 15+ agents to exceed KPIs. Expert in navigating complex CRM/ERP systems and AI-driven productivity tools to optimize operational efficiency.
                     </p>
                     <div class="pt-4">
                         <a href="Jerwin_Lumpay_CV (1).pdf" download class="border-2 border-[#D8B24A] text-[#D8B24A] px-10 py-4 lg:px-12 lg:py-5 rounded-full text-[10px] lg:text-[11px] font-black uppercase hover:bg-[#D8B24A] hover:text-black transition-all flex items-center gap-3 w-fit">
@@ -145,19 +146,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 <div class="competency-box">
                     <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Administration</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Executive Support, Calendar Management, Travel Coordination.</p>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Executive Support, Calendar Management, Travel Coordination, and High-Volume Front Desk Operations.</p>
                 </div>
                 <div class="competency-box">
-                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Operations</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization.</p>
+                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Operations & Compliance</h4>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization, CRM/ERP Management, and AI productivity tools.</p>
                 </div>
                 <div class="competency-box">
                     <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Customer Experience</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Escalation Management, Multi-channel Support.</p>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Escalation Management, Multi-channel Support, and specialized Customer Operations leadership.</p>
                 </div>
                 <div class="competency-box">
                     <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Leadership</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Team Coaching, Performance Monitoring (AHT, CSAT).</p>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Team Coaching, Performance Monitoring (AHT, CSAT), and Strategic KPI management for 15+ agents.</p>
                 </div>
             </div>
         </div>
