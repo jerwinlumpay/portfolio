@@ -19,8 +19,9 @@
 
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
+        .section-container { max-width: 1000px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
@@ -36,10 +37,44 @@
         .btn-whatsapp { background-color: var(--whatsapp); }
         .btn-linkedin { background-color: var(--linkedin); }
         
-        .gold-text { color: var(--champagne); }
+        /* ROADMAP TIMELINE STYLES */
+        .roadmap-container { position: relative; padding-left: 40px; border-left: 1px solid rgba(216, 178, 74, 0.2); }
         
-        .portfolio-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); padding: 30px; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
-        .portfolio-card:hover { background: rgba(216, 178, 74, 0.05); transform: translateY(-5px); border-color: var(--champagne); }
+        .portfolio-card { 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid rgba(216, 178, 74, 0.05); 
+            padding: 30px; border-radius: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            position: relative; margin-bottom: 40px;
+        }
+
+        /* The "Node" on the roadmap */
+        .portfolio-card::before {
+            content: ''; position: absolute; left: -51px; top: 35px;
+            width: 20px; height: 20px; background: #08080A;
+            border: 3px solid var(--champagne); border-radius: 50%;
+            z-index: 2; transition: 0.3s;
+        }
+
+        .portfolio-card:hover { 
+            background: rgba(216, 178, 74, 0.03); 
+            transform: scale(1.02); 
+            border-color: var(--champagne);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .portfolio-card:hover::before { background: var(--champagne); box-shadow: 0 0 15px var(--champagne); }
+
+        /* BRAND ACCENTS */
+        .border-purple { border-left: 4px solid #A855F7 !important; }
+        .border-adp { border-left: 4px solid #D12027 !important; }
+        .border-ibex { border-left: 4px solid var(--champagne) !important; }
+        .border-results { border-left: 4px solid #F97316 !important; }
+        .border-sutherland { border-left: 4px solid #3B82F6 !important; }
+        .border-psaa { border-left: 4px solid #10B981 !important; }
+
+        .date-tag { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .company-name { font-size: 11px; font-weight: 900; color: #777; letter-spacing: 1px; margin-bottom: 15px; }
 
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
@@ -92,52 +127,52 @@
 
     <main class="main-content">
         <div class="section-container">
-            <header class="mb-12 lg:mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.3em] mb-4">Professional Milestones</h2>
-                <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none tracking-tighter">Career <br><span class="gold-text">Experience.</span></h1>
+            <header class="mb-16">
+                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.3em] mb-4">Professional Roadmap</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Career <br><span class="text-[#D8B24A]">Path.</span></h1>
             </header>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">May 2025 – April 2026 | Dubai, UAE</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Front Desk Representative</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">Purple Desk</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Managed end-to-end booking schedules, ticketing, and memberships using Roller CRM. Handled 10,000+ calls with an AHT of 3:41 while contributing $80K in revenue. Trained new hires on operational resources.</p>
+            <div class="roadmap-container">
+                <div class="portfolio-card border-purple">
+                    <span class="date-tag text-purple-400">May 2025 – April 2026 | Dubai, UAE</span>
+                    <h3 class="text-2xl font-bold mb-1">Front Desk Representative</h3>
+                    <p class="company-name">Purple Desk</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Managed end-to-end booking schedules and memberships using Roller CRM. Handled 10,000+ calls and contributed $80K in revenue while maintaining an exceptional AHT.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">Sept 2022 – March 2025</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Client Services & Compliance Specialist</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ADP</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Oversaw USCIS Form I-9 and E-Verify compliance for major US clients like Sodexo and Siemens. Maintained audit-ready records and mitigated legal risks through meticulous data privacy adherence.</p>
+                <div class="portfolio-card border-adp">
+                    <span class="date-tag text-red-500">Sept 2022 – March 2025</span>
+                    <h3 class="text-2xl font-bold mb-1">Client Services & Compliance Specialist</h3>
+                    <p class="company-name">ADP (Automatic Data Processing)</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Oversaw USCIS Form I-9 and E-Verify compliance for Fortune 500 clients. Mitigated legal risks through meticulous data privacy and audit-ready record keeping.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">April 2018 – August 2022</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Customer Service Team Lead</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ibex</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Promoted from Agent to Team Lead, managing 10-15 staff for GoDaddy and AT&T accounts. Conducted performance coaching and action planning based on data-driven business reviews.</p>
+                <div class="portfolio-card border-ibex">
+                    <span class="date-tag text-[#D8B24A]">April 2018 – August 2022</span>
+                    <h3 class="text-2xl font-bold mb-1">Customer Service Team Lead</h3>
+                    <p class="company-name">ibex</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Promoted to Team Lead for GoDaddy & AT&T accounts. Managed 15+ agents, conducting performance coaching and data-driven action planning to exceed operational KPIs.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">Nov 2016 – March 2018</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Sales Associate</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ResultsCX</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Engaged customers through inbound and outbound calls for US telecom products. Identified customer needs and recommended tailored solutions to meet sales targets.</p>
+                <div class="portfolio-card border-results">
+                    <span class="date-tag text-orange-400">Nov 2016 – March 2018</span>
+                    <h3 class="text-2xl font-bold mb-1">Sales Associate</h3>
+                    <p class="company-name">ResultsCX</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Optimized customer acquisition for US telecom giants. Specialized in identifying customer needs and tailoring product solutions to meet aggressive sales targets.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">April 2015 – Oct 2016</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Customer Service Representative</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">Sutherland</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Managed merchant disputes and chargebacks, ensuring transaction defense with financial institutions. Delivered financial support including refunds and transaction monitoring.</p>
+                <div class="portfolio-card border-sutherland">
+                    <span class="date-tag text-blue-400">April 2015 – Oct 2016</span>
+                    <h3 class="text-2xl font-bold mb-1">Customer Service Representative</h3>
+                    <p class="company-name">Sutherland Global Services</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Specialized in merchant disputes and chargebacks. Provided high-level transaction defense for financial institutions and handled complex refund processing.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">March 2012 – March 2015</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Executive Administrative Assistant</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">PSAA International Academy Inc</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Supported the President with complex calendars and international travel. Acted as primary contact for government officials and streamlined digital filing systems.</p>
+                <div class="portfolio-card border-psaa">
+                    <span class="date-tag text-emerald-400">March 2012 – March 2015</span>
+                    <h3 class="text-2xl font-bold mb-1">Executive Administrative Assistant</h3>
+                    <p class="company-name">PSAA International Academy Inc</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">High-level executive support for the President. Managed international travel, government relations (TESDA), and implemented digital filing workflows using Google Workspace.</p>
                 </div>
             </div>
         </div>
