@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jerwin Lumpay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    <style>
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; }
+        body { background: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; }
+        .contact-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(216, 178, 74, 0.1); transition: 0.3s; }
+        .contact-card:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); }
+        .gold-icon { color: var(--champagne); font-size: 1.5rem; }
+    </style>
+</head>
+<body class="pt-32 pb-20 px-8">
+    <nav class="fixed top-0 left-0 w-full z-50 p-8 bg-[#0D0D0F]/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-black uppercase italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html" class="text-[#D8B24A]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-16">
+            <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[11px] font-extrabold mb-4">Get In Touch</h2>
+            <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">Let's <br>Connect.</h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="https://wa.me/971544609927" class="contact-card p-8 rounded-2xl flex items-center gap-6">
+                <div class="gold-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">WhatsApp</p>
+                    <p class="font-bold">+971 54 460 9927</p>
+                </div>
+            </a>
+
+            <a href="mailto:support@jerwinlumpay.com" class="contact-card p-8 rounded-2xl flex items-center gap-6">
+                <div class="gold-icon"><i class="far fa-envelope"></i></div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Email</p>
+                    <p class="font-bold">support@jerwinlumpay.com</p>
+                </div>
+            </a>
+
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="contact-card p-8 rounded-2xl flex items-center gap-6">
+                <div class="gold-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">LinkedIn</p>
+                    <p class="font-bold">jerwin-lumpay</p>
+                </div>
+            </a>
+
+            <div class="contact-card p-8 rounded-2xl flex items-center gap-6">
+                <div class="gold-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Location</p>
+                    <p class="font-bold">Dubai, United Arab Emirates</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
