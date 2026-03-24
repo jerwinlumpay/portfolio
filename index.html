@@ -57,30 +57,35 @@
         }
         .marquee-item span { color: var(--gold); margin-right: 12px; }
 
-        .nav-link { transition: all 0.3s ease; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
+        /* Navigation */
+        .nav-link { transition: all 0.3s ease; color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
         .nav-link:hover { color: var(--gold); }
         
-        /* Page Logic */
-        .page-container { min-height: 100vh; padding-top: 120px; padding-bottom: 100px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        /* Container Logic */
+        .page-container { min-height: 100vh; padding-top: 140px; padding-bottom: 120px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
         .exp-card { 
             background: rgba(255,255,255,0.01);
             border: 1px solid rgba(255,255,255,0.05);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
             transition: all 0.3s ease;
-            position: relative;
         }
-        .exp-card:hover { 
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.02);
-            transform: translateX(10px);
+        .exp-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.02); }
+
+        .contact-box {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: 0.3s;
         }
+        .contact-box:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.08); }
 
         .btn-luxury {
             background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
             color: black;
-            padding: 12px 32px;
+            padding: 14px 36px;
             border-radius: 50px;
             font-weight: 800;
             text-transform: uppercase;
@@ -90,8 +95,26 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            cursor: pointer;
         }
         .btn-luxury:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        
+        /* WhatsApp Specific Button */
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .btn-whatsapp:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
     </style>
 </head>
 <body class="antialiased">
@@ -99,135 +122,142 @@
     <nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 px-8 py-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <span class="text-2xl font-bold tracking-[0.3em] uppercase">J.LUMPAY<span class="gold-text">.</span></span>
-            <div class="hidden md:flex gap-12">
-                <a href="#page1" class="nav-link">Overview</a>
-                <a href="#page2" class="nav-link">Milestones</a>
-                <a href="mailto:support@jerwinlumpay.com" class="nav-link">Contact</a>
+            <div class="hidden md:flex gap-10">
+                <a href="#profile" class="nav-link">Executive Summary</a>
+                <a href="#milestones" class="nav-link">Career Roadmap</a>
+                <a href="#contact" class="nav-link">Direct Contact</a>
             </div>
-            <a href="Jerwin_Lumpay_CV.pdf" download class="btn-luxury">
-                <i class="fas fa-download"></i> Download CV
+            <a href="https://wa.me/971544609927" target="_blank" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Chat Now
             </a>
         </div>
     </nav>
 
-    <section id="page1" class="page-container px-6 lg:px-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-            
-            <div class="lg:col-span-5 space-y-12">
+    <section id="profile" class="page-container px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            <div class="lg:col-span-5">
                 <div class="relative group">
-                    <div class="absolute -inset-2 bg-gold rounded-2xl blur-3xl opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+                    <div class="absolute -inset-4 bg-gold rounded-2xl blur-3xl opacity-10"></div>
                     <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full shadow-2xl border border-white/10 object-cover aspect-[4/5]">
                 </div>
-                
-                <div class="space-y-6">
-                    <h2 class="section-title">Professional Summary</h2>
-                    <p class="text-xl text-slate-300 font-light leading-relaxed">
-                        Highly organized and versatile professional with over 10 years of experience in Office Administration, Compliance, and Customer Operations. I specialize in bridging the gap between high-level executive vision and daily operational reality.
-                    </p>
-                </div>
             </div>
-
-            <div class="lg:col-span-7 space-y-16">
-                <header>
-                    <h2 class="section-title mb-6">Executive/Virtual Assistant, Office operation & Administration & Customer Service</h2>
-                    <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-[0.9] tracking-tighter">
-                        Operational <br><span class="gold-text">Sovereignty.</span>
-                    </h1>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="p-8 bg-white/[0.03] border border-white/10 rounded-xl">
-                        <h3 class="gold-text font-bold uppercase tracking-widest text-xs mb-4">Administration</h3>
-                        <p class="text-slate-400 text-sm">Executive Support, Calendar Management, Travel Coordination, and Meeting Minutes.</p>
-                    </div>
-                    <div class="p-8 bg-white/[0.03] border border-white/10 rounded-xl">
-                        <h3 class="gold-text font-bold uppercase tracking-widest text-xs mb-4">Operations</h3>
-                        <p class="text-slate-400 text-sm">E-Verify/I-9 Compliance, Workflow Optimization, and Resource Allocation.</p>
-                    </div>
-                    <div class="p-8 bg-white/[0.03] border border-white/10 rounded-xl">
-                        <h3 class="gold-text font-bold uppercase tracking-widest text-xs mb-4">Experience</h3>
-                        <p class="text-slate-400 text-sm">Escalation Management, Inbound/Outbound Sales, and Multi-channel Support.</p>
-                    </div>
-                    <div class="p-8 bg-white/[0.03] border border-white/10 rounded-xl">
-                        <h3 class="gold-text font-bold uppercase tracking-widest text-xs mb-4">Leadership</h3>
-                        <p class="text-slate-400 text-sm">Team Coaching, Performance Monitoring (AHT, CSAT), and Business Reviews.</p>
-                    </div>
+            <div class="lg:col-span-7 space-y-10">
+                <h2 class="section-title">Executive/Virtual Assistant, Office operation & Administration & Customer Service</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">
+                    Dubai Based. <br><span class="gold-text">Global Reach.</span>
+                </h1>
+                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl">
+                    A highly organized professional with over 10 years of experience. Currently operating out of <strong>Dubai, United Arab Emirates</strong>, providing mission-critical support and administrative excellence to international organizations.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="mailto:support@jerwinlumpay.com" class="btn-luxury">Email Me</a>
+                    <a href="Jerwin_Lumpay_CV.pdf" download class="border border-white/20 text-white px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="page2" class="page-container px-6 lg:px-16 bg-[#0B0B0B]">
+    <section id="milestones" class="page-container px-6 lg:px-16 bg-[#0B0B0B]">
         <div class="max-w-5xl mx-auto space-y-16">
             <div class="text-center space-y-4">
                 <h2 class="section-title">Professional Roadmap</h2>
                 <h3 class="text-4xl md:text-6xl font-black italic uppercase">Career <span class="gold-text">Milestones</span></h3>
             </div>
 
-            <div class="grid grid-cols-1 gap-6">
+            <div class="space-y-6">
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
                         <h4 class="text-xl font-bold uppercase">Purple Desk | Front Desk Representative</h4>
-                        <span class="gold-text font-bold text-xs uppercase">May 2025 - April 2026</span>
+                        <span class="gold-text font-bold text-xs">2025 - 2026</span>
                     </div>
-                    <p class="text-sm text-slate-400 mb-4 italic">Dubai, UAE</p>
-                    <ul class="text-slate-400 text-sm space-y-2">
-                        <li>• Managed end-to-end booking schedules and memberships using Roller CRM.</li>
-                        <li>• Handled 10,000+ interactions contributing $80K in operational revenue.</li>
-                    </ul>
+                    <p class="text-slate-400 text-sm">Orchestrated booking logistics and membership workflows for $80K revenue operations in Dubai, UAE.</p>
                 </div>
 
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
                         <h4 class="text-xl font-bold uppercase">ADP | Compliance Specialist</h4>
-                        <span class="gold-text font-bold text-xs uppercase">Sept 2022 - March 2025</span>
+                        <span class="gold-text font-bold text-xs">2022 - 2025</span>
                     </div>
-                    <ul class="text-slate-400 text-sm space-y-2">
-                        <li>• Managed USCIS Form I-9 and E-Verify compliance for Sodexo and Siemens.</li>
-                        <li>• Maintained 100% audit-ready records and resolved documentation discrepancies.</li>
-                    </ul>
+                    <p class="text-slate-400 text-sm">Led E-Verify and I-9 compliance protocols for Sodexo and Siemens, maintaining 100% audit accuracy.</p>
                 </div>
 
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
                         <h4 class="text-xl font-bold uppercase">ibex | Customer Service Team Lead</h4>
-                        <span class="gold-text font-bold text-xs uppercase">April 2018 - August 2022</span>
+                        <span class="gold-text font-bold text-xs">2018 - 2022</span>
                     </div>
-                    <ul class="text-slate-400 text-sm space-y-2">
-                        <li>• Led 15+ agents for GoDaddy and AT&T US accounts.</li>
-                        <li>• Awarded VIP Award 2021 for Service Excellence and Leadership.</li>
-                    </ul>
+                    <p class="text-slate-400 text-sm">Managed high-performance teams of 15+ agents for GoDaddy and AT&T. Recipient of the VIP Award 2021.</p>
                 </div>
 
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
                         <h4 class="text-xl font-bold uppercase">ResultsCX | Sales Associate</h4>
-                        <span class="gold-text font-bold text-xs uppercase">Nov 2016 - March 2018</span>
+                        <span class="gold-text font-bold text-xs">2016 - 2018</span>
                     </div>
-                    <p class="text-slate-400 text-sm">Recommended tailored telecom solutions to meet sales targets and customer needs.</p>
+                    <p class="text-slate-400 text-sm">Identified customer needs and recommended tailored solutions to consistently meet sales targets.</p>
                 </div>
 
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
-                        <h4 class="text-xl font-bold uppercase">Sutherland | Customer Service Representative</h4>
-                        <span class="gold-text font-bold text-xs uppercase">Sept 2015 - Sept 2016</span>
+                        <h4 class="text-xl font-bold uppercase">Sutherland | CSR Representative</h4>
+                        <span class="gold-text font-bold text-xs">2015 - 2016</span>
                     </div>
-                    <p class="text-slate-400 text-sm">Managed merchant disputes, chargebacks, and high-volume financial support inquiries.</p>
+                    <p class="text-slate-400 text-sm">Managed merchant disputes and delivered end-to-end financial account support.</p>
                 </div>
 
                 <div class="exp-card">
                     <div class="flex flex-col md:flex-row justify-between mb-4">
                         <h4 class="text-xl font-bold uppercase">PSAA International | Executive Assistant</h4>
-                        <span class="gold-text font-bold text-xs uppercase">Aug 2012 - April 2015</span>
+                        <span class="gold-text font-bold text-xs">2012 - 2015</span>
                     </div>
-                    <ul class="text-slate-400 text-sm space-y-2">
-                        <li>• Direct support to the President: travel, calendars, and government liaison.</li>
-                        <li>• Managed digital filing systems for seamless remote administrative access.</li>
-                    </ul>
+                    <p class="text-slate-400 text-sm">Direct support to the President, managing complex calendars and international travel logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-container px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <h2 class="section-title">Connectivity</h2>
+                        <h3 class="text-5xl font-black uppercase italic">Dubai <br><span class="gold-text">Headquarters</span></h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="contact-box group">
+                            <i class="fas fa-map-marker-alt text-gold text-2xl mb-4"></i>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Location</h4>
+                            <p class="text-sm font-bold">Dubai, UAE</p>
+                        </div>
+                        <div class="contact-box group">
+                            <i class="fab fa-whatsapp text-gold text-2xl mb-4"></i>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">WhatsApp</h4>
+                            <p class="text-sm font-bold">+971 54 460 9927</p>
+                        </div>
+                        <div class="contact-box group">
+                            <i class="fas fa-envelope text-gold text-2xl mb-4"></i>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Email</h4>
+                            <p class="text-sm font-bold">support@jerwinlumpay.com</p>
+                        </div>
+                        <div class="contact-box group">
+                            <i class="fab fa-linkedin text-gold text-2xl mb-4"></i>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">LinkedIn</h4>
+                            <p class="text-sm font-bold">/in/jerwin-lumpay</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="text-center pt-12">
-                    <a href="mailto:support@jerwinlumpay.com" class="btn-luxury">Secure Services</a>
+                <div class="flex items-center justify-center">
+                    <div class="text-center space-y-8">
+                        <p class="text-slate-400 text-lg font-light italic italic leading-relaxed">
+                            "Ready to streamline your operations and elevate your executive support? Reach out directly via WhatsApp for a real-time consultation."
+                        </p>
+                        <a href="https://wa.me/971544609927" target="_blank" class="btn-whatsapp px-12 py-5 text-sm">
+                            <i class="fab fa-whatsapp text-xl"></i> Secure Instant Message
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,11 +270,10 @@
             <div class="marquee-item"><span>//</span> MICROSOFT 365 EXPERT</div>
             <div class="marquee-item"><span>//</span> JIRA & MONDAY.COM</div>
             <div class="marquee-item"><span>//</span> E-VERIFY / I-9 COMPLIANCE</div>
-            <div class="marquee-item"><span>//</span> AI PRODUCTIVITY (COPILOT/CHATGPT)</div>
+            <div class="marquee-item"><span>//</span> WHATSAPP: +971 54 460 9927</div>
+            <div class="marquee-item"><span>//</span> DUBAI, UAE BASED</div>
+            <div class="marquee-item"><span>//</span> EXECUTIVE SUPPORT</div>
             <div class="marquee-item"><span>//</span> GOOGLE WORKSPACE</div>
-            <div class="marquee-item"><span>//</span> TABLEAU</div>
-            <div class="marquee-item"><span>//</span> AVAYA</div>
-            <div class="marquee-item"><span>//</span> GENCLOUD AI</div>
             <div class="marquee-item"><span>//</span> SALESFORCE</div>
             <div class="marquee-item"><span>//</span> ROLLER CRM</div>
         </div>
