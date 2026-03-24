@@ -3,47 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Specialized Solutions by Jerwin Lumpay</title>
+    <title>Services | Jerwin Lumpay</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; }
         body { background: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; }
-        .service-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(216, 178, 74, 0.1); padding: 3rem; border-radius: 20px; transition: 0.3s; }
-        .service-card:hover { border-color: var(--champagne); }
+        .service-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(216, 178, 74, 0.1); transition: 0.3s; }
+        .service-card:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); }
     </style>
 </head>
-<body class="pt-32 pb-20 px-8">
-    <nav class="fixed top-0 left-0 w-full z-50 p-8 bg-[#0D0D0F]/90 backdrop-blur-md">
+<body class="pt-40 pb-20 px-8">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-8 py-8 bg-[#0D0D0F]/95 backdrop-blur-md border-b border-white/5 transition-all">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-black uppercase italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
-            <div class="flex gap-8 text-[10px] font-bold uppercase">
-                <a href="index.html">Home</a>
-                <a href="services.html" class="text-[#D8B24A]">Services</a>
-                <a href="portfolio.html">Portfolio</a>
+            <a href="index.html" class="text-xl font-black uppercase tracking-widest italic">J.LUMPAY<span class="text-[#D8B24A]">.</span></a>
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Home</a>
+                <a href="portfolio.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Portfolio</a>
+                <a href="skills.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Skills</a>
+                <a href="services.html" class="text-[10px] font-bold uppercase tracking-widest text-[#D8B24A]">Services</a>
+                <a href="contact.html" class="text-[10px] font-bold uppercase tracking-widest hover:text-[#D8B24A] transition">Contact</a>
             </div>
+            <a href="https://wa.me/971544609927" class="bg-gradient-to-r from-[#D8B24A] to-[#B8860B] text-black px-6 py-3 rounded-full font-extrabold uppercase text-[10px] tracking-widest hover:scale-105 transition">Quick Chat</a>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-5xl font-black italic uppercase mb-16">Specialized <span class="text-[#D8B24A]">Solutions.</span></h1>
-        
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-20 text-center">
+            <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[11px] font-extrabold mb-4">Strategic Solutions</h2>
+            <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none">Expert <br>Services.</h1>
+        </header>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="service-card">
-                <h3 class="text-2xl font-bold uppercase mb-4 text-[#D8B24A]">Administration & Executive Support</h3>
-                <p class="text-slate-400 text-sm font-light">Expert management of complex calendars, international travel coordination, and executive-level administrative workflows[cite: 8, 38].</p>
+            <div class="service-card p-10 rounded-3xl">
+                <i class="fas fa-tasks text-[#D8B24A] text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Executive Administration</h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed">High-level calendar management, international travel coordination, and meeting minutes for C-suite executives[cite: 8].</p>
             </div>
-            <div class="service-card">
-                <h3 class="text-2xl font-bold uppercase mb-4 text-[#D8B24A]">Operations & Compliance</h3>
-                <p class="text-slate-400 text-sm font-light">Specialized in USCIS E-Verify/I-9 compliance and Roller CRM operational optimization[cite: 8, 23].</p>
+            <div class="service-card p-10 rounded-3xl">
+                <i class="fas fa-shield-alt text-[#D8B24A] text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Compliance & Operations</h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed">Specialized in E-Verify/I-9 compliance and Roller CRM workflow optimization[cite: 8, 11].</p>
             </div>
-            <div class="service-card">
-                <h3 class="text-2xl font-bold uppercase mb-4 text-[#D8B24A]">Customer Experience Leadership</h3>
-                <p class="text-slate-400 text-sm font-light">Proven leadership of teams exceeding 15+ agents with focus on CSAT and escalation management[cite: 5, 9].</p>
+            <div class="service-card p-10 rounded-3xl">
+                <i class="fas fa-users text-[#D8B24A] text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Operational Leadership</h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed">Management of 15+ agents with focus on CSAT, AHT, and data-driven performance coaching[cite: 5, 9].</p>
             </div>
-            <div class="service-card">
-                <h3 class="text-2xl font-bold uppercase mb-4 text-[#D8B24A]">AI & Productivity Tools</h3>
-                <p class="text-slate-400 text-sm font-light">Advanced proficiency in Microsoft 365, Salesforce, and AI-driven productivity tools like ChatGPT and CoPilot[cite: 11, 14].</p>
+            <div class="service-card p-10 rounded-3xl">
+                <i class="fas fa-headset text-[#D8B24A] text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Customer Experience</h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed">Multi-channel support and escalation management for leading US telecom and tech brands[cite: 9, 27].</p>
             </div>
         </div>
     </div>
