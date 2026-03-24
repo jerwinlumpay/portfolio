@@ -1,23 +1,54 @@
-<main class="main-content pt-32 px-20">
-    <div class="max-w-5xl">
-        <h1 class="text-5xl md:text-7xl font-black italic uppercase mb-20 leading-none">Tools & <br>Systems.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Tools | Jerwin Lumpay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    <style>
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
+        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; display: flex; margin: 0; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: flex; flex-direction: column; padding: 40px; z-index: 100; }
+        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; padding: 80px 60px; }
+        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { color: var(--champagne); }
+        .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; text-decoration: none; }
+        .tool-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(216,178,74,0.1); padding: 25px; border-radius: 15px; text-align: center; transition: 0.3s; }
+        .tool-card:hover { border-color: var(--champagne); background: rgba(216,178,74,0.05); transform: translateY(-5px); }
+        .tool-card i { font-size: 2rem; color: var(--champagne); margin-bottom: 15px; display: block; }
+        .tool-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="mb-20"><a href="index.html" class="text-xl font-black italic text-white" style="text-decoration: none;">J.LUMPAY<span style="color: var(--champagne);">.</span></a></div>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="skills.html" class="nav-link active">Skills</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="feedback.html" class="nav-link">Feedback</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <a href="https://wa.me/971544609927" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </aside>
+
+    <main class="main-content">
+        <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Technical Proficiency</h2>
+        <h1 class="text-5xl font-black italic uppercase mb-16">Tools & <span class="text-[#D8B24A]">Productivity.</span></h1>
+        
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white/5 p-6 rounded-xl border border-white/5 text-center hover:bg-[#D8B24A]/10 transition">
-                <i class="fab fa-microsoft text-[#D8B24A] text-2xl mb-4"></i>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Excel / Word / PPT [cite: 14]</p>
-            </div>
-            <div class="bg-white/5 p-6 rounded-xl border border-white/5 text-center hover:bg-[#D8B24A]/10 transition">
-                <i class="fab fa-google text-[#D8B24A] text-2xl mb-4"></i>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Google Workspace [cite: 14]</p>
-            </div>
-            <div class="bg-white/5 p-6 rounded-xl border border-white/5 text-center hover:bg-[#D8B24A]/10 transition">
-                <i class="fas fa-video text-[#D8B24A] text-2xl mb-4"></i>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Zoom / Teams [cite: 15]</p>
-            </div>
-            <div class="bg-white/5 p-6 rounded-xl border border-white/5 text-center hover:bg-[#D8B24A]/10 transition">
-                <i class="fas fa-database text-[#D8B24A] text-2xl mb-4"></i>
-                <p class="text-[10px] font-bold uppercase tracking-widest">CRM & Booking Systems [cite: 11, 19]</p>
-            </div>
+            <div class="tool-card"><i class="fab fa-microsoft"></i><span class="tool-label">Microsoft 365 Expert</span></div>
+            <div class="tool-card"><i class="fab fa-google"></i><span class="tool-label">Google Workspace</span></div>
+            <div class="tool-card"><i class="fas fa-database"></i><span class="tool-label">Salesforce / CRM</span></div>
+            <div class="tool-card"><i class="fas fa-calendar-check"></i><span class="tool-label">Roller / Booking</span></div>
+            <div class="tool-card"><i class="fas fa-tasks"></i><span class="tool-label">JIRA / Monday.com</span></div>
+            <div class="tool-card"><i class="fas fa-video"></i><span class="tool-label">Zoom / Teams / Webex</span></div>
+            <div class="tool-card"><i class="fas fa-robot"></i><span class="tool-label">ChatGPT / CoPilot</span></div>
+            <div class="tool-card"><i class="fas fa-headset"></i><span class="tool-label">Avaya / RingCentral</span></div>
         </div>
-    </div>
-</main>
+    </main>
+</body>
+</html>
