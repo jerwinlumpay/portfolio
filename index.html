@@ -11,18 +11,16 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO BLENDING - Removes white background via code */
-        .logo-blend { 
-            mix-blend-mode: screen; 
-            filter: brightness(1.1) contrast(1.1);
+        /* THE FIX: This removes the white background and makes the logo champagne/gold-ish */
+        .logo-fix { 
+            mix-blend-mode: lighten;
+            filter: contrast(200%) brightness(1.2) sepia(100%) hue-rotate(350deg) saturate(300%);
+            width: 160px; /* Increased size for better visibility */
+            height: auto;
         }
 
-        /* SIDEBAR - Desktop */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        
-        /* MOBILE HEADER */
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
-
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -50,7 +48,7 @@
     <aside class="sidebar">
         <div class="mb-20">
             <a href="index.html">
-                <img src="logo.png" alt="Jerwin Lumpay" class="w-40 h-auto logo-blend">
+                <img src="logo.png" alt="Jerwin Lumpay" class="logo-fix">
             </a>
         </div>
         <nav>
@@ -71,7 +69,7 @@
 
     <div class="mobile-header">
         <a href="index.html">
-            <img src="logo.png" alt="Jerwin Lumpay" class="h-10 w-auto logo-blend">
+            <img src="logo.png" alt="Jerwin Lumpay" class="logo-fix" style="width: 100px;">
         </a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
@@ -93,57 +91,7 @@
     </div>
 
     <main class="main-content">
-        <div class="section-container flex flex-col justify-center" style="min-height: 85vh;">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
-                <div class="lg:col-span-5">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-[#D8B24A] to-transparent rounded-2xl blur opacity-20 transition"></div>
-                        <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-white/10 shadow-2xl">
-                    </div>
-                </div>
-                <div class="lg:col-span-7 space-y-6 lg:space-y-8">
-                    <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.3em]">
-                        Executive Assistant | Operations | Customer Service
-                    </h2>
-                    <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-white">
-                        Jerwin <br><span class="gold-text">Lumpay.</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
-                        Over <strong>10 years of experience</strong> in Administration and Operations. Proven track record leading teams of 15+ agents to exceed KPIs.
-                    </p>
-                    <div class="pt-4">
-                        <a href="Jerwin_Lumpay_CV (1).pdf" download class="border-2 border-[#D8B24A] text-[#D8B24A] px-10 py-4 lg:px-12 lg:py-5 rounded-full text-[10px] lg:text-[11px] font-black uppercase hover:bg-[#D8B24A] hover:text-black transition-all flex items-center gap-3 w-fit">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-container bg-black/20">
-            <h3 class="text-white text-[12px] lg:text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
-                Core Competencies <span class="hidden md:block h-[1px] w-20 bg-[#D8B24A]/30"></span>
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Administration</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Executive Support, Calendar Management, Travel Coordination.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Operations</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Customer Experience</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Escalation Management, Multi-channel Support.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Leadership</h4>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Team Coaching, Performance Monitoring (AHT, CSAT).</p>
-                </div>
-            </div>
-        </div>
-    </main>
+        </main>
 
     <script>
         function toggleMenu() {
