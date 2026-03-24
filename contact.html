@@ -9,36 +9,84 @@
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
-        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; display: flex; margin: 0; }
+        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* FIXED LEFT SIDEBAR */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: flex; flex-direction: column; padding: 40px; z-index: 100; }
+        /* SIDEBAR - Desktop Only */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
         
-        /* MAIN CONTENT AREA - Optimized for spacing */
-        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        /* MOBILE HEADER - Mobile Only */
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+
+        /* MAIN CONTENT AREA */
+        .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; justify-content: center; }
         
-        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 80px 60px; }
+        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
+        @media (min-width: 1024px) {
+            .sidebar { display: flex; }
+            .mobile-header { display: none; }
+            .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
+            .section-container { padding: 80px 60px; }
+        }
+
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; text-decoration: none; }
+        .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
         
-        /* CONTACT INTERACTIVE ELEMENTS */
-        .contact-item { display: flex; align-items: center; gap: 25px; padding: 35px; background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); border-radius: 20px; transition: 0.4s; text-decoration: none; color: inherit; width: 100%; }
-        .contact-item:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); transform: translateX(15px); }
-        .icon-box { width: 70px; height: 70px; border-radius: 50%; background: #08080A; border: 1px solid var(--champagne); display: flex; align-items: center; justify-content: center; color: var(--champagne); font-size: 1.4rem; flex-shrink: 0; }
-        .label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; color: #555; display: block; margin-bottom: 8px; }
-        .detail { font-size: 1.4rem; font-weight: 700; color: var(--ivory); }
+        /* CONTACT CARDS */
+        .contact-item { display: flex; align-items: center; gap: 20px; padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); border-radius: 20px; transition: 0.4s; text-decoration: none; color: inherit; width: 100%; }
+        .contact-item:hover { border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); transform: translateY(-5px); }
+        .icon-box { width: 50px; height: 50px; border-radius: 50%; background: #08080A; border: 1px solid var(--champagne); display: flex; align-items: center; justify-content: center; color: var(--champagne); font-size: 1.2rem; flex-shrink: 0; }
+        .label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #555; display: block; margin-bottom: 4px; }
+        .detail { font-size: 1.1rem; font-weight: 700; color: var(--ivory); word-break: break-all; }
         
+        @media (min-width: 768px) {
+            .contact-item { gap: 25px; padding: 35px; }
+            .icon-box { width: 70px; height: 70px; font-size: 1.4rem; }
+            .detail { font-size: 1.4rem; }
+        }
+
         .gold-text { color: var(--champagne); }
+
+        /* Mobile Menu */
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
+        #mobile-menu.active { left: 0; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay.active { display: block; }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
-        <div class="mb-20">
-            <a href="index.html" class="text-xl font-black italic text-white" style="text-decoration: none;">J.LUMPAY<span class="gold-text">.</span></a>
+        <div class="mb-20"><a href="index.html" class="text-xl font-black italic text-white" style="text-decoration: none;">J.LUMPAY<span class="gold-text">.</span></a></div>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="feedback.html" class="nav-link">Feedback</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <div class="mt-auto">
+            <div class="flex gap-4 text-slate-500 mb-6">
+                <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="hover:text-[#D8B24A]"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="https://wa.me/971544609927" class="hover:text-[#25D366]"><i class="fab fa-whatsapp text-lg"></i></a>
+            </div>
+            <a href="https://wa.me/971544609927" class="btn-whatsapp w-full"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </aside>
+
+    <div class="mobile-header">
+        <a href="index.html" class="text-lg font-black italic text-white">J.LUMPAY<span class="gold-text">.</span></a>
+        <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+    <div id="mobile-menu">
+        <div class="flex justify-between items-center mb-12">
+             <span class="text-white font-black italic">MENU</span>
+             <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
@@ -48,26 +96,22 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link active">Contact</a>
         </nav>
-        <div class="mt-10 flex gap-4 text-slate-500 mb-6">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="hover:text-[#D8B24A]"><i class="fab fa-linkedin-in text-lg"></i></a>
-            <a href="https://wa.me/971544609927" class="hover:text-[#25D366]"><i class="fab fa-whatsapp text-lg"></i></a>
-        </div>
-        <a href="https://wa.me/971544609927" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </aside>
+        <a href="https://wa.me/971544609927" class="btn-whatsapp w-full mt-10"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
 
     <main class="main-content">
         <div class="section-container">
-            <header class="mb-16">
-                <h2 class="text-[#D8B24A] text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Direct Communication</h2>
-                <h1 class="text-7xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Get In <br><span class="gold-text">Touch.</span></h1>
+            <header class="mb-12 lg:mb-16">
+                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Direct Communication</h2>
+                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Get In <br><span class="gold-text">Touch.</span></h1>
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-5xl">
                 <div class="contact-item">
                     <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
                         <span class="label">Location</span>
-                        <p class="detail">Dubai, UAE [cite: 2]</p>
+                        <p class="detail">Dubai, UAE</p>
                     </div>
                 </div>
 
@@ -75,7 +119,7 @@
                     <div class="icon-box"><i class="fas fa-envelope"></i></div>
                     <div>
                         <span class="label">Email Me</span>
-                        <p class="detail">support@jerwinlumpay.com [cite: 2]</p>
+                        <p class="detail">support@jerwinlumpay.com</p>
                     </div>
                 </a>
 
@@ -83,7 +127,7 @@
                     <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
                     <div>
                         <span class="label">WhatsApp & Call</span>
-                        <p class="detail">+971 54 460 9927 [cite: 2]</p>
+                        <p class="detail">+971 54 460 9927</p>
                     </div>
                 </a>
 
@@ -91,12 +135,18 @@
                     <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
                     <div>
                         <span class="label">Professional Network</span>
-                        <p class="detail">linkedin.com/in/jerwin-lumpay [cite: 2]</p>
+                        <p class="detail">linkedin.com/in/jerwin-lumpay</p>
                     </div>
                 </a>
             </div>
         </div>
     </main>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
