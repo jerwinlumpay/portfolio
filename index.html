@@ -14,8 +14,10 @@
         /* FIXED LEFT SIDEBAR */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: flex; flex-direction: column; padding: 40px; z-index: 100; }
         
-        /* MAIN CONTENT AREA */
-        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; padding: 60px 80px; }
+        /* MAIN CONTENT AREA - Optimized for spacing */
+        .main-content { margin-left: 280px; width: calc(100% - 280px); min-height: 100vh; display: flex; flex-direction: column; }
+        
+        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 80px 60px; }
         
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
@@ -23,7 +25,8 @@
         .btn-whatsapp { background-color: var(--whatsapp); color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; text-decoration: none; }
         
         .gold-text { color: var(--champagne); }
-        .competency-box { background: rgba(216, 178, 74, 0.05); border-left: 2px solid var(--champagne); padding: 15px; margin-bottom: 10px; }
+        .competency-box { background: rgba(216, 178, 74, 0.03); border: 1px solid rgba(216, 178, 74, 0.1); border-left: 3px solid var(--champagne); padding: 25px; transition: 0.3s; }
+        .competency-box:hover { background: rgba(216, 178, 74, 0.08); transform: translateY(-5px); }
     </style>
 </head>
 <body>
@@ -47,50 +50,53 @@
     </aside>
 
     <main class="main-content">
-        <div class="max-w-5xl space-y-16">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="section-container flex flex-col justify-center min-vh-80" style="min-height: 85vh;">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                 <div class="lg:col-span-5">
-                    <img src="jerwindp.jpg" class="rounded-2xl w-full border border-white/10 shadow-2xl">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-[#D8B24A] to-transparent rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        <img src="jerwindp.jpg" class="relative rounded-2xl w-full border border-white/10 shadow-2xl transition duration-500 group-hover:scale-[1.01]">
+                    </div>
                 </div>
-                <div class="lg:col-span-7 space-y-6">
-                    <h2 class="text-[#D8B24A] text-[11px] font-extrabold uppercase tracking-[0.2em] leading-relaxed">
-                        Executive/Virtual Assistant, Office operation & Administration & Customer Service
+                <div class="lg:col-span-7 space-y-8">
+                    <h2 class="text-[#D8B24A] text-[12px] font-extrabold uppercase tracking-[0.3em] leading-relaxed">
+                        Executive/Virtual Assistant, Office operation & Administration & Customer Service [cite: 2]
                     </h2>
-                    <h1 class="text-6xl md:text-7xl font-black italic uppercase leading-none tracking-tighter">Jerwin <br><span class="gold-text">Lumpay.</span></h1>
+                    <h1 class="text-7xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Jerwin <br><span class="gold-text">Lumpay.</span> [cite: 1]</h1>
                     
-                    <p class="text-lg text-slate-300 font-light leading-relaxed">
-                        Highly organized and versatile professional with over **10 years of experience** in Office Administration, Compliance, and Customer Operations. Proven track record in managing high-volume front-desk operations, executive-level support, and leading teams of 15+ agents to exceed KPIs.
+                    <p class="text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
+                        Highly organized and versatile professional with over **10 years of experience** in Office Administration, Compliance, and Customer Operations[cite: 4]. Proven track record in managing high-volume front-desk operations, executive-level support, and leading teams of 15+ agents to exceed KPIs[cite: 5].
                     </p>
 
-                    <div class="flex gap-4">
-                        <a href="Jerwin_Lumpay_CV (1).pdf" download class="border border-[#D8B24A] text-[#D8B24A] px-10 py-4 rounded-full text-[10px] font-bold uppercase hover:bg-[#D8B24A] hover:text-black transition flex items-center gap-2">
-                            <i class="fas fa-download"></i> Download CV
+                    <div class="pt-4">
+                        <a href="Jerwin_Lumpay_CV (1).pdf" download class="border-2 border-[#D8B24A] text-[#D8B24A] px-12 py-5 rounded-full text-[11px] font-black uppercase hover:bg-[#D8B24A] hover:text-black transition-all flex items-center gap-3 w-fit">
+                            <i class="fas fa-download"></i> Download CV [cite: 18]
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <hr class="border-white/5">
-
-            <div>
-                <h3 class="text-white text-[12px] font-black uppercase tracking-[0.4em] mb-8">Core Competencies</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="competency-box">
-                        <h4 class="gold-text font-bold text-xs uppercase mb-2">Administration</h4>
-                        <p class="text-slate-400 text-sm">Executive Support, Calendar Management, Travel Coordination, Meeting Minutes.</p>
-                    </div>
-                    <div class="competency-box">
-                        <h4 class="gold-text font-bold text-xs uppercase mb-2">Operations</h4>
-                        <p class="text-slate-400 text-sm">E-Verify/I-9 Compliance, Workflow Optimization, Resource Allocation.</p>
-                    </div>
-                    <div class="competency-box">
-                        <h4 class="gold-text font-bold text-xs uppercase mb-2">Customer Experience</h4>
-                        <p class="text-slate-400 text-sm">Escalation Management, Inbound/Outbound Sales, Multi-channel Support.</p>
-                    </div>
-                    <div class="competency-box">
-                        <h4 class="gold-text font-bold text-xs uppercase mb-2">Leadership</h4>
-                        <p class="text-slate-400 text-sm">Team Coaching, Performance Monitoring (AHT, CSAT), Business Reviews (MBR).</p>
-                    </div>
+        <div class="section-container bg-black/20">
+            <h3 class="text-white text-[13px] font-black uppercase tracking-[0.5em] mb-12 flex items-center gap-4">
+                Core Competencies <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span> [cite: 7]
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="competency-box">
+                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Administration [cite: 8]</h4>
+                    <p class="text-slate-300 text-base leading-relaxed">Executive Support, Calendar Management, Travel Coordination, Meeting Minutes[cite: 8].</p>
+                </div>
+                <div class="competency-box">
+                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Operations [cite: 8]</h4>
+                    <p class="text-slate-300 text-base leading-relaxed">E-Verify/I-9 Compliance, Workflow Optimization, Resource Allocation[cite: 8].</p>
+                </div>
+                <div class="competency-box">
+                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Customer Experience [cite: 9]</h4>
+                    <p class="text-slate-300 text-base leading-relaxed">Escalation Management, Inbound/Outbound Sales, Multi-channel Support[cite: 9].</p>
+                </div>
+                <div class="competency-box">
+                    <h4 class="gold-text font-black text-sm uppercase mb-3 tracking-widest">Leadership [cite: 9]</h4>
+                    <p class="text-slate-300 text-base leading-relaxed">Team Coaching, Performance Monitoring (AHT, CSAT), Business Reviews (MBR)[cite: 9].</p>
                 </div>
             </div>
         </div>
