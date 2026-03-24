@@ -11,13 +11,18 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* Updated Logo Style for Transparent Background */
+        /* LOGO RECOMMENDATION: CHAMPAGNE GOLD FILTER */
+        /* This transforms your blue logo into a metallic gold that matches your --champagne variable */
         .logo-style { 
             width: 160px;
             height: auto;
             transition: 0.3s;
+            filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
         }
-        .logo-style:hover { opacity: 0.8; }
+        .logo-style:hover { 
+            filter: brightness(0) saturate(100%) invert(100%); /* Turns white on hover */
+            opacity: 1; 
+        }
 
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
