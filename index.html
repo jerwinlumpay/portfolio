@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.Lumpay | Executive/Virtual Assistant & Operations</title>
+    <title>Executive/Virtual Asisstant, Customer Service, Office Administration andoperation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
@@ -13,7 +13,6 @@
             --p22: 'P22 Underground', sans-serif; 
             --gold: #D4AF37;
             --obsidian: #0A0A0A;
-            --glass: rgba(255, 255, 255, 0.03);
         }
         body { 
             background-color: var(--obsidian); 
@@ -24,223 +23,232 @@
         .gold-text { color: var(--gold); }
         .section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5em; color: var(--gold); }
         
-        /* Fixed Bottom Marquee */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        /* Glass Navigation */
+        nav { transition: all 0.4s ease; background-color: transparent; }
+        nav.scrolled { 
+            background-color: rgba(10, 10, 10, 0.95); 
+            backdrop-filter: blur(20px); 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
+            padding: 1rem 2rem !important; 
         }
-        .marquee-fixed-bottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-blur: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.4);
-            z-index: 100;
-            padding: 18px 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: scroll 35s linear infinite;
-        }
-        .marquee-item {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin: 0 45px;
-            color: #FFFFFF;
-            letter-spacing: 2px;
-        }
-        .marquee-item span { color: var(--gold); margin-right: 12px; }
 
-        .nav-link { transition: all 0.3s ease; color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
-        .nav-link:hover { color: var(--gold); }
-        
-        .page-container { min-height: 100vh; padding-top: 140px; padding-bottom: 120px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .page-container { min-height: 100vh; padding-top: 140px; padding-bottom: 100px; }
 
-        .exp-card, .feedback-card { 
-            background: rgba(255,255,255,0.01);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 2.5rem;
+        /* Enhanced Service Cards */
+        .service-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.04);
+        }
+
+        /* Tool Badge */
+        .tool-badge {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px;
             border-radius: 12px;
-            transition: all 0.3s ease;
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            transition: 0.3s;
         }
-        .exp-card:hover, .feedback-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.02); }
+        .tool-badge:hover { color: var(--gold); border-color: var(--gold); background: rgba(212, 175, 55, 0.1); }
 
         .btn-luxury {
             background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
-            color: black;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 11px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            color: black; padding: 14px 36px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
+            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
         }
-        .btn-luxury:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+
+        #backToTop {
+            position: fixed; bottom: 100px; right: 30px; width: 50px; height: 50px;
+            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px);
+            border: 1px solid var(--gold); border-radius: 50%; color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden; transition: 0.4s;
+        }
+        #backToTop.show { opacity: 1; visibility: visible; }
         
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 11px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+        /* Infinite Marquee */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-fixed-bottom {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.98); border-top: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 100; padding: 15px 0; overflow: hidden; white-space: nowrap;
         }
+        .marquee-content { display: inline-block; animation: scroll 30s linear infinite; }
+        .marquee-item { display: inline-block; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin: 0 40px; color: #FFF; letter-spacing: 2px; }
+        .marquee-item span { color: var(--gold); }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 px-8 py-6">
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-10 py-8">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-2xl font-bold tracking-[0.3em] uppercase">J.LUMPAY<span class="gold-text">.</span></span>
+            <span class="text-xl font-black tracking-tighter uppercase">J.LUMPAY<span class="gold-text">.</span></span>
             <div class="hidden md:flex gap-10">
-                <a href="#profile" class="nav-link">Profile</a>
-                <a href="#milestones" class="nav-link">Experience</a>
-                <a href="#feedback" class="nav-link">Client Feedback</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#services" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Services</a>
+                <a href="#tools" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Technology</a>
+                <a href="#contact" class="text-[10px] font-bold uppercase tracking-widest hover:text-gold transition">Contact</a>
             </div>
-            <a href="https://wa.me/971544609927" target="_blank" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp Me
-            </a>
+            <a href="https://wa.me/971544609927" target="_blank" class="btn-luxury">WhatsApp Chat</a>
         </div>
     </nav>
 
-    <section id="profile" class="page-container px-6 lg:px-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-            <div class="lg:col-span-5">
-                <div class="relative group">
-                    <div class="absolute -inset-4 bg-gold rounded-2xl blur-3xl opacity-10"></div>
-                    <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full shadow-2xl border border-white/10 object-cover aspect-[4/5]">
-                </div>
-            </div>
-            <div class="lg:col-span-7 space-y-10">
-                <h2 class="section-title">Executive/Virtual Assistant, Office operation & Administration & Customer Service</h2>
-                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">
-                    Precision <br><span class="gold-text">Performance.</span>
+    <section id="services" class="page-container px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 space-y-6">
+                <h2 class="section-title">Executive/Virtual Assistant Expertise</h2>
+                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-tight tracking-tighter">
+                    Operations & <br><span class="gold-text">Support Leader.</span>
                 </h1>
-                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl">
-                    Operating from <strong>Dubai, UAE</strong>, I provide high-level administrative architecture for global organizations.
+                <p class="text-slate-400 max-w-3xl mx-auto text-lg font-light leading-relaxed">
+                    A decade of operational excellence specializing in US-compliance, high-volume customer service, and C-Suite virtual assistance, currently based in the business hub of **Dubai, UAE**.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="https://www.linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-luxury">
-                        <i class="fab fa-linkedin"></i> LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="milestones" class="page-container px-6 lg:px-16 bg-[#0B0B0B]">
-        <div class="max-w-5xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <h2 class="section-title">Professional Roadmap</h2>
-                <h3 class="text-4xl md:text-6xl font-black italic uppercase">Career <span class="gold-text">Milestones</span></h3>
             </div>
 
-            <div class="space-y-6">
-                <div class="exp-card">
-                    <div class="flex justify-between mb-4">
-                        <h4 class="text-xl font-bold uppercase">Purple Desk | Dubai</h4>
-                        <span class="gold-text font-bold text-xs">2025 - 2026</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-briefcase gold-text text-3xl"></i>
+                        <h4 class="text-xl font-bold uppercase leading-tight">Office <br>Administration</h4>
                     </div>
-                    <p class="text-slate-400 text-sm">Front Desk Operations & CRM Management ($80K revenue operations).</p>
+                    <ul class="text-slate-400 space-y-4 text-sm font-light">
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Complex Scheduling & Itineraries</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Revenue Tracking & CRM Hygiene</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Vendor & Stakeholder Management</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Data Entry & Digital Organization</li>
+                    </ul>
                 </div>
+
+                <div class="service-card">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-microchip gold-text text-3xl"></i>
+                        <h4 class="text-xl font-bold uppercase leading-tight">Operation & <br>Compliance</h4>
+                    </div>
+                    <ul class="text-slate-400 space-y-4 text-sm font-light">
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> USCIS & E-Verify Management</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Form I-9 Legal Compliance</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Workflow Process Automation</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Standard Operating Procedures (SOP)</li>
+                    </ul>
                 </div>
+
+                <div class="service-card">
+                    <div class="flex items-center gap-4 mb-8">
+                        <i class="fas fa-headset gold-text text-3xl"></i>
+                        <h4 class="text-xl font-bold uppercase leading-tight">Customer <br>Service</h4>
+                    </div>
+                    <ul class="text-slate-400 space-y-4 text-sm font-light">
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Multi-channel Voice & Email Support</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> High-Level Dispute Resolution</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> CSAT & Team Performance Lead</li>
+                        <li><i class="fas fa-caret-right gold-text mr-2"></i> Global Account Retention</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="feedback" class="page-container px-6 lg:px-16">
-        <div class="max-w-7xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <h2 class="section-title">Testimonials</h2>
-                <h3 class="text-4xl md:text-6xl font-black italic uppercase">Client <span class="gold-text">Feedback</span></h3>
+    <section id="tools" class="py-20 px-6 lg:px-20 bg-[#080808]">
+        <div class="max-w-7xl mx-auto border-y border-white/5 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
+                <div class="lg:col-span-1">
+                    <h2 class="section-title mb-4">Mastered Tech</h2>
+                    <h3 class="text-3xl font-bold uppercase italic">Digital <br><span class="gold-text">Tool Stack.</span></h3>
+                </div>
+                <div class="lg:col-span-3 flex flex-wrap gap-4">
+                    <div class="tool-badge">Salesforce CRM</div>
+                    <div class="tool-badge">Roller CRM</div>
+                    <div class="tool-badge">USCIS E-Verify</div>
+                    <div class="tool-badge">ADP Workforce</div>
+                    <div class="tool-badge">Jira / Atlassian</div>
+                    <div class="tool-badge">Microsoft 365</div>
+                    <div class="tool-badge">Google Workspace</div>
+                    <div class="tool-badge">Monday.com</div>
+                    <div class="tool-badge">Slack / Zoom</div>
+                    <div class="tool-badge">Roller CRM</div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="feedback-card space-y-6">
-                    <div class="flex items-center gap-4">
-                        <img src="image_d41e4d.png" alt="Client 1" class="w-16 h-16 rounded-full border-2 border-gold/30 object-cover">
-                        <div>
-                            <div class="flex text-gold text-xs mb-1">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <section id="contact" class="page-container px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="space-y-12">
+                    <h3 class="text-6xl font-black uppercase italic italic leading-none">Ready to <br><span class="gold-text">Scale Up?</span></h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold transition">
+                            <i class="fab fa-whatsapp text-3xl gold-text"></i>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-slate-500">Fast Response</p>
+                                <p class="text-xl font-bold">+971 54 460 9927</p>
                             </div>
-                            <h4 class="font-bold uppercase text-sm">Verified Client</h4>
+                        </div>
+                        <div class="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold transition">
+                            <i class="far fa-envelope text-3xl gold-text"></i>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-slate-500">Corporate Email</p>
+                                <p class="text-xl font-bold">support@jerwinlumpay.com</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-slate-300 italic leading-relaxed">
-                        "He was great to work with. He understood the task and even though I gave him little information he was able to follow through with the lead generation perfectly. I would highly recommend him and I would definitely work with him again."
-                    </p>
                 </div>
 
-                <div class="feedback-card space-y-6">
-                    <div class="flex items-center gap-4">
-                        <img src="image_d41e6c.png" alt="Client 2" class="w-16 h-16 rounded-full border-2 border-gold/30 object-cover">
-                        <div>
-                            <div class="flex text-gold text-xs mb-1">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="font-bold uppercase text-sm">Verified Client</h4>
-                        </div>
-                    </div>
-                    <p class="text-slate-300 italic leading-relaxed">
-                        "Jerwin is highly professional and an expert in his field. I highly recommend Jerwin as he is very professional and gets things done in a high quality way. Looking forward to working together in the future."
-                    </p>
+                <div class="bg-white/[0.02] border border-white/5 p-10 rounded-3xl space-y-6">
+                    <h4 class="text-2xl font-bold uppercase italic mb-4">Direct Engagement Inquiry</h4>
+                    <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm">
+                    <select class="w-full bg-black border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm text-slate-400">
+                        <option>Primary Requirement...</option>
+                        <option>Executive VA Support</option>
+                        <option>Customer Service Solution</option>
+                        <option>Operational Compliance Audit</option>
+                        <option>Office Administration</option>
+                    </select>
+                    <textarea placeholder="How can my expertise assist your current goals?" rows="4" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-gold text-sm"></textarea>
+                    <button class="btn-luxury w-full justify-center">Send Inquiry</button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="page-container px-6 lg:px-16 bg-[#0B0B0B]">
-        <div class="max-w-7xl mx-auto text-center space-y-12">
-            <h2 class="section-title">Get in Touch</h2>
-            <h1 class="text-5xl md:text-8xl font-black italic uppercase italic">Dubai <span class="gold-text">HQ.</span></h1>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-10">
-                <a href="https://wa.me/971544609927" target="_blank" class="p-8 border border-white/5 rounded-2xl hover:border-gold/50 transition">
-                    <i class="fab fa-whatsapp text-3xl gold-text mb-4"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">WhatsApp</p>
-                    <p class="text-sm">+971 54 460 9927</p>
-                </a>
-                <a href="mailto:support@jerwinlumpay.com" class="p-8 border border-white/5 rounded-2xl hover:border-gold/50 transition">
-                    <i class="far fa-envelope text-3xl gold-text mb-4"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Email</p>
-                    <p class="text-sm">support@jerwinlumpay.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/jerwin-lumpay" target="_blank" class="p-8 border border-white/5 rounded-2xl hover:border-gold/50 transition">
-                    <i class="fab fa-linkedin-in text-3xl gold-text mb-4"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">LinkedIn</p>
-                    <p class="text-sm">/in/jerwin-lumpay</p>
-                </a>
             </div>
         </div>
     </section>
 
     <div class="marquee-fixed-bottom">
         <div class="marquee-content">
-            <div class="marquee-item"><span>//</span> DUBAI, UAE BASED</div>
-            <div class="marquee-item"><span>//</span> WHATSAPP: +971 54 460 9927</div>
-            <div class="marquee-item"><span>//</span> SALESFORCE</div>
+            <div class="marquee-item"><span>//</span> DUBAI, UAE (GST)</div>
+            <div class="marquee-item"><span>//</span> 10+ YEARS EXPERIENCE</div>
             <div class="marquee-item"><span>//</span> ROLLER CRM</div>
-            <div class="marquee-item"><span>//</span> MICROSOFT 365 EXPERT</div>
-            <div class="marquee-item"><span>//</span> E-VERIFY COMPLIANCE</div>
-            <div class="marquee-item"><span>//</span> JIRA & MONDAY.COM</div>
+            <div class="marquee-item"><span>//</span> E-VERIFY SPECIALIST</div>
+            <div class="marquee-item"><span>//</span> WHATSAPP: +971 54 460 9927</div>
+            <div class="marquee-item"><span>//</span> VIP AWARD 2021</div>
+            <div class="marquee-item"><span>//</span> SALESFORCE MASTER</div>
         </div>
     </div>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            const btt = document.getElementById('backToTop');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                btt.classList.add('show');
+            } else {
+                nav.classList.remove('scrolled');
+                btt.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
