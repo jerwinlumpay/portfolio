@@ -44,7 +44,6 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Button Styles */
         .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-whatsapp { background-color: var(--whatsapp); }
         .btn-whatsapp:hover { background-color: #1eb954; transform: translateY(-2px); }
@@ -64,7 +63,7 @@
         .quote { font-style: italic; font-size: 0.95rem; color: #e2e8f0; line-height: 1.6; margin-bottom: 15px; flex-grow: 1; }
         .client-name { font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--champagne); margin-top: 10px; }
 
-        /* Mobile Menu */
+        /* Mobile Menu Overlay */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
@@ -84,6 +83,7 @@
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
             <a href="services.html" class="nav-link">Services</a>
+            <a href="achievements.html" class="nav-link">Achievements</a>
             <a href="feedback.html" class="nav-link active">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -105,6 +105,7 @@
     </div>
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
              <span class="text-white font-black italic">MENU</span>
@@ -115,6 +116,7 @@
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
             <a href="services.html" class="nav-link">Services</a>
+            <a href="achievements.html" class="nav-link">Achievements</a>
             <a href="feedback.html" class="nav-link active">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
