@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills & Tools | Jerwin Lumpay</title>
+    <title>Achievements | Jerwin Lumpay</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
@@ -11,176 +11,154 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        .logo-style { width: 160px; height: auto; transition: 0.3s; filter: brightness(0) invert(1); }
-
+        /* SIDEBAR - Matching Index Style */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
-        .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
+        .logo-style { width: 160px; height: auto; transition: 0.3s; filter: brightness(0) invert(1); }
         
-        @media (min-width: 1024px) {
-            .sidebar { display: flex; }
-            .mobile-header { display: none; }
-            .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
-            .section-container { padding: 80px 60px; }
-        }
-
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
-        
+
+        /* BUTTONS - Matching Sidebar Style */
         .btn-contact { color: white; padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
         .btn-whatsapp { background-color: #26D367; }
         .btn-linkedin { background-color: #0077B5; }
 
-        /* TOOL LOGO STYLING */
-        .tool-grid-card { 
-            background: rgba(255,255,255,0.03); 
-            border: 1px solid rgba(216, 178, 74, 0.1); 
-            border-radius: 16px; 
-            padding: 20px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            transition: all 0.4s ease;
-        }
-        .tool-grid-card:hover { 
-            background: rgba(255,255,255,0.07); 
-            border-color: var(--champagne); 
-            transform: translateY(-5px);
-        }
-        .tool-logo-img {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 12px;
-            /* Keeps original colors but makes them vibrant against dark bg */
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
-        }
-        .tool-name {
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #aaa;
+        /* MAIN CONTENT */
+        .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
+        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 60px 25px; }
+
+        @media (min-width: 1024px) {
+            .sidebar { display: flex; }
+            .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
         }
 
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
-        #mobile-menu.active { left: 0; }
+        /* CERTIFICATION CARDS */
+        .cert-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(216, 178, 74, 0.1); padding: 25px; border-radius: 20px; transition: 0.4s; position: relative; overflow: hidden; height: 100%; }
+        .cert-card:hover { transform: translateY(-10px); border-color: var(--champagne); background: rgba(216, 178, 74, 0.05); }
+        .cert-logo { font-size: 2rem; margin-bottom: 15px; }
+        .skill-pill { font-size: 9px; padding: 3px 10px; background: rgba(216, 178, 74, 0.15); color: var(--champagne); border-radius: 4px; display: inline-block; margin: 2px; font-weight: 700; text-transform: uppercase; }
+
+        /* MOBILE HEADER */
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        @media (min-width: 1024px) { .mobile-header { display: none; } }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
-        <div class="mb-20"><a href="index.html"><img src="logo1.png" alt="Jerwin" class="logo-style"></a></div>
+        <div class="mb-20">
+            <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style"></a>
+        </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="skills.html" class="nav-link active">Skills</a>
+            <a href="skills.html" class="nav-link">Skills</a>
             <a href="services.html" class="nav-link">Services</a>
-            <a href="achievements.html" class="nav-link">Achievements</a>
+            <a href="achievements.html" class="nav-link active">Achievements</a>
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-4">
-            <a href="#" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
-            <a href="#" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
+                <i class="fab fa-linkedin-in"></i> LINKEDIN
+            </a>
+            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WHATSAPP
+            </a>
         </div>
     </aside>
+
+    <div class="mobile-header">
+        <a href="index.html"><img src="logo1.png" style="width: 80px;" class="logo-style"></a>
+        <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
 
     <main class="main-content">
         <div class="section-container">
             <header class="mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] font-extrabold uppercase tracking-[0.4em] mb-4">Technical Proficiency</h2>
-                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none text-white">Tools & <br><span class="text-[#D8B24A]">Systems.</span></h1>
+                <h2 class="text-[#D8B24A] text-[10px] font-extrabold uppercase tracking-[0.5em] mb-4">Professional Roadmap</h2>
+                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none text-white tracking-tighter">
+                    Verified <br><span class="text-[#D8B24A]">Excellence.</span>
+                </h1>
             </header>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-                
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="tool-logo-img" alt="Microsoft">
-                    <span class="tool-name">Microsoft 365</span>
+            <div class="mb-20">
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Ibex Recognition <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="cert-card" style="border-left: 5px solid var(--champagne);">
+                        <div class="cert-logo text-[#D8B24A]"><i class="fas fa-crown"></i></div>
+                        <h4 class="text-white font-black uppercase text-lg">Essential Leadership Training</h4>
+                        <p class="text-slate-500 text-xs mb-4">Issued Mar 2021</p>
+                        <div class="flex flex-wrap">
+                            <span class="skill-pill">Leadership</span><span class="skill-pill">Coaching</span><span class="skill-pill">Teamwork</span>
+                        </div>
+                    </div>
+                    <div class="cert-card" style="border-left: 5px solid var(--champagne);">
+                        <div class="cert-logo text-[#D8B24A]"><i class="fas fa-certificate"></i></div>
+                        <h4 class="text-white font-black uppercase text-lg">R.I.T.E VIP Award</h4>
+                        <p class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-2">Respect • Integrity • Transparency • Excellence</p>
+                        <p class="text-slate-400 text-sm">Recognized for top-tier operational performance and professional integrity.</p>
+                    </div>
                 </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="tool-logo-img" alt="Google">
-                    <span class="tool-name">Google Workspace</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" class="tool-logo-img" alt="Notion">
-                    <span class="tool-name">Notion</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" class="tool-logo-img" alt="ChatGPT">
-                    <span class="tool-name">ChatGPT / GPT-4</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Monday_logo.svg" class="tool-logo-img" alt="Monday">
-                    <span class="tool-name">Monday.com</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" class="tool-logo-img" alt="Zoom">
-                    <span class="tool-name">Zoom</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Calendly_logo.svg" class="tool-logo-img" alt="Calendly">
-                    <span class="tool-name">Calendly</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="tool-logo-img" alt="AWS">
-                    <span class="tool-name">AWS</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Canva_logo.svg" class="tool-logo-img" alt="Canva">
-                    <span class="tool-name">Canva</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" class="tool-logo-img" alt="Slack">
-                    <span class="tool-name">Slack</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/CapCut_logo.svg" class="tool-logo-img" alt="CapCut">
-                    <span class="tool-name">CapCut</span>
-                </div>
-
-                <div class="tool-grid-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Grammarly_logo.svg" class="tool-logo-img" alt="Grammarly">
-                    <span class="tool-name">Grammarly</span>
-                </div>
-
             </div>
-            
-            <div class="mt-20 border-t border-white/10 pt-16">
-                 <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Core Competencies <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span></h3>
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                     <div class="p-8 border border-white/5 bg-white/5 rounded-2xl">
-                         <h4 class="text-[#D8B24A] font-black uppercase text-sm mb-4">Operations & Compliance</h4>
-                         <ul class="text-slate-400 text-sm space-y-2">
-                             <li>• E-Verify / I-9 Compliance Management</li>
-                             <li>• CRM/ERP Workflow Optimization</li>
-                             <li>• High-Volume Front Desk Coordination</li>
-                         </ul>
-                     </div>
-                     <div class="p-8 border border-white/5 bg-white/5 rounded-2xl">
-                         <h4 class="text-[#D8B24A] font-black uppercase text-sm mb-4">Leadership</h4>
-                         <ul class="text-slate-400 text-sm space-y-2">
-                             <li>• Team Coaching (15+ Agents)</li>
-                             <li>• Performance Monitoring (KPI/CSAT)</li>
-                             <li>• Strategic Escalation Management</li>
-                         </ul>
-                     </div>
-                 </div>
+
+            <div class="mb-20">
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10">Global Certifications</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="cert-card">
+                        <div class="cert-logo text-blue-500"><i class="fab fa-microsoft"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Career Essentials: Admin Assistance</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">Microsoft + LinkedIn | Aug 2025</p>
+                        <div class="mt-auto">
+                            <span class="skill-pill">Microsoft 365</span><span class="skill-pill">Business Comms</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-logo text-[#0077B5]"><i class="fab fa-linkedin"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Time Management Fundamentals</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">LinkedIn | Aug 2025</p>
+                        <span class="skill-pill">Efficiency</span><span class="skill-pill">Priority Management</span>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-logo text-[#0077B5]"><i class="fab fa-linkedin"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Managing Multiple Projects</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">LinkedIn | Aug 2025</p>
+                        <span class="skill-pill">Project Ops</span><span class="skill-pill">Scheduling</span>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-logo text-[#0077B5]"><i class="fab fa-linkedin"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Communication Foundations</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">LinkedIn | Aug 2025</p>
+                        <span class="skill-pill">Interpersonal</span><span class="skill-pill">Professionalism</span>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-logo text-[#0077B5]"><i class="fab fa-linkedin"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Writing Business Emails</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">LinkedIn | Aug 2025</p>
+                        <span class="skill-pill">Email Etiquette</span><span class="skill-pill">Copywriting</span>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-logo text-[#0077B5]"><i class="fab fa-linkedin"></i></div>
+                        <h4 class="text-white font-bold uppercase text-sm mb-1">Note-Taking for Pros</h4>
+                        <p class="text-slate-500 text-[10px] mb-4">LinkedIn | Aug 2025</p>
+                        <span class="skill-pill">Documentation</span>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+
+    <script>
+        function toggleMenu() {
+            // Simplified for this view, logic matches your mobile menu
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
