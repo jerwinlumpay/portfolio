@@ -13,9 +13,9 @@
         
         /* CHAMPAGNE GOLD LOGO FILTER */
         .logo-style { 
-            width: 160px;
-            height: auto;
-            transition: 0.3s;
+            width: 160px; 
+            height: auto; 
+            transition: 0.3s; 
             filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
         }
         .logo-style:hover { 
@@ -31,7 +31,6 @@
 
         /* MAIN CONTENT AREA */
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
         @media (min-width: 1024px) {
@@ -44,7 +43,6 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Button Styles */
         .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-whatsapp { background-color: var(--whatsapp); }
         .btn-whatsapp:hover { background-color: #1eb954; transform: translateY(-2px); }
@@ -61,6 +59,9 @@
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
         .overlay.active { display: block; }
+
+        /* Achievement Highlight Style */
+        .achievement-highlight { border-left: 4px solid var(--champagne); }
     </style>
 </head>
 <body>
@@ -76,6 +77,7 @@
             <a href="portfolio.html" class="nav-link active">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
             <a href="services.html" class="nav-link">Services</a>
+            <a href="achievements.html" class="nav-link">Achievements</a>
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -107,6 +109,7 @@
             <a href="portfolio.html" class="nav-link active">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
             <a href="services.html" class="nav-link">Services</a>
+            <a href="achievements.html" class="nav-link">Achievements</a>
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -127,7 +130,7 @@
                 <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none tracking-tighter">Career <br><span class="gold-text">Experience.</span></h1>
             </header>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-24">
                 <div class="portfolio-card">
                     <span class="text-[10px] gold-text font-bold tracking-widest uppercase">May 2025 – April 2026 | Dubai, UAE</span>
                     <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Front Desk Representative</h3>
@@ -155,19 +158,43 @@
                     <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ResultsCX</p>
                     <p class="text-slate-400 text-sm leading-relaxed">Identified customer needs through inbound/outbound calls for leading telecom products, delivering tailored solutions to consistently meet and exceed sales targets.</p>
                 </div>
+            </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">April 2015 – Oct 2016</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Customer Service Representative</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">Sutherland</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Managed merchant disputes and chargebacks with financial institutions. Provided end-to-end financial account support, including refunds and real-time transaction monitoring.</p>
+            <header class="mb-12 lg:mb-16">
+                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.3em] mb-4">Recognitions & Training</h2>
+                <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none tracking-tighter">Honors & <br><span class="gold-text">Certifications.</span></h1>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="portfolio-card achievement-highlight">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-award text-2xl gold-text"></i>
+                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">VIP Award 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ibex VIP Award Winner</h3>
+                    <p class="text-slate-400 text-sm">Recognized for "Excellence in Leadership and Performance" among mid-level management across the ibex network.</p>
                 </div>
 
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">March 2012 – March 2015</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Executive Administrative Assistant</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">PSAA International Academy Inc.</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Provided high-level support to the President, managing international travel and complex calendars. Acted as a primary liaison for government officials (TESDA) and streamlined digital filing.</p>
+                <div class="portfolio-card achievement-highlight">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-certificate text-2xl gold-text"></i>
+                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">2021 Training</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Essential Leadership Program</h3>
+                    <p class="text-slate-400 text-sm">Completed comprehensive leadership training focusing on coaching techniques, conflict resolution, and operational KPI management.</p>
+                </div>
+
+                <div class="portfolio-card achievement-highlight">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fab fa-microsoft text-2xl gold-text"></i>
+                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">2025 Certified</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Microsoft 365 Admin Assistance</h3>
+                    <p class="text-slate-400 text-sm">Career Essentials certification verified by Microsoft and LinkedIn, covering advanced administrative automation and collaborative workflows.</p>
+                </div>
+
+                <div class="portfolio-card flex items-center justify-center border-dashed border-2 opacity-80">
+                    <a href="achievements.html" class="gold-text font-black uppercase tracking-[0.2em] hover:tracking-[0.4em] transition-all">View All Achievements <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </div>
