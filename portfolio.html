@@ -11,25 +11,14 @@
         :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* CHAMPAGNE GOLD LOGO FILTER */
         .logo-style { 
-            width: 160px; 
-            height: auto; 
-            transition: 0.3s; 
+            width: 160px; height: auto; transition: 0.3s; 
             filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
         }
-        .logo-style:hover { 
-            filter: brightness(0) saturate(100%) invert(100%);
-            opacity: 1; 
-        }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
 
-        /* SIDEBAR - Desktop Only */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        
-        /* MOBILE HEADER - Mobile Only */
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
-
-        /* MAIN CONTENT AREA */
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -45,32 +34,34 @@
         
         .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-whatsapp:hover { background-color: #1eb954; transform: translateY(-2px); }
         .btn-linkedin { background-color: var(--linkedin); }
-        .btn-linkedin:hover { background-color: #005a8a; transform: translateY(-2px); }
         
         .gold-text { color: var(--champagne); }
         
         .portfolio-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); padding: 30px; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .portfolio-card:hover { background: rgba(216, 178, 74, 0.05); transform: translateY(-5px); border-color: var(--champagne); }
 
-        /* Mobile Menu */
+        /* VIBRANT ACHIEVEMENT TILES */
+        .achievement-card { position: relative; overflow: hidden; border-radius: 4px; border: 1px solid rgba(216, 178, 74, 0.2); transition: 0.4s ease; }
+        .achievement-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; transition: 0.3s; }
+        
+        .award-gold::before { background: linear-gradient(90deg, #D8B24A, #FFF4DE); }
+        .cert-blue::before { background: linear-gradient(90deg, #0077B5, #00A0DC); }
+        .lead-purple::before { background: linear-gradient(90deg, #6B46C1, #9F7AEA); }
+
+        .achievement-card:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
         .overlay.active { display: block; }
-
-        /* Achievement Highlight Style */
-        .achievement-highlight { border-left: 4px solid var(--champagne); }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
         <div class="mb-20">
-            <a href="index.html">
-                <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style">
-            </a>
+            <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style"></a>
         </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
@@ -82,19 +73,13 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html">
-            <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;">
-        </a>
+        <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;"></a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
@@ -113,14 +98,6 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <div class="space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
     </div>
 
     <main class="main-content">
@@ -132,31 +109,16 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-24">
                 <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">May 2025 – April 2026 | Dubai, UAE</span>
+                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">May 2025 – April 2026</span>
                     <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Front Desk Representative</h3>
                     <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">Purple Desk</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Managed end-to-end booking schedules for 10,000+ calls, contributing $80K in revenue while maintaining an AHT of 3:41. Specialist in Roller CRM operations and new hire training.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Managed end-to-end booking schedules for 10,000+ calls, contributing $80K in revenue.</p>
                 </div>
-
                 <div class="portfolio-card">
                     <span class="text-[10px] gold-text font-bold tracking-widest uppercase">Sept 2022 – March 2025</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Client Services & Compliance Specialist</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Client Services & Compliance</h3>
                     <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ADP</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Oversaw USCIS Form I-9 and E-Verify compliance for major US clients like Sodexo and Siemens. Mitigated legal risks through meticulous data privacy and audit-ready record maintenance.</p>
-                </div>
-
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">April 2018 – August 2022</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Customer Service Team Lead</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ibex</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Led teams of 10-15 staff for GoDaddy and AT&T accounts. Conducted data-driven coaching and business reviews, earning the VIP Award 2021 and Top Team Q1 2021 honors.</p>
-                </div>
-
-                <div class="portfolio-card">
-                    <span class="text-[10px] gold-text font-bold tracking-widest uppercase">Nov 2016 – March 2018</span>
-                    <h3 class="text-xl md:text-2xl font-bold mt-2 mb-2">Sales Associate</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-wider">ResultsCX</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Identified customer needs through inbound/outbound calls for leading telecom products, delivering tailored solutions to consistently meet and exceed sales targets.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Oversaw USCIS Form I-9 and E-Verify compliance for major US clients like Sodexo.</p>
                 </div>
             </div>
 
@@ -165,37 +127,48 @@
                 <h1 class="text-5xl md:text-7xl font-black italic uppercase leading-none tracking-tighter">Honors & <br><span class="gold-text">Certifications.</span></h1>
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                <div class="portfolio-card achievement-highlight">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fas fa-award text-2xl gold-text"></i>
-                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">VIP Award 2021</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="portfolio-card achievement-card award-gold">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-yellow-500/10 p-3 rounded-lg">
+                            <i class="fas fa-crown text-2xl text-yellow-500"></i>
+                        </div>
+                        <span class="text-[9px] font-black text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded">WINNER</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">ibex VIP Award Winner</h3>
-                    <p class="text-slate-400 text-sm">Recognized for "Excellence in Leadership and Performance" among mid-level management across the ibex network.</p>
+                    <h3 class="text-xl font-bold mb-2">VIP Award 2021</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed uppercase tracking-tighter mb-4">ibex Global</p>
+                    <p class="text-slate-300 text-sm italic">"Excellence in Leadership and Performance Award."</p>
                 </div>
 
-                <div class="portfolio-card achievement-highlight">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fas fa-certificate text-2xl gold-text"></i>
-                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">2021 Training</span>
+                <div class="portfolio-card achievement-card cert-blue">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-blue-500/10 p-3 rounded-lg">
+                            <i class="fab fa-microsoft text-2xl text-blue-500"></i>
+                        </div>
+                        <span class="text-[9px] font-black text-blue-500 bg-blue-500/10 px-2 py-1 rounded">CERTIFIED</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Essential Leadership Program</h3>
-                    <p class="text-slate-400 text-sm">Completed comprehensive leadership training focusing on coaching techniques, conflict resolution, and operational KPI management.</p>
+                    <h3 class="text-xl font-bold mb-2">M365 Assistance</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed uppercase tracking-tighter mb-4">Microsoft x LinkedIn</p>
+                    <p class="text-slate-300 text-sm italic">Career Essentials in Administrative Assistance.</p>
                 </div>
 
-                <div class="portfolio-card achievement-highlight">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fab fa-microsoft text-2xl gold-text"></i>
-                        <span class="text-[10px] gold-text font-bold uppercase tracking-widest">2025 Certified</span>
+                <div class="portfolio-card achievement-card lead-purple">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-purple-500/10 p-3 rounded-lg">
+                            <i class="fas fa-users-cog text-2xl text-purple-400"></i>
+                        </div>
+                        <span class="text-[9px] font-black text-purple-400 bg-purple-500/10 px-2 py-1 rounded">TRAINING</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Microsoft 365 Admin Assistance</h3>
-                    <p class="text-slate-400 text-sm">Career Essentials certification verified by Microsoft and LinkedIn, covering advanced administrative automation and collaborative workflows.</p>
+                    <h3 class="text-xl font-bold mb-2">Leadership Program</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed uppercase tracking-tighter mb-4">Essential Mgmt</p>
+                    <p class="text-slate-300 text-sm italic">Advanced coaching and KPI management course.</p>
                 </div>
+            </div>
 
-                <div class="portfolio-card flex items-center justify-center border-dashed border-2 opacity-80">
-                    <a href="achievements.html" class="gold-text font-black uppercase tracking-[0.2em] hover:tracking-[0.4em] transition-all">View All Achievements <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
+            <div class="mt-12 text-center">
+                <a href="achievements.html" class="inline-block border border-[#D8B24A] text-[#D8B24A] px-10 py-4 font-black uppercase tracking-widest hover:bg-[#D8B24A] hover:text-black transition-all">
+                    Explore All Honors <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </main>
