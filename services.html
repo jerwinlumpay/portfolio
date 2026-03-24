@@ -14,7 +14,7 @@
             --ivory: #FFF4DE; 
             --whatsapp: #25D366; 
             --linkedin: #0077B5;
-            /* Stable Service Colors */
+            /* Enhanced Branded Service Colors */
             --admin-blue: #3b82f6;
             --support-green: #10b981;
             --ops-purple: #a855f7;
@@ -49,31 +49,32 @@
         .btn-whatsapp { background-color: var(--whatsapp); }
         .btn-linkedin { background-color: var(--linkedin); }
 
-        /* STABLE SERVICE CARDS */
+        /* SERVICE CARDS */
         .service-card { 
             background: rgba(255, 255, 255, 0.02); 
             border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 35px; border-radius: 24px; transition: 0.3s; 
+            padding: 40px; border-radius: 30px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             height: 100%; 
         }
         .service-card:hover { 
             background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(216, 178, 74, 0.3);
-            transform: translateY(-5px);
+            border-color: var(--champagne);
+            transform: translateY(-10px);
         }
 
-        /* STABLE ICON COLORS (No Glow) */
+        /* HIGHLIGHTED ICONS - LARGER SIZE */
         .icon-container {
-            width: 50px; height: 50px; border-radius: 12px;
+            width: 75px; height: 75px; border-radius: 20px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-bottom: 25px;
+            font-size: 2rem; margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Specific Colors - Solid & Refined */
-        .ic-admin { color: var(--admin-blue); background: rgba(59, 130, 246, 0.15); }
-        .ic-support { color: var(--support-green); background: rgba(16, 185, 129, 0.15); }
+        /* Permanent Branded Colors for Icons */
+        .ic-admin { color: #60a5fa; background: rgba(59, 130, 246, 0.15); }
+        .ic-support { color: #34d399; background: rgba(16, 185, 129, 0.15); }
         .ic-sales { color: var(--champagne); background: rgba(216, 178, 74, 0.15); }
-        .ic-ops { color: var(--ops-purple); background: rgba(168, 85, 247, 0.15); }
+        .ic-ops { color: #c084fc; background: rgba(168, 85, 247, 0.15); }
 
         /* Mobile Menu */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
@@ -127,16 +128,16 @@
 
     <main class="main-content">
         <div class="section-container">
-            <header class="mb-12 lg:mb-16">
+            <header class="mb-12 lg:mb-20">
                 <h2 class="text-[#D8B24A] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.5em] mb-4">Core Solutions</h2>
                 <h1 class="text-6xl md:text-8xl font-black italic uppercase mb-4 leading-none text-white tracking-tighter">Top Service <br><span class="text-[#D8B24A]">Offerings.</span></h1>
             </header>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 <div class="service-card">
                     <div class="icon-container ic-admin"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="text-xl font-bold uppercase mb-4 text-white">1. Executive & Admin Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">01. Executive Support</h3>
+                    <ul class="text-slate-400 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Calendar and email management</li>
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Scheduling, reports, and documentation</li>
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Travel and coordination tasks</li>
@@ -145,8 +146,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-support"><i class="fas fa-headset"></i></div>
-                    <h3 class="text-xl font-bold uppercase mb-4 text-white">2. Customer Service Operations</h3>
-                    <ul class="text-slate-400 text-sm space-y-3">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">02. Customer Support</h3>
+                    <ul class="text-slate-400 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> Chat, email, and phone support</li>
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> Complaint resolution and escalation</li>
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> CRM updates and customer tracking</li>
@@ -155,8 +156,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-sales"><i class="fas fa-piggy-bank"></i></div>
-                    <h3 class="text-xl font-bold uppercase mb-4 text-white">3. Sales & Booking Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">03. Sales & Booking</h3>
+                    <ul class="text-slate-400 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-[#D8B24A] font-bold">•</span> Lead follow-ups and client onboarding</li>
                         <li class="flex gap-3"> <span class="text-[#D8B24A] font-bold">•</span> Upselling and booking management</li>
                         <li class="flex gap-3"> <span class="text-[#D8B24A] font-bold">•</span> Revenue tracking and coordination</li>
@@ -165,8 +166,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-ops"><i class="fas fa-layer-group"></i></div>
-                    <h3 class="text-xl font-bold uppercase mb-4 text-white">4. Operations & Process Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-3">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">04. Operations Support</h3>
+                    <ul class="text-slate-400 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> Workflow organization and task tracking</li>
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> SOP creation and process improvement</li>
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> Data entry and inventory management</li>
