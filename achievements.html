@@ -8,24 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
-        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; }
+        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; --microsoft: #F25022; }
         body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO STYLE */
-        .logo-style { 
-            width: 160px;
-            height: auto;
-            transition: 0.3s;
-            /* Applying white filter to match your reference image */
-            filter: brightness(0) invert(1);
-        }
+        .logo-style { width: 160px; height: auto; transition: 0.3s; filter: brightness(0) invert(1); }
 
-        /* SIDEBAR - Desktop Left Nav */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        
-        /* MOBILE HEADER */
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
-
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 60px 25px; }
         
@@ -39,18 +28,15 @@
         .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Bottom Buttons - Pill Style from Reference */
         .btn-contact { color: white; padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-whatsapp { background-color: #26D367; } /* Brighter green from image */
-        .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-whatsapp { background-color: #26D367; }
         .btn-linkedin { background-color: #0077B5; }
-        .btn-linkedin:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* Content Styling */
-        .edu-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(216, 178, 74, 0.1); padding: 35px; border-radius: 20px; border-left: 4px solid var(--champagne); }
-        .award-card { background: #0A192F; border: 1px solid rgba(216, 178, 74, 0.1); padding: 25px; border-radius: 15px; transition: 0.4s; }
-        .gold-text { color: var(--champagne); }
-        .icon-box { width: 45px; height: 45px; border-radius: 10px; background: rgba(216, 178, 74, 0.1); display: flex; align-items: center; justify-content: center; color: var(--champagne); font-size: 1.2rem; margin-bottom: 15px; }
+        /* ACHIEVEMENT CARDS */
+        .cert-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(216, 178, 74, 0.1); padding: 20px; border-radius: 12px; transition: 0.3s; display: flex; flex-direction: column; height: 100%; }
+        .cert-card:hover { transform: translateY(-5px); background: rgba(216, 178, 74, 0.05); border-color: var(--champagne); }
+        .cert-icon { font-size: 1.5rem; margin-bottom: 15px; }
+        .skill-tag { font-size: 9px; padding: 2px 8px; background: rgba(216, 178, 74, 0.1); color: var(--champagne); border-radius: 4px; display: inline-block; margin-top: 4px; margin-right: 4px; text-transform: uppercase; font-weight: 700; }
 
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
         #mobile-menu.active { left: 0; }
@@ -61,11 +47,7 @@
 <body>
 
     <aside class="sidebar">
-        <div class="mb-20">
-            <a href="index.html">
-                <img src="logo1.png" alt="Jerwin Lumpay" class="logo-style">
-            </a>
-        </div>
+        <div class="mb-20"><a href="index.html"><img src="logo1.png" alt="Jerwin" class="logo-style"></a></div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
@@ -75,82 +57,108 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        
         <div class="mt-auto space-y-4">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LINKEDIN
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WHATSAPP
-            </a>
+            <a href="#" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
+            <a href="#" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;"></a>
+        <img src="logo1.png" style="width: 80px;" class="logo-style">
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
-    </div>
-
-    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-    <div id="mobile-menu">
-        <div class="flex justify-between items-center mb-12">
-             <span class="text-white font-black italic tracking-widest">MENU</span>
-             <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
-        </div>
-        <nav>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="achievements.html" class="nav-link active">Achievements</a>
-            <a href="feedback.html" class="nav-link">Feedback</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-        <div class="mt-auto space-y-4">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin">
-                <i class="fab fa-linkedin-in"></i> LINKEDIN
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WHATSAPP
-            </a>
-        </div>
     </div>
 
     <main class="main-content">
         <div class="section-container">
             <header class="mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Academic & Professional</h2>
-                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-white">
-                    Key <br><span class="gold-text">Milestones.</span>
-                </h1>
+                <h2 class="text-[#D8B24A] text-[10px] font-extrabold uppercase tracking-[0.5em] mb-4">Credentials & Recognition</h2>
+                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-none text-white">Certifications.</h1>
             </header>
 
             <div class="mb-20">
-                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
-                    Education <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span>
-                </h3>
-                <div class="edu-card">
-                    <h4 class="text-2xl md:text-3xl font-black italic uppercase text-white leading-tight">Bachelor of Science in <br>Business Administration</h4>
-                    <p class="gold-text font-black text-xs uppercase tracking-widest mt-2">Management Specialist</p>
-                    <p class="text-slate-400 mt-6 font-medium">Concordia College – Manila, Philippines</p>
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Ibex Leadership</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="cert-card" style="border-left: 4px solid var(--champagne);">
+                        <div class="cert-icon text-[#D8B24A]"><i class="fas fa-crown"></i></div>
+                        <h4 class="text-white font-black uppercase text-sm mb-1">Essential Leadership Training</h4>
+                        <p class="text-slate-500 text-[10px] mb-3">Issued Mar 2021</p>
+                        <div class="mt-auto">
+                            <span class="skill-tag">Coaching</span><span class="skill-tag">Teamwork</span><span class="skill-tag">KPI Management</span>
+                        </div>
+                    </div>
+                    <div class="cert-card" style="border-left: 4px solid var(--champagne);">
+                        <div class="cert-icon text-[#D8B24A]"><i class="fas fa-medal"></i></div>
+                        <h4 class="text-white font-black uppercase text-sm mb-1">R.I.T.E VIP Award</h4>
+                        <p class="text-slate-500 text-[10px] mb-3">Highest Operational Excellence</p>
+                        <div class="mt-auto">
+                            <span class="skill-tag">Integrity</span><span class="skill-tag">Excellence</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div>
-                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
-                    Awards & Certifications <span class="h-[1px] w-20 bg-[#D8B24A]/30"></span>
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="award-card">
-                        <div class="icon-box"><i class="fas fa-medal"></i></div>
-                        <h4 class="text-white font-black uppercase text-sm mb-2">Ibex Leadership Training</h4>
-                        <p class="text-slate-400 text-sm">Advanced certification in team leadership and operational strategy.</p>
+            <div class="mb-20">
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Professional Foundations</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="cert-card">
+                        <div class="cert-icon text-blue-400"><i class="fab fa-microsoft"></i></div>
+                        <h4 class="text-white font-black uppercase text-xs mb-1">Career Essentials: Admin Assistance</h4>
+                        <p class="text-slate-500 text-[9px] mb-3">Microsoft & LinkedIn | Aug 2025</p>
+                        <div class="mt-auto">
+                            <span class="skill-tag">Microsoft 365</span><span class="skill-tag">Business Comms</span>
+                        </div>
                     </div>
-                    <div class="award-card border-l-4 border-l-[#D8B24A]">
-                        <div class="icon-box"><i class="fas fa-crown"></i></div>
-                        <h4 class="text-white font-black uppercase text-sm mb-1">Ibex R.I.T.E VIP Award</h4>
-                        <p class="gold-text text-[9px] font-black uppercase tracking-widest mb-2">Respect • Integrity • Transparency • Excellence</p>
-                        <p class="text-slate-400 text-sm">The highest recognition for professional integrity and performance excellence.</p>
+
+                    <div class="cert-card">
+                        <div class="cert-icon text-blue-500"><i class="fas fa-project-diagram"></i></div>
+                        <h4 class="text-white font-black uppercase text-xs mb-1">CAPM® Exam Prep & Tips</h4>
+                        <p class="text-slate-500 text-[9px] mb-3">LinkedIn | Aug 2025</p>
+                        <div class="mt-auto"><span class="skill-tag">Project Management</span></div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon text-green-500"><i class="fas fa-clock"></i></div>
+                        <h4 class="text-white font-black uppercase text-xs mb-1">Time Management Fundamentals</h4>
+                        <p class="text-slate-500 text-[9px] mb-3">LinkedIn | Aug 2025</p>
+                        <div class="mt-auto"><span class="skill-tag">Efficiency</span><span class="skill-tag">Planning</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-20">
+                <h3 class="text-white text-[13px] font-black uppercase tracking-[0.4em] mb-10">Administrative Expertise</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Note-Taking for Business</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Writing Business Emails</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Collaborating in M365</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Communication Foundations</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Managing Multiple Projects</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Admin Professional Tips</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Admin Foundations</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | Jul 2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="text-white font-bold uppercase text-[10px]">Optimizing M365 Work</h4>
+                        <p class="text-slate-500 text-[9px]">LinkedIn | 2025</p>
                     </div>
                 </div>
             </div>
@@ -160,7 +168,6 @@
     <script>
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
         }
     </script>
 </body>
