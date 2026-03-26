@@ -8,14 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
-        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; --adp-purple: #53317E; --ibex-gold: #D8B24A; }
-        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
-        
-        .logo-style { width: 160px; height: auto; transition: 0.3s; filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%); }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
+        :root { 
+            --onyx: #000000; 
+            --champagne: #DEB58A; 
+            --silk: #EEE5D9; 
+            --velvet: #2D3D62;
+            --whatsapp: #25D366; 
+            --linkedin: #0077B5; 
+        }
 
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* LOGO TINTING - CHAMPAGNE FILTER */
+        .logo-style { 
+            width: 160px; height: auto; transition: 0.3s; 
+            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%); 
+        }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
+
+        /* SIDEBAR REMAINS BLACK */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); border-right: 1px solid rgba(222, 181, 138, 0.05); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); border-bottom: 1px solid rgba(222, 181, 138, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
 
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1100px; margin: 0 auto; width: 100%; padding: 40px 25px; }
@@ -27,67 +40,66 @@
             .section-container { padding: 80px 60px; }
         }
 
-        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
-        .nav-link:hover, .nav-link.active { color: var(--champagne); }
-        
-        .btn-contact { color: white; padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-linkedin { background-color: var(--linkedin); }
-
-        /* INTERACTIVE TILE STYLING */
-        .award-card { 
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            padding: 30px; border-radius: 20px; 
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        /* ENHANCED NAVIGATION */
+        .nav-link { 
+            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            margin-bottom: 30px; display: block; text-decoration: none; 
         }
+        .nav-link:hover, .nav-link.active { 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
+        }
+        
+        /* SIDEBAR CONTACT BUTTONS */
+        .btn-contact { 
+            background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; 
+            font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; 
+            align-items: center; justify-content: center; gap: 10px; text-decoration: none; 
+            transition: 0.3s; width: 100%; letter-spacing: 1px; 
+        }
+        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
 
-        /* GLOW EFFECTS */
-        .award-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, var(--glow-color, rgba(216, 178, 74, 0.2)) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
+        /* AWARD CARDS - ADAPTED FOR PALETTE */
+        .award-card { 
+            background: rgba(255, 255, 255, 0.6); 
+            border: 1px solid rgba(0, 0, 0, 0.05); 
+            padding: 35px; border-radius: 25px; 
+            position: relative; overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(10px);
         }
 
         .award-card:hover {
             transform: translateY(-8px);
-            border-color: var(--hover-border, var(--champagne));
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+            background: #FFFFFF;
+            border-color: var(--champagne);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
-
-        .award-card:hover::before { opacity: 0.15; }
 
         .card-content { position: relative; z-index: 1; }
 
         .icon-circle { 
-            width: 50px; height: 50px; border-radius: 14px; 
+            width: 55px; height: 55px; border-radius: 16px; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 1.4rem; margin-bottom: 20px;
+            font-size: 1.5rem; margin-bottom: 25px;
             transition: 0.3s;
         }
 
         /* BRAND THEMES */
-        .theme-adp { --glow-color: #53317E; --hover-border: #9b6bd3; }
-        .theme-ibex { --glow-color: #D8B24A; --hover-border: #D8B24A; }
-        .theme-ms { --glow-color: #00A4EF; --hover-border: #00A4EF; }
-        .theme-li { --glow-color: #0077B5; --hover-border: #0077B5; }
+        .bg-adp { background: rgba(83, 49, 126, 0.1); color: #53317E; }
+        .bg-ibex { background: rgba(222, 181, 138, 0.15); color: var(--champagne); }
+        .bg-ms { background: rgba(0, 164, 239, 0.1); color: #00A4EF; }
+        .bg-li { background: rgba(0, 119, 181, 0.1); color: #0077B5; }
 
-        .bg-adp { background: rgba(83, 49, 126, 0.2); color: #9b6bd3; }
-        .bg-ibex { background: rgba(216, 178, 74, 0.2); color: #D8B24A; }
-        .bg-ms { background: rgba(0, 164, 239, 0.2); color: #00A4EF; }
-        .bg-li { background: rgba(0, 119, 181, 0.2); color: #0077B5; }
+        .skill-tag { 
+            font-size: 9px; padding: 5px 12px; background: var(--velvet); color: var(--silk); 
+            border-radius: 6px; display: inline-block; margin-top: 12px; margin-right: 8px; 
+            text-transform: uppercase; font-weight: 800; letter-spacing: 1px;
+        }
 
-        .skill-tag { font-size: 9px; padding: 4px 10px; background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); border-radius: 6px; display: inline-block; margin-top: 10px; margin-right: 6px; text-transform: uppercase; font-weight: 800; border: 1px solid rgba(255,255,255,0.1); }
-
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -107,8 +119,8 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-4">
-            <a href="https://linkedin.com/in/jerwin-lumpay" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
+            <a href="https://wa.me/971544609927" class="btn-contact"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         </div>
     </aside>
 
@@ -119,8 +131,11 @@
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
-        <div class="flex justify-between items-center mb-12"><span class="text-white font-black italic">MENU</span><button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button></div>
-        <nav class="space-y-6">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-white font-black italic tracking-widest">MENU</span>
+            <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
+        </div>
+        <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
@@ -134,29 +149,29 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] font-extrabold uppercase tracking-[0.5em] mb-4">Recognitions & Honors</h2>
-                <h1 class="text-5xl md:text-8xl font-black italic uppercase leading-tight text-white">Awards.</h1>
+                <h2 class="text-[--onyx] opacity-40 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Recognitions & Honors</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none text-[--velvet] tracking-tighter">Awards.</h1>
             </header>
 
             <section class="mb-20">
-                <h3 class="text-white/40 text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Major Recognition <span class="h-[1px] flex-1 bg-white/10"></span></h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="award-card theme-adp">
+                <h3 class="text-[--velvet] opacity-30 text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Major Recognition <span class="h-[1px] flex-1 bg-[--velvet] opacity-10"></span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="award-card">
                         <div class="card-content">
                             <div class="icon-circle bg-adp"><i class="fas fa-shield-halved"></i></div>
-                            <h4 class="text-white font-bold uppercase text-lg tracking-tight mb-1">ADP Core Value Award</h4>
-                            <p class="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-4">Compliance Recognition</p>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Recognized for commitment to excellence in client services and adherence to global compliance standards.</p>
+                            <h4 class="text-[--velvet] font-black uppercase text-xl tracking-tight mb-1">ADP Core Value Award</h4>
+                            <p class="text-[--velvet] opacity-40 text-[10px] uppercase font-bold tracking-widest mb-4">Compliance Recognition</p>
+                            <p class="text-[--velvet] opacity-70 text-sm leading-relaxed mb-4">Recognized for commitment to excellence in client services and adherence to global compliance standards.</p>
                             <div class="flex flex-wrap"><span class="skill-tag">Integrity</span><span class="skill-tag">Compliance</span></div>
                         </div>
                     </div>
 
-                    <div class="award-card theme-ibex">
+                    <div class="award-card">
                         <div class="card-content">
                             <div class="icon-circle bg-ibex"><i class="fas fa-crown"></i></div>
-                            <h4 class="text-white font-bold uppercase text-lg tracking-tight mb-1">IBEX VIP R.I.T.E Award</h4>
-                            <p class="text-[#D8B24A] text-[10px] uppercase font-bold tracking-widest mb-4">Performance Excellence</p>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Awarded for outstanding performance reflecting Respect, Integrity, Transparency, and Excellence.</p>
+                            <h4 class="text-[--velvet] font-black uppercase text-xl tracking-tight mb-1">IBEX VIP R.I.T.E Award</h4>
+                            <p class="text-[--champagne] text-[10px] uppercase font-bold tracking-widest mb-4">Performance Excellence</p>
+                            <p class="text-[--velvet] opacity-70 text-sm leading-relaxed mb-4">Awarded for outstanding performance reflecting Respect, Integrity, Transparency, and Excellence.</p>
                             <div class="flex flex-wrap"><span class="skill-tag">Leadership</span><span class="skill-tag">R.I.T.E Values</span></div>
                         </div>
                     </div>
@@ -164,30 +179,30 @@
             </section>
 
             <section class="mb-20">
-                <h3 class="text-white/40 text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Education & Certs <span class="h-[1px] flex-1 bg-white/10"></span></h3>
+                <h3 class="text-[--velvet] opacity-30 text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">Education & Certs <span class="h-[1px] flex-1 bg-[--velvet] opacity-10"></span></h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="award-card theme-ms">
+                    <div class="award-card">
                         <div class="card-content">
                             <div class="icon-circle bg-ms"><i class="fab fa-microsoft"></i></div>
-                            <h4 class="text-white font-bold uppercase text-xs leading-tight mb-2">M365 Optimization</h4>
-                            <p class="text-slate-500 text-[9px] uppercase mb-4">Productivity Certification</p>
-                            <p class="text-slate-400 text-xs">Expert certification in leveraging Microsoft 365 for business efficiency.</p>
+                            <h4 class="text-[--velvet] font-bold uppercase text-xs leading-tight mb-2">M365 Optimization</h4>
+                            <p class="text-[--velvet] opacity-40 text-[9px] uppercase mb-4">Productivity Certification</p>
+                            <p class="text-[--velvet] opacity-70 text-xs">Expert certification in leveraging Microsoft 365 for business efficiency.</p>
                         </div>
                     </div>
-                    <div class="award-card theme-li">
+                    <div class="award-card">
                         <div class="card-content">
                             <div class="icon-circle bg-li"><i class="fab fa-linkedin-in"></i></div>
-                            <h4 class="text-white font-bold uppercase text-xs leading-tight mb-2">Time Management</h4>
-                            <p class="text-slate-500 text-[9px] uppercase mb-4">LinkedIn Learning</p>
-                            <p class="text-slate-400 text-xs">Strategies for high-level executive support and workflow management.</p>
+                            <h4 class="text-[--velvet] font-bold uppercase text-xs leading-tight mb-2">Time Management</h4>
+                            <p class="text-[--velvet] opacity-40 text-[9px] uppercase mb-4">LinkedIn Learning</p>
+                            <p class="text-[--velvet] opacity-70 text-xs">Strategies for high-level executive support and workflow management.</p>
                         </div>
                     </div>
-                    <div class="award-card" style="--glow-color: #FFF;">
+                    <div class="award-card">
                         <div class="card-content">
-                            <div class="icon-circle bg-white/10 text-white"><i class="fas fa-graduation-cap"></i></div>
-                            <h4 class="text-white font-bold uppercase text-xs leading-tight mb-2">BS Management</h4>
-                            <p class="text-slate-500 text-[9px] uppercase mb-4">Concordia College</p>
-                            <p class="text-slate-400 text-xs">Bachelor of Science in Business Administration & Management.</p>
+                            <div class="icon-circle bg-white shadow-sm text-[--velvet]"><i class="fas fa-graduation-cap"></i></div>
+                            <h4 class="text-[--velvet] font-bold uppercase text-xs leading-tight mb-2">BS Management</h4>
+                            <p class="text-[--velvet] opacity-40 text-[9px] uppercase mb-4">Concordia College</p>
+                            <p class="text-[--velvet] opacity-70 text-xs">Bachelor of Science in Business Administration & Management.</p>
                         </div>
                     </div>
                 </div>
