@@ -12,28 +12,28 @@
     
     <style>
         :root { 
-            --onyx: #000000;         /* Sidebar & Interaction */
-            --velvet: #2D3D62;       /* Content Text */
-            --silk: #EEE5D9;         /* Main Background */
-            --champagne: #DEB58A;    /* Luxury Gold & Glow Accent */
-            --pearl: #FFFFFF;        /* Portfolio Cards */
+            --onyx: #000000;         /* Sidebar & Mobile Header */
+            --velvet: #2D3D62;       /* Body Text */
+            --silk: #EEE5D9;         /* Content Background */
+            --champagne: #DEB58A;    /* Primary Brand Gold */
+            --pearl: #FFFFFF;        /* Portfolio Card Background */
         }
 
         body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO MATCHED TO CHAMPAGNE */
+        /* LOGO - ALIGNED TO CHAMPAGNE BRAND COLOR */
         .logo-style { 
             width: 160px; height: auto; transition: 0.3s;
-            filter: invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
+            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
         }
         .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
-        /* SIDEBAR */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        /* SIDEBAR ARCHITECTURE */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
         
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1000px; margin: 0 auto; width: 100%; padding: 40px 25px; }
+        .section-container { max-width: 1100px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
@@ -42,69 +42,60 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* ENHANCED NAVIGATION - BIGGER FONT & GLOW */
+        /* NAVIGATION - LUXE 15PX BOLD */
         .nav-link { 
-            font-size: 15px; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.4); 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            margin-bottom: 30px; 
-            display: block; 
-            text-decoration: none;
+            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            margin-bottom: 30px; display: block; text-decoration: none;
         }
         .nav-link:hover, .nav-link.active { 
-            color: var(--champagne); 
-            text-shadow: 0 0 15px rgba(222, 181, 138, 0.6); 
-            transform: translateX(10px); 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
         }
 
-        /* BUTTONS */
+        /* SIDEBAR ACTIONS */
         .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); }
+        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
 
-        /* ROADMAP TIMELINE STYLES */
+        /* ROADMAP TIMELINE */
         .roadmap-container { position: relative; padding-left: 40px; border-left: 2px solid rgba(0, 0, 0, 0.05); }
         
         .portfolio-card { 
             background: var(--pearl); 
-            border: 1px solid rgba(0, 0, 0, 0.05); 
-            padding: 35px; border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.03); 
+            padding: 35px; border-radius: 28px;
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             position: relative; margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border-left: 6px solid var(--champagne);
         }
 
-        /* The "Node" on the roadmap */
+        /* Timeline Nodes */
         .portfolio-card::before {
-            content: ''; position: absolute; left: -52px; top: 40px;
-            width: 22px; height: 22px; background: var(--silk);
+            content: ''; position: absolute; left: -53px; top: 40px;
+            width: 24px; height: 24px; background: var(--silk);
             border: 4px solid var(--onyx); border-radius: 50%;
-            z-index: 2; transition: 0.3s;
+            z-index: 2; transition: 0.4s;
         }
 
         .portfolio-card:hover { 
-            transform: translateY(-5px) scale(1.01); 
-            border-color: var(--champagne);
+            transform: translateY(-8px); 
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-left-color: var(--onyx);
         }
         
         .portfolio-card:hover::before { 
             border-color: var(--champagne); 
             background: var(--champagne);
-            box-shadow: 0 0 15px var(--champagne); 
+            box-shadow: 0 0 20px rgba(222, 181, 138, 0.6); 
         }
 
-        /* BRAND ACCENTS */
-        .border-accent { border-left: 5px solid var(--champagne) !important; }
+        .date-tag { font-size: 10px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; display: block; color: var(--champagne); }
+        .company-name { font-size: 12px; font-weight: 900; color: var(--onyx); opacity: 0.5; letter-spacing: 1.5px; margin-bottom: 18px; text-transform: uppercase; }
 
-        .date-tag { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; color: var(--champagne); }
-        .company-name { font-size: 12px; font-weight: 900; color: var(--velvet); opacity: 0.5; letter-spacing: 1px; margin-bottom: 15px; text-transform: uppercase; }
-
+        /* MOBILE MENU INTERFACE */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
         #mobile-menu.active { left: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -130,7 +121,7 @@
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html"><img src="logo1.png" alt="Jerwin Lumpay" class="logo-style" style="width: 80px;"></a>
+        <a href="index.html"><img src="logo1.png" alt="Jerwin" class="logo-style" style="width: 80px;"></a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
@@ -140,7 +131,7 @@
              <span class="text-white font-black italic tracking-widest">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
-        <nav class="mb-10">
+        <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link active">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
@@ -154,47 +145,47 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-20">
-                <h2 class="text-[--onyx] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.4em] mb-4 opacity-60">Professional Roadmap</h2>
+                <h2 class="text-[--onyx] opacity-40 uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Professional Roadmap</h2>
                 <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">Career <br><span class="text-[--champagne]">Path.</span></h1>
             </header>
             
             <div class="roadmap-container">
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">May 2025 – Present | Dubai, UAE</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Front Desk Representative</h3>
                     <p class="company-name">Purple Desk</p>
                     <p class="text-[--velvet] text-sm leading-relaxed opacity-80">Managed end-to-end booking schedules and memberships using Roller CRM. Handled 10,000+ calls and contributed $80K in revenue while maintaining an exceptional AHT.</p>
                 </div>
 
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">Sept 2022 – March 2025</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Compliance Specialist</h3>
                     <p class="company-name">ADP (Automatic Data Processing)</p>
                     <p class="text-[--velvet] text-sm leading-relaxed opacity-80">Oversaw USCIS Form I-9 and E-Verify compliance for Fortune 500 clients. Mitigated legal risks through meticulous data privacy and audit-ready record keeping.</p>
                 </div>
 
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">April 2018 – August 2022</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Customer Service Team Lead</h3>
                     <p class="company-name">ibex</p>
                     <p class="text-[--velvet] text-sm leading-relaxed opacity-80">Promoted to Team Lead for GoDaddy & AT&T accounts. Managed 15+ agents, conducting performance coaching and data-driven action planning to exceed operational KPIs.</p>
                 </div>
 
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">Nov 2016 – March 2018</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Sales Associate</h3>
                     <p class="company-name">ResultsCX</p>
                     <p class="text-[--velvet] text-sm leading-relaxed opacity-80">Optimized customer acquisition for US telecom giants. Specialized in identifying customer needs and tailoring product solutions to meet sales targets.</p>
                 </div>
 
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">April 2015 – Oct 2016</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Customer Service Representative</h3>
                     <p class="company-name">Sutherland Global Services</p>
                     <p class="text-[--velvet] text-sm leading-relaxed opacity-80">Specialized in merchant disputes and chargebacks. Provided high-level transaction defense for financial institutions and handled complex refund processing.</p>
                 </div>
 
-                <div class="portfolio-card border-accent">
+                <div class="portfolio-card">
                     <span class="date-tag">March 2012 – March 2015</span>
                     <h3 class="text-3xl font-black mb-1 text-[--onyx]">Executive Administrative Assistant</h3>
                     <p class="company-name">PSAA International Academy Inc</p>
