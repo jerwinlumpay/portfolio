@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills & Proficiencies | Jerwin Lumpay</title>
+    <title>jerwinlumpay | Skills & Proficiencies</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
+    
     <style>
-        :root { --onyx: #0D0D0F; --champagne: #D8B24A; --ivory: #FFF4DE; --whatsapp: #25D366; --linkedin: #0077B5; }
-        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
-        
-        /* SIDEBAR STYLES */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        .logo-style { 
-            width: 160px; height: auto; transition: 0.3s; 
-            filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
+        :root { 
+            --onyx: #000000;         /* Sidebar & Interaction */
+            --velvet: #2D3D62;       /* Content Text */
+            --silk: #EEE5D9;         /* Main Background */
+            --champagne: #DEB58A;    /* Luxury Gold & Glow Accent */
+            --pearl: #FFFFFF;        /* Tool Cards */
         }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
 
-        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
-        .nav-link:hover, .nav-link.active { color: var(--champagne); }
-
-        .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
-        .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-linkedin { background-color: var(--linkedin); }
-
-        /* MOBILE HEADER */
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* CONTENT AREA */
+        /* LOGO - COLOR MATCHED */
+        .logo-style { 
+            width: 160px; height: auto; transition: 0.3s;
+            filter: invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
+        }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
+
+        /* SIDEBAR */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1100px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -40,73 +42,67 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* TOOL ARCHITECTURE - ENLARGED */
-        .skill-group { margin-bottom: 5rem; }
-        
-        /* Grid for tools */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 20px;
+        /* NAVIGATION - 15PX BOLD & GLOW */
+        .nav-link { 
+            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
+            color: rgba(238, 229, 217, 0.4); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            margin-bottom: 30px; display: block; text-decoration: none;
         }
+        .nav-link:hover, .nav-link.active { 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.6); transform: translateX(10px); 
+        }
+
+        /* BUTTONS */
+        .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
+        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); }
+
+        /* SKILL GROUPING */
+        .skill-group { margin-bottom: 5rem; }
+        .group-title {
+            color: var(--velvet); font-size: 11px; font-weight: 900; text-transform: uppercase; 
+            letter-spacing: 4px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px;
+        }
+        .group-title::after { content: ''; flex-grow: 1; height: 1px; background: rgba(0,0,0,0.05); }
+
+        /* TOOL CARDS */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 25px; }
 
         .tool-card { 
-            background: rgba(255, 255, 255, 0.02); 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 25px 15px; 
-            border-radius: 24px; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center;
-            gap: 15px; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
+            background: var(--pearl); border: 1px solid rgba(0, 0, 0, 0.03); 
+            padding: 35px 20px; border-radius: 28px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 18px; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
-        
-        .tool-card span {
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #999;
-        }
+
+        .tool-card span { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--velvet); opacity: 0.6; }
 
         .tool-card:hover { 
-            transform: translateY(-10px); 
-            background: rgba(255, 255, 255, 0.05); 
-            border-color: var(--champagne); 
+            transform: translateY(-12px); background: var(--pearl); 
+            border-color: var(--champagne); box-shadow: 0 20px 40px rgba(0,0,0,0.06);
         }
+        .tool-card:hover span { opacity: 1; color: var(--onyx); }
 
-        .tool-card:hover span { color: var(--ivory); }
+        /* ICON BOXES - MAINTAINING COLOR IDENTITY */
+        .ic-box { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: 0.3s; }
         
-        /* ENLARGED PERMANENT ICON BOXES */
-        .ic-box {
-            width: 65px; height: 65px;
-            border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem;
-            transition: 0.3s;
-        }
-
-        /* PERMANENT STABLE COLORS */
-        .bg-word { background: rgba(43, 87, 154, 0.15); color: #4b89dc; border: 1px solid rgba(43, 87, 154, 0.3); }
-        .bg-excel { background: rgba(33, 115, 70, 0.15); color: #40c07d; border: 1px solid rgba(33, 115, 70, 0.3); }
-        .bg-ppt { background: rgba(210, 71, 38, 0.15); color: #ff6b4a; border: 1px solid rgba(210, 71, 38, 0.3); }
-        .bg-outlook { background: rgba(0, 120, 212, 0.15); color: #4db3ff; border: 1px solid rgba(0, 120, 212, 0.3); }
-        .bg-teams { background: rgba(98, 100, 167, 0.15); color: #9294e3; border: 1px solid rgba(98, 100, 167, 0.3); }
-        .bg-google { background: rgba(234, 67, 53, 0.1); color: #ea4335; border: 1px solid rgba(234, 67, 53, 0.2); }
-        .bg-ai { background: rgba(16, 163, 127, 0.15); color: #10a37f; border: 1px solid rgba(16, 163, 127, 0.3); }
-        .bg-canva { background: rgba(0, 196, 204, 0.15); color: #00c4cc; border: 1px solid rgba(0, 196, 204, 0.3); }
-        .bg-notion { background: rgba(255, 255, 255, 0.1); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .bg-crm { background: rgba(216, 178, 74, 0.15); color: var(--champagne); border: 1px solid rgba(216, 178, 74, 0.3); }
-        .bg-slack { background: rgba(74, 21, 75, 0.2); color: #e01e5a; border: 1px solid rgba(74, 21, 75, 0.4); }
-        .bg-monday { background: rgba(255, 61, 87, 0.15); color: #ff3d57; border: 1px solid rgba(255, 61, 87, 0.3); }
-        .bg-jira { background: rgba(0, 82, 204, 0.15); color: #4c9aff; border: 1px solid rgba(0, 82, 204, 0.3); }
-        .bg-wa { background: rgba(37, 211, 102, 0.15); color: var(--whatsapp); border: 1px solid rgba(37, 211, 102, 0.3); }
+        .bg-word { background: rgba(43, 87, 154, 0.1); color: #2b579a; }
+        .bg-excel { background: rgba(33, 115, 70, 0.1); color: #217346; }
+        .bg-ppt { background: rgba(210, 71, 38, 0.1); color: #d24726; }
+        .bg-outlook { background: rgba(0, 120, 212, 0.1); color: #0078d4; }
+        .bg-teams { background: rgba(98, 100, 167, 0.1); color: #6264a7; }
+        .bg-google { background: rgba(234, 67, 53, 0.08); color: #ea4335; }
+        .bg-ai { background: rgba(16, 163, 127, 0.1); color: #10a37f; }
+        .bg-canva { background: rgba(0, 196, 204, 0.1); color: #00c4cc; }
+        .bg-notion { background: rgba(0, 0, 0, 0.05); color: #000000; }
+        .bg-crm { background: rgba(222, 181, 138, 0.2); color: var(--champagne); }
+        .bg-slack { background: rgba(74, 21, 75, 0.1); color: #4a154b; }
+        .bg-monday { background: rgba(255, 61, 87, 0.1); color: #ff3d57; }
+        .bg-jira { background: rgba(0, 82, 204, 0.1); color: #0052cc; }
+        .bg-wa { background: rgba(37, 211, 102, 0.1); color: #25D366; }
 
         /* MOBILE MENU */
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
         .overlay.active { display: block; }
@@ -128,8 +124,8 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://wa.me/971544609927" class="btn-contact"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </aside>
 
@@ -141,10 +137,10 @@
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-             <span class="text-white font-black italic">MENU</span>
+             <span class="text-white font-black italic tracking-widest">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
-        <nav class="space-y-6">
+        <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link active">Skills</a>
@@ -158,12 +154,12 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-20">
-                <h2 class="text-[#D8B24A] uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Expertise Architecture</h2>
-                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Tools & <br><span class="text-[#D8B24A]">Proficiency.</span></h1>
+                <h2 class="text-[--onyx] opacity-60 uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Expertise Architecture</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">Tools & <br><span class="text-[--champagne]">Proficiency.</span></h1>
             </header>
 
             <div class="skill-group">
-                <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">Microsoft 365 Ecosystem</h3>
+                <h3 class="group-title">Microsoft 365 Ecosystem</h3>
                 <div class="tools-grid">
                     <div class="tool-card">
                         <div class="ic-box bg-word"><i class="fas fa-file-word"></i></div>
@@ -189,7 +185,7 @@
             </div>
 
             <div class="skill-group">
-                <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">AI & Creative Design</h3>
+                <h3 class="group-title">AI & Creative Design</h3>
                 <div class="tools-grid">
                     <div class="tool-card">
                         <div class="ic-box bg-ai"><i class="fas fa-robot"></i></div>
@@ -211,7 +207,7 @@
             </div>
 
             <div class="skill-group">
-                <h3 class="text-[#D8B24A] text-[10px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">Management Infrastructure</h3>
+                <h3 class="group-title">Management Infrastructure</h3>
                 <div class="tools-grid">
                     <div class="tool-card">
                         <div class="ic-box bg-crm"><i class="fab fa-salesforce"></i></div>
