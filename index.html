@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>jerwinlumpay | Home</title>
-    <meta name="description" content="Official Portfolio of Jerwin Lumpay">
+    <title>jerwinlumpay | Executive Portfolio</title>
     <link rel="icon" type="image/png" href="logo1.png">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
@@ -29,61 +26,52 @@
             filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
         }
 
-        /* SIDEBAR FIXED LAYOUT */
+        /* SIDEBAR */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
         
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
-        
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
             .mobile-header { display: none; }
             .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
-            .section-container { padding: 80px 60px; }
         }
 
-        /* NAV LINKS WITH ACTIVE STATE */
+        /* NAVIGATION */
         .nav-link { 
             font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s ease; 
             margin-bottom: 30px; display: block; text-decoration: none;
         }
-        .nav-link:hover, .nav-link.active { 
-            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
-        }
+        .nav-link.active { color: var(--champagne); transform: translateX(10px); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); }
 
-        /* NEXT PAGE BUTTON */
-        .next-btn {
-            display: inline-flex; align-items: center; gap: 15px; margin-top: 30px;
-            font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 11px;
-            color: var(--velvet); opacity: 0.5; transition: 0.3s;
+        /* SKILLS CARD STYLE */
+        .skill-card {
+            background: var(--pearl);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            aspect-ratio: 1/1;
         }
-        .next-btn:hover { opacity: 1; color: var(--champagne); transform: translateY(5px); }
+        .skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .skill-card i, .skill-card img { font-size: 2.5rem; margin-bottom: 15px; }
+        .skill-label { font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--velvet); opacity: 0.6; }
 
-        .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
-
-        .gold-text { color: var(--champagne); }
-        
-        .competency-box { 
-            background: rgba(255, 255, 255, 0.6); 
-            border: 1px solid rgba(0, 0, 0, 0.05); 
-            border-left: 4px solid var(--champagne); 
-            padding: 30px; transition: 0.4s; height: 100%; 
-            backdrop-filter: blur(10px);
-            border-radius: 4px;
-        }
-        .competency-box:hover { background: var(--pearl); border-left-color: var(--onyx); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        /* SECTION PADDING */
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 25px; border-bottom: 1px solid rgba(0,0,0,0.02); }
+        @media (min-width: 1024px) { section { padding: 120px 80px; } }
 
         /* MOBILE MENU (RIGHT SIDE) */
-        #mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
+        #mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { right: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
-
-        /* FULL HEIGHT SECTIONS */
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        
+        .gold-text { color: var(--champagne); }
     </style>
 </head>
 <body>
@@ -92,7 +80,7 @@
         <div class="mb-20">
             <a href="#home"><img src="logo1.png" alt="jerwinlumpay" class="logo-style"></a>
         </div>
-        <nav id="desktop-nav">
+        <nav>
             <a href="#home" class="nav-link">Home</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#skills" class="nav-link">Skills</a>
@@ -102,109 +90,124 @@
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-4">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact">
-                <i class="fab fa-linkedin-in"></i> LINKEDIN
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact">
-                <i class="fab fa-whatsapp"></i> WHATSAPP
-            </a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" class="btn-contact bg-white text-black p-4 rounded-full font-black text-[11px] block text-center uppercase tracking-widest">LinkedIn</a>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <a href="#home"><img src="logo1.png" alt="jerwinlumpay" class="logo-style" style="width: 80px;"></a>
+        <img src="logo1.png" alt="logo" class="logo-style" style="width: 80px;">
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-             <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
-             <span class="text-white font-black italic tracking-widest">MENU</span>
+            <span class="text-white font-black italic tracking-widest">MENU</span>
+            <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
-        <nav>
+        <nav class="flex flex-col">
             <a href="#home" onclick="toggleMenu()" class="nav-link">Home</a>
             <a href="#portfolio" onclick="toggleMenu()" class="nav-link">Portfolio</a>
             <a href="#skills" onclick="toggleMenu()" class="nav-link">Skills</a>
-            <a href="#services" onclick="toggleMenu()" class="nav-link">Services</a>
             <a href="#contact" onclick="toggleMenu()" class="nav-link">Contact</a>
         </nav>
     </div>
 
     <main class="main-content">
         <section id="home">
-            <div class="section-container">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
-                    <div class="lg:col-span-5 order-2 lg:order-1">
-                        <div class="relative group">
-                            <div class="absolute -inset-2 bg-gradient-to-tr from-[--champagne] to-transparent rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                            <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-black/5 shadow-2xl transition-all duration-700">
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-7 space-y-6 lg:space-y-8 order-1 lg:order-2">
-                        <h2 class="text-[--velvet] opacity-60 uppercase tracking-[0.6em] text-[13px] md:text-[14px] font-black">
-                            Executive Operations | Specialized Support | Technical Admin
-                        </h2>
-                        <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
-                            Jerwin <br><span class="gold-text">Lumpay.</span>
-                        </h1>
-                        <p class="text-base md:text-lg text-[--velvet] font-light leading-relaxed max-w-2xl">
-                            Strategic operations professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and specialized Customer Operations. Expert in CRM/ERP management and AI-driven workflows.
-                        </p>
-                        <div class="pt-4">
-                            <a href="Jerwin_Lumpay_CV.pdf" download class="border-2 border-[--onyx] text-[--onyx] px-10 py-4 lg:px-12 lg:py-5 rounded-full text-[10px] lg:text-[11px] font-black uppercase hover:bg-[--onyx] hover:text-[--silk] transition-all flex items-center gap-3 w-fit tracking-widest shadow-lg">
-                                <i class="fas fa-download"></i> Download CV
-                            </a>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <img src="jerwindp.jpg" alt="Jerwin" class="rounded-2xl w-full border border-black/5 shadow-2xl">
                 </div>
-                <a href="#portfolio" class="next-btn">Next Chapter — Portfolio <i class="fas fa-arrow-down"></i></a>
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                    <h2 class="text-[--velvet] opacity-60 uppercase tracking-[0.5em] text-[13px] font-black italic">Executive Operations | Specialized Support | Technical Admin</h2>
+                    <h1 class="text-7xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
+                        Jerwin <br><span class="gold-text">Lumpay.</span>
+                    </h1>
+                    <p class="text-lg text-[--velvet] font-light leading-relaxed max-w-2xl">
+                        Strategic operations professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and specialized Customer Operations. Expert in CRM/ERP management and AI-driven workflows.
+                    </p>
+                    <a href="Jerwin_Lumpay_CV.pdf" download class="inline-flex items-center gap-3 border-2 border-black px-10 py-4 rounded-full font-black uppercase text-[11px] tracking-widest hover:bg-black hover:text-white transition-all">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
             </div>
+            <div class="mt-12 uppercase text-[10px] font-black opacity-40 tracking-[0.4em]">Next Chapter — Portfolio</div>
         </section>
 
         <section id="portfolio">
-            <div class="section-container">
-                <div class="bg-black/5 p-10 md:p-16 rounded-[40px]">
-                    <h3 class="text-[--velvet] text-[11px] font-black uppercase tracking-[0.5em] mb-12 flex items-center gap-6">
-                        Expertise Architecture <span class="h-[1px] flex-1 bg-black/10"></span>
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="competency-box">
-                            <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Administration</h4>
-                            <p class="text-[--velvet] text-xs leading-relaxed opacity-70">Executive Support & Global Calendar Management.</p>
-                        </div>
-                        <div class="competency-box">
-                            <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Operations</h4>
-                            <p class="text-[--velvet] text-xs leading-relaxed opacity-70">E-Verify Compliance & Workflow Optimization.</p>
-                        </div>
-                        <div class="competency-box">
-                            <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Technical</h4>
-                            <p class="text-[--velvet] text-xs leading-relaxed opacity-70">CRM/ERP Management & AI Productivity Tools.</p>
-                        </div>
-                        <div class="competency-box">
-                            <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Leadership</h4>
-                            <p class="text-[--velvet] text-xs leading-relaxed opacity-70">Strategic KPI Management & Team Coaching.</p>
-                        </div>
-                    </div>
+            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-10">Expertise Architecture</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/40 p-8 border-l-4 border-[--champagne] rounded-r-lg">
+                    <h4 class="gold-text font-black text-[10px] uppercase mb-2 tracking-widest">Administration</h4>
+                    <p class="text-xs opacity-70">Executive Support & Global Calendar Management.</p>
                 </div>
-                <a href="#skills" class="next-btn">Next Chapter — Skills <i class="fas fa-arrow-down"></i></a>
+                <div class="bg-white/40 p-8 border-l-4 border-[--champagne] rounded-r-lg">
+                    <h4 class="gold-text font-black text-[10px] uppercase mb-2 tracking-widest">Operations</h4>
+                    <p class="text-xs opacity-70">E-Verify Compliance & Workflow Optimization.</p>
+                </div>
+                <div class="bg-white/40 p-8 border-l-4 border-[--champagne] rounded-r-lg">
+                    <h4 class="gold-text font-black text-[10px] uppercase mb-2 tracking-widest">Technical</h4>
+                    <p class="text-xs opacity-70">CRM/ERP Management & AI Productivity Tools.</p>
+                </div>
+                <div class="bg-white/40 p-8 border-l-4 border-[--champagne] rounded-r-lg">
+                    <h4 class="gold-text font-black text-[10px] uppercase mb-2 tracking-widest">Leadership</h4>
+                    <p class="text-xs opacity-70">Strategic KPI Management & Team Coaching.</p>
+                </div>
             </div>
         </section>
 
-        <section id="skills"><div class="section-container"><h1 class="text-6xl font-black italic uppercase">Skills Section</h1></div></section>
-        <section id="services"><div class="section-container"><h1 class="text-6xl font-black italic uppercase">Services Section</h1></div></section>
-        <section id="contact"><div class="section-container"><h1 class="text-6xl font-black italic uppercase">Contact Section</h1></div></section>
+        <section id="skills">
+            <div class="mb-16">
+                <h3 class="text-[14px] font-black uppercase tracking-[0.5em] opacity-40 mb-4">Expertise Architecture</h3>
+                <h1 class="text-7xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
+                    Tools & <br><span class="gold-text">Proficiency.</span>
+                </h1>
+            </div>
+
+            <div class="mb-20">
+                <h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
+                    Microsoft 365 Ecosystem <span class="h-[1px] flex-1 bg-black/10"></span>
+                </h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="skill-card"><i class="far fa-file-word text-blue-600"></i><span class="skill-label">Word</span></div>
+                    <div class="skill-card"><i class="far fa-file-excel text-green-600"></i><span class="skill-label">Excel</span></div>
+                    <div class="skill-card"><i class="far fa-file-powerpoint text-orange-600"></i><span class="skill-label">PowerPoint</span></div>
+                    <div class="skill-card"><i class="far fa-envelope text-blue-500"></i><span class="skill-label">Outlook</span></div>
+                    <div class="skill-card"><i class="fas fa-users text-purple-600"></i><span class="skill-label">Teams</span></div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-10 flex items-center gap-4">
+                    AI & Creative Design <span class="h-[1px] flex-1 bg-black/10"></span>
+                </h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="skill-card"><i class="fas fa-robot text-teal-600"></i><span class="skill-label">ChatGPT</span></div>
+                    <div class="skill-card"><i class="fab fa-google text-red-500"></i><span class="skill-label">Workspace</span></div>
+                    <div class="skill-card"><i class="fas fa-paint-brush text-cyan-500"></i><span class="skill-label">Canva</span></div>
+                    <div class="skill-card"><i class="fas fa-sticky-note text-black"></i><span class="skill-label">Notion</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h1 class="text-7xl font-black italic uppercase tracking-tighter text-[--velvet]">Services Section</h1>
+        </section>
+
+        <section id="contact">
+            <h1 class="text-7xl font-black italic uppercase tracking-tighter text-[--velvet]">Contact Section</h1>
+        </section>
+
     </main>
 
     <script>
-        // MOBILE MENU (RIGHT SIDE)
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
-        // SCROLL SPY LOGIC
+        // SCROLL SPY
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
 
@@ -212,12 +215,10 @@
             let current = "";
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                if (pageYOffset >= sectionTop - 100) {
                     current = section.getAttribute("id");
                 }
             });
-
             navLinks.forEach((link) => {
                 link.classList.remove("active");
                 if (link.getAttribute("href").includes(current)) {
