@@ -9,26 +9,28 @@
     <link href="https://fonts.cdnfonts.com/css/p22-underground" rel="stylesheet">
     <style>
         :root { 
-            --onyx: #0D0D0F; 
-            --champagne: #D8B24A; 
-            --ivory: #FFF4DE; 
+            --onyx: #000000; 
+            --champagne: #DEB58A; 
+            --silk: #EEE5D9; 
+            --velvet: #2D3D62;
             --whatsapp: #25D366; 
             --linkedin: #0077B5;
             --location-red: #FF4B2B;
         }
         
-        body { background-color: var(--onyx); color: var(--ivory); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
+        body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO STYLE */
+        /* LOGO TINTING - CHAMPAGNE FILTER */
         .logo-style { 
-            width: 160px; height: auto; transition: 0.3s;
-            filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
+            width: 160px; height: auto; transition: 0.3s; 
+            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%); 
         }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
         /* NAVIGATION ARCHITECTURE */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #08080A; border-right: 1px solid rgba(216, 178, 74, 0.1); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #08080A; border-bottom: 1px solid rgba(216, 178, 74, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); border-right: 1px solid rgba(222, 181, 138, 0.05); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); border-bottom: 1px solid rgba(222, 181, 138, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -39,47 +41,59 @@
             .section-container { padding: 80px 60px; }
         }
 
-        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #666; transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
-        .nav-link:hover, .nav-link.active { color: var(--champagne); }
+        /* ENHANCED NAVIGATION */
+        .nav-link { 
+            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            margin-bottom: 30px; display: block; text-decoration: none; 
+        }
+        .nav-link:hover, .nav-link.active { 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
+        }
         
-        .btn-contact { color: white; padding: 12px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: 0.3s; width: 100%; }
-        .btn-whatsapp { background-color: var(--whatsapp); }
-        .btn-linkedin { background-color: var(--linkedin); }
+        /* SIDEBAR CONTACT BUTTONS */
+        .btn-contact { 
+            background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; 
+            font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; 
+            align-items: center; justify-content: center; gap: 10px; text-decoration: none; 
+            transition: 0.3s; width: 100%; letter-spacing: 1px; 
+        }
+        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
 
-        /* STABLE CONTACT CARDS */
+        /* CONTACT CARDS */
         .contact-item { 
-            display: flex; align-items: center; gap: 20px; padding: 30px; 
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 255, 255, 0.05); 
-            border-radius: 24px; transition: 0.3s ease; 
-            text-decoration: none; color: inherit; 
+            display: flex; align-items: center; gap: 20px; padding: 35px; 
+            background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 0, 0, 0.05); 
+            border-radius: 28px; transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+            text-decoration: none; color: inherit; backdrop-filter: blur(10px);
         }
         .contact-item:hover { 
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(216, 178, 74, 0.2);
-            transform: translateY(-5px);
+            background: #FFFFFF;
+            border-color: var(--champagne);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
-        /* PERMANENT SOFT COLORED ICON BOXES */
+        /* ICON BOXES */
         .icon-box { 
-            width: 54px; height: 54px; border-radius: 15px; 
+            width: 60px; height: 60px; border-radius: 18px; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 1.3rem;
+            font-size: 1.4rem; flex-shrink: 0;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
         }
         
-        /* Stable, Non-Flickering Brand Colors */
-        .ic-location { background: rgba(255, 75, 43, 0.15); color: var(--location-red); }
-        .ic-mail { background: rgba(216, 178, 74, 0.15); color: var(--champagne); }
-        .ic-whatsapp { background: rgba(37, 211, 102, 0.15); color: var(--whatsapp); }
-        .ic-linkedin { background: rgba(0, 119, 181, 0.15); color: var(--linkedin); }
+        .ic-location { background: rgba(255, 75, 43, 0.1); color: var(--location-red); }
+        .ic-mail { background: rgba(222, 181, 138, 0.15); color: var(--champagne); }
+        .ic-whatsapp { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
+        .ic-linkedin { background: rgba(0, 119, 181, 0.1); color: var(--linkedin); }
 
-        .label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #777; display: block; margin-bottom: 4px; }
-        .detail { font-size: 1.05rem; font-weight: 700; color: var(--ivory); }
-        .gold-text { color: var(--champagne); }
+        .label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--velvet); opacity: 0.4; display: block; margin-bottom: 4px; }
+        .detail { font-size: 1.15rem; font-weight: 800; color: var(--velvet); letter-spacing: -0.5px; }
 
         /* Mobile Menu */
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: #08080A; z-index: 120; transition: 0.4s; padding: 40px; }
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
         #mobile-menu.active { left: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -98,9 +112,13 @@
             <a href="feedback.html" class="nav-link">Feedback</a>
             <a href="contact.html" class="nav-link active">Contact</a>
         </nav>
-        <div class="mt-auto space-y-3">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact btn-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://wa.me/971544609927" class="btn-contact btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <div class="mt-auto space-y-4">
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact">
+                <i class="fab fa-linkedin-in"></i> LINKEDIN
+            </a>
+            <a href="https://wa.me/971544609927" class="btn-contact">
+                <i class="fab fa-whatsapp"></i> WHATSAPP
+            </a>
         </div>
     </aside>
 
@@ -112,10 +130,10 @@
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-             <span class="text-white font-black italic">MENU</span>
+             <span class="text-white font-black italic tracking-widest">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
-        <nav class="space-y-6">
+        <nav>
             <a href="index.html" class="nav-link">Home</a>
             <a href="portfolio.html" class="nav-link">Portfolio</a>
             <a href="skills.html" class="nav-link">Skills</a>
@@ -129,8 +147,8 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-12 lg:mb-16">
-                <h2 class="text-[#D8B24A] text-[10px] md:text-[12px] font-extrabold uppercase tracking-[0.5em] mb-4">Direct Communication</h2>
-                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">Get In <br><span class="gold-text">Touch.</span></h1>
+                <h2 class="text-[--onyx] opacity-40 text-[10px] md:text-[12px] font-black uppercase tracking-[0.5em] mb-4">Direct Communication</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">Get In <br><span class="text-[--champagne]">Touch.</span></h1>
             </header>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl">
