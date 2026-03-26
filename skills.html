@@ -12,24 +12,24 @@
     
     <style>
         :root { 
-            --onyx: #000000;         /* Sidebar & Interaction */
-            --velvet: #2D3D62;       /* Content Text */
-            --silk: #EEE5D9;         /* Main Background */
-            --champagne: #DEB58A;    /* Luxury Gold & Glow Accent */
-            --pearl: #FFFFFF;        /* Tool Cards */
+            --onyx: #000000;         /* Sidebar & Mobile Header */
+            --velvet: #2D3D62;       /* Body Text */
+            --silk: #EEE5D9;         /* Content Background */
+            --champagne: #DEB58A;    /* Primary Brand Gold */
+            --pearl: #FFFFFF;        /* Card Surface */
         }
 
         body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO - COLOR MATCHED */
+        /* LOGO - ALIGNED TO CHAMPAGNE BRAND COLOR */
         .logo-style { 
             width: 160px; height: auto; transition: 0.3s;
-            filter: invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
+            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
         }
         .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
-        /* SIDEBAR */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        /* SIDEBAR ARCHITECTURE */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
         
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
@@ -42,29 +42,28 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* NAVIGATION - 15PX BOLD & GLOW */
+        /* NAVIGATION - LUXE 15PX BOLD */
         .nav-link { 
             font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.4); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             margin-bottom: 30px; display: block; text-decoration: none;
         }
         .nav-link:hover, .nav-link.active { 
-            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.6); transform: translateX(10px); 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
         }
 
-        /* BUTTONS */
+        /* SIDEBAR ACTIONS */
         .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); }
+        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
 
-        /* SKILL GROUPING */
+        /* SKILLS DISPLAY */
         .skill-group { margin-bottom: 5rem; }
         .group-title {
             color: var(--velvet); font-size: 11px; font-weight: 900; text-transform: uppercase; 
             letter-spacing: 4px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px;
         }
-        .group-title::after { content: ''; flex-grow: 1; height: 1px; background: rgba(0,0,0,0.05); }
+        .group-title::after { content: ''; flex-grow: 1; height: 1px; background: rgba(0,0,0,0.08); }
 
-        /* TOOL CARDS */
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 25px; }
 
         .tool-card { 
@@ -78,33 +77,33 @@
         .tool-card span { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--velvet); opacity: 0.6; }
 
         .tool-card:hover { 
-            transform: translateY(-12px); background: var(--pearl); 
-            border-color: var(--champagne); box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            transform: translateY(-12px); border-color: var(--champagne); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
         }
         .tool-card:hover span { opacity: 1; color: var(--onyx); }
 
-        /* ICON BOXES - MAINTAINING COLOR IDENTITY */
-        .ic-box { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: 0.3s; }
+        /* BRANDED ICON SLOTS */
+        .ic-box { width: 70px; height: 70px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: 0.3s; }
         
-        .bg-word { background: rgba(43, 87, 154, 0.1); color: #2b579a; }
-        .bg-excel { background: rgba(33, 115, 70, 0.1); color: #217346; }
-        .bg-ppt { background: rgba(210, 71, 38, 0.1); color: #d24726; }
-        .bg-outlook { background: rgba(0, 120, 212, 0.1); color: #0078d4; }
-        .bg-teams { background: rgba(98, 100, 167, 0.1); color: #6264a7; }
+        .bg-word { background: rgba(43, 87, 154, 0.08); color: #2b579a; }
+        .bg-excel { background: rgba(33, 115, 70, 0.08); color: #217346; }
+        .bg-ppt { background: rgba(210, 71, 38, 0.08); color: #d24726; }
+        .bg-outlook { background: rgba(0, 120, 212, 0.08); color: #0078d4; }
+        .bg-teams { background: rgba(98, 100, 167, 0.08); color: #6264a7; }
         .bg-google { background: rgba(234, 67, 53, 0.08); color: #ea4335; }
-        .bg-ai { background: rgba(16, 163, 127, 0.1); color: #10a37f; }
-        .bg-canva { background: rgba(0, 196, 204, 0.1); color: #00c4cc; }
+        .bg-ai { background: rgba(16, 163, 127, 0.08); color: #10a37f; }
+        .bg-canva { background: rgba(0, 196, 204, 0.08); color: #00c4cc; }
         .bg-notion { background: rgba(0, 0, 0, 0.05); color: #000000; }
         .bg-crm { background: rgba(222, 181, 138, 0.2); color: var(--champagne); }
-        .bg-slack { background: rgba(74, 21, 75, 0.1); color: #4a154b; }
-        .bg-monday { background: rgba(255, 61, 87, 0.1); color: #ff3d57; }
-        .bg-jira { background: rgba(0, 82, 204, 0.1); color: #0052cc; }
-        .bg-wa { background: rgba(37, 211, 102, 0.1); color: #25D366; }
+        .bg-slack { background: rgba(74, 21, 75, 0.08); color: #4a154b; }
+        .bg-monday { background: rgba(255, 61, 87, 0.08); color: #ff3d57; }
+        .bg-jira { background: rgba(0, 82, 204, 0.08); color: #0052cc; }
+        .bg-wa { background: rgba(37, 211, 102, 0.08); color: #25D366; }
 
-        /* MOBILE MENU */
+        /* MOBILE MENU INTERFACE */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
         #mobile-menu.active { left: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -154,7 +153,7 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-20">
-                <h2 class="text-[--onyx] opacity-60 uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Expertise Architecture</h2>
+                <h2 class="text-[--onyx] opacity-40 uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold mb-4">Expertise Architecture</h2>
                 <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">Tools & <br><span class="text-[--champagne]">Proficiency.</span></h1>
             </header>
 
