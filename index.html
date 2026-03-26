@@ -7,6 +7,7 @@
     <title>jerwinlumpay</title>
     <meta name="description" content="Official Portfolio of Jerwin Lumpay">
     <meta property="og:title" content="jerwinlumpay">
+    <link rel="icon" type="image/png" href="logo1.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,24 +15,25 @@
     
     <style>
         :root { 
-            --onyx: #000000;         /* Primary Background */
-            --velvet: #2D3D62;       /* Professional Deep Blue Accent */
-            --silk: #EEE5D9;         /* Sophisticated Off-White */
-            --champagne: #DEB58A;    /* Elegant Muted Gold */
-            --marble: #EBEAE0;       /* Soft Light Grey */
-            --pearl: #FFFFFF;        /* Pure White */
+            --onyx: #000000;         /* Primary Interaction / Icons */
+            --velvet: #2D3D62;       /* Content Text */
+            --silk: #EEE5D9;         /* Sophisticated Background */
+            --champagne: #DEB58A;    /* Headings & High-End Accents */
+            --marble: #EBEAE0;       /* Section Separators */
+            --pearl: #FFFFFF;        /* Content Panels */
         }
 
-        body { background-color: var(--onyx); color: var(--silk); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
+        body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
         .logo-style { 
             width: 160px; height: auto; transition: 0.3s;
-            filter: brightness(0) saturate(100%) invert(84%) sepia(26%) saturate(1048%) hue-rotate(3deg) brightness(91%) contrast(85%);
+            filter: brightness(0) saturate(100%) invert(8%) sepia(85%) saturate(3061%) hue-rotate(352deg) brightness(89%) contrast(110%);
         }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); opacity: 1; }
+        .logo-style:hover { filter: brightness(0) saturate(100%) invert(11%); sepia(49%) saturate(1473%) hue-rotate(3deg) brightness(96%) contrast(85%); opacity: 1; }
 
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: #050505; border-right: 1px solid rgba(238, 229, 217, 0.05); display: none; flex-direction: column; padding: 40px; z-index: 100; }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: #050505; border-bottom: 1px solid rgba(238, 229, 217, 0.05); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        /* SIDEBAR - Onyx Panel */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); border-right: 1px solid rgba(238, 229, 217, 0.05); display: none; flex-direction: column; padding: 40px; z-index: 100; color: var(--silk); }
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); border-bottom: 1px solid rgba(238, 229, 217, 0.05); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -42,24 +44,27 @@
             .section-container { padding: 80px 60px; }
         }
 
-        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: rgba(238, 229, 217, 0.4); transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
+        .nav-link { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: rgba(238, 229, 217, 0.6); transition: 0.3s; margin-bottom: 25px; display: block; text-decoration: none; }
         .nav-link:hover, .nav-link.active { color: var(--champagne); }
         
-        /* Unified Luxury Button Style */
-        .btn-contact { color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; background-color: var(--champagne); }
-        .btn-contact:hover { background-color: var(--silk); transform: translateY(-2px); }
+        /* New Luxury Button Style - Onyx & Pearl */
+        .btn-contact { color: var(--pearl); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; background-color: var(--silk); color: var(--onyx); }
+        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); }
 
         .gold-text { color: var(--champagne); }
+        .velvet-text { color: var(--velvet); }
         
+        /* High-End Glass Competency Box */
         .competency-box { 
-            background: rgba(238, 229, 217, 0.02); 
-            border: 1px solid rgba(238, 229, 217, 0.05); 
-            border-left: 2px solid var(--champagne); 
+            background: rgba(255, 255, 255, 0.6); 
+            border: 1px solid rgba(0, 0, 0, 0.05); 
+            border-left: 3px solid var(--champagne); 
             padding: 30px; transition: 0.3s; height: 100%; 
+            backdrop-filter: blur(5px);
         }
-        .competency-box:hover { background: rgba(238, 229, 217, 0.05); border-color: var(--champagne); }
+        .competency-box:hover { background: rgba(255, 255, 255, 0.9); border-color: var(--champagne); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
 
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: #050505; z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; color: var(--silk); }
         #mobile-menu.active { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
         .overlay.active { display: block; }
@@ -119,69 +124,3 @@
                 <i class="fab fa-linkedin-in"></i> LINKEDIN
             </a>
             <a href="https://wa.me/971544609927" class="btn-contact">
-                <i class="fab fa-whatsapp"></i> WHATSAPP
-            </a>
-        </div>
-    </div>
-
-    <main class="main-content">
-        <div class="section-container flex flex-col justify-center" style="min-height: 90vh;">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
-                <div class="lg:col-span-5 order-2 lg:order-1">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-[--champagne] to-transparent rounded-2xl blur opacity-10 transition"></div>
-                        <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-white/5 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-                    </div>
-                </div>
-                <div class="lg:col-span-7 space-y-6 lg:space-y-8 order-1 lg:order-2">
-                    <h2 class="text-[--champagne] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.4em]">
-                        Operations | Executive Support | Technical Admin
-                    </h2>
-                    <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-white">
-                        Jerwin <br><span class="gold-text">Lumpay.</span>
-                    </h1>
-                    <p class="text-base md:text-lg text-[--marble] font-light leading-relaxed max-w-2xl opacity-80">
-                        Strategic professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and Operations. Expert in CRM/ERP management and AI-driven workflows to maximize efficiency for global clients.
-                    </p>
-                    <div class="pt-4">
-                        <a href="Jerwin_Lumpay_CV.pdf" download class="border-2 border-[--champagne] text-[--champagne] px-10 py-4 lg:px-12 lg:py-5 rounded-full text-[10px] lg:text-[11px] font-black uppercase hover:bg-[--champagne] hover:text-black transition-all flex items-center gap-3 w-fit tracking-widest">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-container">
-            <h3 class="text-white/40 text-[11px] font-black uppercase tracking-[0.5em] mb-12 flex items-center gap-6">
-                Expertise <span class="h-[1px] flex-1 bg-white/5"></span>
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Administration</h4>
-                    <p class="text-[--marble] text-xs leading-relaxed opacity-70">Executive Support & Global Calendar Management.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Operations</h4>
-                    <p class="text-[--marble] text-xs leading-relaxed opacity-70">E-Verify Compliance & Workflow Optimization.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Technical</h4>
-                    <p class="text-[--marble] text-xs leading-relaxed opacity-70">CRM/ERP Management & AI Productivity Tools.</p>
-                </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Leadership</h4>
-                    <p class="text-[--marble] text-xs leading-relaxed opacity-70">Strategic KPI Management & Team Coaching.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
