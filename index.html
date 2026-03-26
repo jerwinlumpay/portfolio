@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>jerwinlumpay</title>
+    <title>jerwinlumpay | Home</title>
     <meta name="description" content="Official Portfolio of Jerwin Lumpay">
     <link rel="icon" type="image/png" href="logo1.png">
     
@@ -14,7 +14,7 @@
     
     <style>
         :root { 
-            --onyx: #000000;         /* Sidebar & Interaction */
+            --onyx: #000000;         /* Sidebar & Mobile Header */
             --velvet: #2D3D62;       /* Content Text */
             --silk: #EEE5D9;         /* Main Background */
             --champagne: #DEB58A;    /* Luxury Gold & Glow Accent */
@@ -23,16 +23,17 @@
 
         body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO - MATCHED TO CHAMPAGNE #DEB58A */
+        /* LOGO - ALIGNED TO CHAMPAGNE #DEB58A */
         .logo-style { 
             width: 160px; height: auto; transition: 0.3s;
-            filter: invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
+            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
         }
         .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
-        /* SIDEBAR */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; }
+        /* SIDEBAR ARCHITECTURE */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -43,27 +44,19 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* ENHANCED NAVIGATION - BIGGER FONT & GLOW */
+        /* NAVIGATION - LUXE 15PX BOLD */
         .nav-link { 
-            font-size: 15px; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.4); 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            margin-bottom: 30px; 
-            display: block; 
-            text-decoration: none;
+            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
+            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            margin-bottom: 30px; display: block; text-decoration: none;
         }
         .nav-link:hover, .nav-link.active { 
-            color: var(--champagne); 
-            text-shadow: 0 0 15px rgba(222, 181, 138, 0.6); 
-            transform: translateX(10px); 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
         }
 
         /* BUTTONS */
         .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-contact:hover { background-color: var(--champagne); transform: translateY(-2px); box-shadow: 0 0 15px rgba(222, 181, 138, 0.3); }
+        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
 
         .gold-text { color: var(--champagne); }
         
@@ -71,16 +64,17 @@
         .competency-box { 
             background: rgba(255, 255, 255, 0.6); 
             border: 1px solid rgba(0, 0, 0, 0.05); 
-            border-left: 3px solid var(--champagne); 
-            padding: 30px; transition: 0.3s; height: 100%; 
-            backdrop-filter: blur(5px);
+            border-left: 4px solid var(--champagne); 
+            padding: 30px; transition: 0.4s; height: 100%; 
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
         }
-        .competency-box:hover { background: rgba(255, 255, 255, 0.9); border-color: var(--champagne); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .competency-box:hover { background: var(--pearl); border-left-color: var(--onyx); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
 
-        /* MOBILE MENU */
+        /* MOBILE MENU INTERFACE */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
         #mobile-menu.active { left: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -136,12 +130,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
                     <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-[--champagne] to-transparent rounded-2xl blur opacity-10 transition"></div>
-                        <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-black/5 shadow-2xl transition-all duration-700">
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-[--champagne] to-transparent rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-black/5 shadow-2xl transition-all duration-700 grayscale hover:grayscale-0">
                     </div>
                 </div>
+
                 <div class="lg:col-span-7 space-y-6 lg:space-y-8 order-1 lg:order-2">
-                    <h2 class="text-[--onyx] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.4em]">
+                    <h2 class="text-[--onyx] opacity-40 uppercase tracking-[0.5em] text-[10px] md:text-[11px] font-extrabold">
                         Executive Operations | Specialized Support | Technical Admin
                     </h2>
                     <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
@@ -159,9 +154,9 @@
             </div>
         </div>
 
-        <div class="section-container bg-black/5 p-16 rounded-[40px] my-10">
+        <div class="section-container bg-black/5 p-10 md:p-16 rounded-[40px] my-10">
             <h3 class="text-[--velvet] text-[11px] font-black uppercase tracking-[0.5em] mb-12 flex items-center gap-6">
-                Expertise Architecture <span class="h-[1px] flex-1 bg-black/5"></span>
+                Expertise Architecture <span class="h-[1px] flex-1 bg-black/10"></span>
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="competency-box">
