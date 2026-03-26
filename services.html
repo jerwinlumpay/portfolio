@@ -15,7 +15,8 @@
             --velvet: #2D3D62;
         }
         
-        body { background-color: var(--onyx); color: var(--silk); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
+        /* BODY MATCHES THE PALETTE (SILK) */
+        body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
         /* LOGO TINTING - CHAMPAGNE FILTER */
         .logo-style { 
@@ -24,9 +25,10 @@
         }
         .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
-        /* SIDEBAR & HEADER */
+        /* SIDEBAR REMAINS BLACK */
         .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); border-right: 1px solid rgba(222, 181, 138, 0.05); display: none; flex-direction: column; padding: 40px; z-index: 100; }
         .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); border-bottom: 1px solid rgba(222, 181, 138, 0.1); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        
         .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
         .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
         
@@ -37,7 +39,7 @@
             .section-container { padding: 80px 60px; }
         }
 
-        /* ENHANCED NAVIGATION */
+        /* NAVIGATION IN BLACK SIDEBAR */
         .nav-link { 
             font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
             color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
@@ -47,7 +49,7 @@
             color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
         }
         
-        /* CLEAN SILK SIDEBAR BUTTONS */
+        /* SIDEBAR BUTTONS */
         .btn-contact { 
             background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; 
             font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; 
@@ -59,17 +61,19 @@
             box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); 
         }
 
-        /* SERVICE CARDS */
+        /* SERVICE CARDS - ADJUSTED FOR SILK BACKGROUND */
         .service-card { 
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
+            background: rgba(255, 255, 255, 0.6); 
+            border: 1px solid rgba(0, 0, 0, 0.05); 
             padding: 40px; border-radius: 30px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             height: 100%; 
+            backdrop-filter: blur(10px);
         }
         .service-card:hover { 
-            background: rgba(255, 255, 255, 0.05);
+            background: #FFFFFF;
             border-color: var(--champagne);
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
         /* ICONS */
@@ -77,13 +81,13 @@
             width: 75px; height: 75px; border-radius: 20px;
             display: flex; align-items: center; justify-content: center;
             font-size: 2rem; margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .ic-admin { color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
-        .ic-support { color: #34d399; background: rgba(16, 185, 129, 0.1); }
+        .ic-admin { color: #3b82f6; background: rgba(59, 130, 246, 0.1); }
+        .ic-support { color: #10b981; background: rgba(16, 185, 129, 0.1); }
         .ic-sales { color: var(--champagne); background: rgba(222, 181, 138, 0.1); }
-        .ic-ops { color: #c084fc; background: rgba(168, 85, 247, 0.1); }
+        .ic-ops { color: #a855f7; background: rgba(168, 85, 247, 0.1); }
 
         /* Mobile Menu */
         #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
@@ -138,15 +142,15 @@
     <main class="main-content">
         <div class="section-container">
             <header class="mb-12 lg:mb-20">
-                <h2 class="text-[--champagne] text-[10px] md:text-[11px] font-black uppercase tracking-[0.5em] mb-4">Core Solutions</h2>
-                <h1 class="text-6xl md:text-8xl font-black italic uppercase mb-4 leading-none text-white tracking-tighter">Top Service <br><span class="text-[--champagne]">Offerings.</span></h1>
+                <h2 class="text-[--onyx] opacity-40 text-[10px] md:text-[11px] font-black uppercase tracking-[0.5em] mb-4">Core Solutions</h2>
+                <h1 class="text-6xl md:text-8xl font-black italic uppercase mb-4 leading-none text-[--velvet] tracking-tighter">Top Service <br><span class="text-[--champagne]">Offerings.</span></h1>
             </header>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 <div class="service-card">
                     <div class="icon-container ic-admin"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">01. Executive Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-4">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-[--velvet] italic">01. Executive Support</h3>
+                    <ul class="text-[--velvet] opacity-70 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Calendar and email management</li>
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Scheduling, reports, and documentation</li>
                         <li class="flex gap-3"> <span class="text-blue-500 font-bold">•</span> Travel and coordination tasks</li>
@@ -155,8 +159,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-support"><i class="fas fa-headset"></i></div>
-                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">02. Customer Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-4">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-[--velvet] italic">02. Customer Support</h3>
+                    <ul class="text-[--velvet] opacity-70 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> Chat, email, and phone support</li>
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> Complaint resolution and escalation</li>
                         <li class="flex gap-3"> <span class="text-emerald-500 font-bold">•</span> CRM updates and customer tracking</li>
@@ -165,8 +169,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-sales"><i class="fas fa-piggy-bank"></i></div>
-                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">03. Sales & Booking</h3>
-                    <ul class="text-slate-400 text-sm space-y-4">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-[--velvet] italic">03. Sales & Booking</h3>
+                    <ul class="text-[--velvet] opacity-70 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-[--champagne] font-bold">•</span> Lead follow-ups and client onboarding</li>
                         <li class="flex gap-3"> <span class="text-[--champagne] font-bold">•</span> Upselling and booking management</li>
                         <li class="flex gap-3"> <span class="text-[--champagne] font-bold">•</span> Revenue tracking and coordination</li>
@@ -175,8 +179,8 @@
 
                 <div class="service-card">
                     <div class="icon-container ic-ops"><i class="fas fa-layer-group"></i></div>
-                    <h3 class="text-2xl font-black uppercase mb-5 text-white italic">04. Operations Support</h3>
-                    <ul class="text-slate-400 text-sm space-y-4">
+                    <h3 class="text-2xl font-black uppercase mb-5 text-[--velvet] italic">04. Operations Support</h3>
+                    <ul class="text-[--velvet] opacity-70 text-sm space-y-4">
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> Workflow organization and task tracking</li>
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> SOP creation and process improvement</li>
                         <li class="flex gap-3"> <span class="text-purple-500 font-bold">•</span> Data entry and inventory management</li>
