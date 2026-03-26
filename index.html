@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>jerwinlumpay | Home</title>
-    <meta name="description" content="Official Portfolio of Jerwin Lumpay">
+    <title>Jerwin Lumpay | Executive Operations Portfolio</title>
+    <meta name="description" content="Official Portfolio of Jerwin Lumpay - Strategic Operations & Administration">
     <link rel="icon" type="image/png" href="logo1.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,143 +21,149 @@
             --pearl: #FFFFFF;        /* Content Panels */
         }
 
+        html { scroll-behavior: smooth; }
         body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* LOGO - ALIGNED TO CHAMPAGNE #DEB58A */
+        /* LOGO TINTING */
         .logo-style { 
             width: 160px; height: auto; transition: 0.3s;
             filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
         }
-        .logo-style:hover { filter: brightness(0) saturate(100%) invert(100%); }
 
-        /* SIDEBAR ARCHITECTURE */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        /* SIDEBAR LOCK */
+        .sidebar { 
+            width: 280px; height: 100vh; position: fixed; left: 0; top: 0; 
+            background: var(--onyx); display: none; flex-direction: column; 
+            padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); 
+        }
+
+        .mobile-header { 
+            display: flex; position: fixed; top: 0; width: 100%; height: 70px; 
+            background: var(--onyx); align-items: center; justify-content: space-between; 
+            padding: 0 25px; z-index: 110; 
+        }
         
-        .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
-        .section-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 40px 25px; }
-        
+        .main-content { width: 100%; padding-top: 70px; }
+
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
             .mobile-header { display: none; }
             .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
-            .section-container { padding: 80px 60px; }
         }
 
-        /* NAVIGATION - LUXE 15PX BOLD */
+        /* NAVIGATION - SCROLL SPY READY */
         .nav-link { 
             font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            color: rgba(238, 229, 217, 0.2); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             margin-bottom: 30px; display: block; text-decoration: none;
         }
-        .nav-link:hover, .nav-link.active { 
-            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(10px); 
+        
+        /* Auto-applied by script */
+        .nav-link.active { 
+            color: var(--champagne); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); transform: translateX(15px); 
         }
 
-        /* BUTTONS */
-        .btn-contact { background-color: var(--silk); color: var(--onyx); padding: 14px; border-radius: 50px; font-weight: 900; text-transform: uppercase; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .btn-contact:hover { background-color: var(--champagne); color: var(--onyx); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(222, 181, 138, 0.2); }
+        /* SECTION ARCHITECTURE */
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 25px; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        @media (min-width: 1024px) { section { padding: 120px 80px; } }
 
-        .gold-text { color: var(--champagne); }
-        
+        /* NEXT SECTION BUTTON */
+        .next-btn {
+            display: inline-flex; align-items: center; gap: 15px; margin-top: 50px;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 11px;
+            color: var(--velvet); opacity: 0.5; transition: 0.3s; width: fit-content;
+        }
+        .next-btn:hover { opacity: 1; color: var(--champagne); transform: translateY(5px); }
+
         /* COMPETENCY BOXES */
         .competency-box { 
-            background: rgba(255, 255, 255, 0.6); 
-            border: 1px solid rgba(0, 0, 0, 0.05); 
-            border-left: 4px solid var(--champagne); 
-            padding: 30px; transition: 0.4s; height: 100%; 
-            backdrop-filter: blur(10px);
-            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 0, 0, 0.05); 
+            border-left: 4px solid var(--champagne); padding: 30px; transition: 0.4s; 
+            backdrop-filter: blur(10px); border-radius: 4px;
         }
         .competency-box:hover { background: var(--pearl); border-left-color: var(--onyx); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
 
-        /* MOBILE MENU INTERFACE */
-        #mobile-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; display: flex; flex-direction: column; }
-        #mobile-menu.active { left: 0; }
+        /* MOBILE MENU - RIGHT ALIGNED */
+        #mobile-menu { 
+            position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; 
+            background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; 
+            display: flex; flex-direction: column; 
+        }
+        #mobile-menu.active { right: 0; }
+        
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
         .overlay.active { display: block; }
+        
+        .gold-text { color: var(--champagne); }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
         <div class="mb-20">
-            <a href="index.html"><img src="logo1.png" alt="jerwinlumpay" class="logo-style"></a>
+            <a href="#home"><img src="logo1.png" alt="jerwinlumpay" class="logo-style"></a>
         </div>
-        <nav>
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="achievements.html" class="nav-link">Achievements</a>
-            <a href="feedback.html" class="nav-link">Feedback</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+        <nav id="desktop-nav">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#feedback" class="nav-link">Feedback</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto space-y-4">
-            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="btn-contact">
-                <i class="fab fa-linkedin-in"></i> LINKEDIN
-            </a>
-            <a href="https://wa.me/971544609927" class="btn-contact">
-                <i class="fab fa-whatsapp"></i> WHATSAPP
-            </a>
+            <a href="https://linkedin.com/in/jerwin-lumpay" target="_blank" class="text-[--silk] opacity-30 text-[10px] font-black tracking-widest hover:opacity-100 transition block">LINKEDIN</a>
+            <a href="https://wa.me/971544609927" class="text-[--silk] opacity-30 text-[10px] font-black tracking-widest hover:opacity-100 transition block">WHATSAPP</a>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <a href="index.html"><img src="logo1.png" alt="jerwinlumpay" class="logo-style" style="width: 80px;"></a>
+        <a href="#home"><img src="logo1.png" alt="jerwinlumpay" class="logo-style" style="width: 80px;"></a>
         <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-             <span class="text-white font-black italic tracking-widest">MENU</span>
              <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
+             <span class="text-white font-black italic tracking-widest">MENU</span>
         </div>
         <nav>
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="achievements.html" class="nav-link">Achievements</a>
-            <a href="feedback.html" class="nav-link">Feedback</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="#home" onclick="toggleMenu()" class="nav-link">Home</a>
+            <a href="#portfolio" onclick="toggleMenu()" class="nav-link">Portfolio</a>
+            <a href="#skills" onclick="toggleMenu()" class="nav-link">Skills</a>
+            <a href="#contact" onclick="toggleMenu()" class="nav-link">Contact</a>
         </nav>
     </div>
 
     <main class="main-content">
-        <div class="section-container flex flex-col justify-center" style="min-height: 90vh;">
+        
+        <section id="home">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
                     <div class="relative group">
                         <div class="absolute -inset-2 bg-gradient-to-tr from-[--champagne] to-transparent rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                        <img src="jerwindp.jpg" alt="Jerwin Lumpay" class="relative rounded-2xl w-full border border-black/5 shadow-2xl transition-all duration-700">
+                        <img src="jerwindp.jpg" alt="Jerwin" class="relative rounded-2xl w-full border border-black/5 shadow-2xl">
                     </div>
                 </div>
-
-                <div class="lg:col-span-7 space-y-6 lg:space-y-8 order-1 lg:order-2">
-                    <h2 class="text-[--velvet] opacity-60 uppercase tracking-[0.6em] text-[13px] md:text-[14px] font-black">
-                        Executive Operations | Specialized Support | Technical Admin
-                    </h2>
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                    <h2 class="text-[--velvet] opacity-60 uppercase tracking-[0.6em] text-[13px] font-black">Executive Operations | Specialized Support</h2>
                     <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
                         Jerwin <br><span class="gold-text">Lumpay.</span>
                     </h1>
                     <p class="text-base md:text-lg text-[--velvet] font-light leading-relaxed max-w-2xl">
-                        Strategic operations professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and specialized Customer Operations. Expert in CRM/ERP management and AI-driven workflows.
+                        Strategic operations professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and specialized Customer Operations.
                     </p>
-                    <div class="pt-4">
-                        <a href="Jerwin_Lumpay_CV.pdf" download class="border-2 border-[--onyx] text-[--onyx] px-10 py-4 lg:px-12 lg:py-5 rounded-full text-[10px] lg:text-[11px] font-black uppercase hover:bg-[--onyx] hover:text-[--silk] transition-all flex items-center gap-3 w-fit tracking-widest shadow-lg">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
+                    <a href="Jerwin_Lumpay_CV.pdf" download class="border-2 border-[--onyx] text-[--onyx] px-10 py-4 rounded-full text-[11px] font-black uppercase hover:bg-[--onyx] hover:text-[--silk] transition-all flex items-center gap-3 w-fit tracking-widest">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
-        </div>
+            <a href="#portfolio" class="next-btn">01 — View Portfolio <i class="fas fa-chevron-down"></i></a>
+        </section>
 
-        <div class="section-container bg-black/5 p-10 md:p-16 rounded-[40px] my-10">
-            <h3 class="text-[--velvet] text-[11px] font-black uppercase tracking-[0.5em] mb-12 flex items-center gap-6">
-                Expertise Architecture <span class="h-[1px] flex-1 bg-black/10"></span>
-            </h3>
+        <section id="portfolio">
+            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-6">Expertise Architecture</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="competency-box">
                     <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Administration</h4>
@@ -167,23 +173,54 @@
                     <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Operations</h4>
                     <p class="text-[--velvet] text-xs leading-relaxed opacity-70">E-Verify Compliance & Workflow Optimization.</p>
                 </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Technical</h4>
-                    <p class="text-[--velvet] text-xs leading-relaxed opacity-70">CRM/ERP Management & AI Productivity Tools.</p>
                 </div>
-                <div class="competency-box">
-                    <h4 class="gold-text font-black text-[10px] uppercase mb-3 tracking-widest">Leadership</h4>
-                    <p class="text-[--velvet] text-xs leading-relaxed opacity-70">Strategic KPI Management & Team Coaching.</p>
-                </div>
-            </div>
-        </div>
+            <a href="#skills" class="next-btn">02 — Professional Skills <i class="fas fa-chevron-down"></i></a>
+        </section>
+
+        <section id="skills">
+            <h1 class="text-6xl md:text-8xl font-black italic uppercase text-[--velvet]">Skills & <br><span class="gold-text">Proficiencies.</span></h1>
+            <a href="#services" class="next-btn">03 — Services <i class="fas fa-chevron-down"></i></a>
+        </section>
+
+        <section id="contact">
+            <h1 class="text-6xl md:text-8xl font-black italic uppercase text-[--velvet]">Get In <br><span class="gold-text">Touch.</span></h1>
+            <p class="mt-8 text-xl font-bold">Dubai, UAE • support@jerwinlumpay.com</p>
+        </section>
+
     </main>
 
     <script>
+        // 1. MOBILE MENU TOGGLE
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
+
+        // 2. SCROLL SPY LOGIC
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const options = {
+            threshold: 0.4 // Highlighting happens when 40% of section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute("id");
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${id}`) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        }, options);
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
