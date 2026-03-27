@@ -131,6 +131,29 @@
         .fa-windows { color: #0078D4; }
         .fa-linkedin-in { color: #0077B5; }
         .fa-envelope { color: #0078D4; } /* Outlook Blue */
+
+        /* CUSTOM BUTTON */
+        .btn-download {
+            background-color: var(--velvet);
+            color: var(--pearl);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(45, 61, 98, 0.2);
+        }
+        .btn-download:hover {
+            background-color: var(--champagne);
+            color: var(--velvet);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(222, 181, 138, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -194,6 +217,12 @@
                     <div class="bg-white/40 p-6 md:p-10 rounded-3xl border-l-4 md:border-l-8 border-[--velvet] text-left">
                         <h4 class="font-black uppercase text-[11px] mb-3 tracking-widest italic">Professional Summary</h4>
                         <p class="text-sm md:text-md leading-relaxed opacity-90">Highly organized and versatile professional with over 10 years of experience in Office Administration, Compliance, and Customer Operations. Proven track record in managing high-volume front-desk operations and leading teams of 15+ agents to exceed KPIs.</p>
+                    </div>
+                    <div class="pt-4 flex justify-center lg:justify-start">
+                        <a href="CV_Jerwin_Lumpay_UAE.pdf" download class="btn-download">
+                            <i class="fas fa-file-download text-lg"></i>
+                            Download CV / Resume
+                        </a>
                     </div>
                 </div>
             </div>
@@ -319,6 +348,12 @@
                     <div class="flex items-center gap-5">
                         <i class="fab fa-linkedin-in text-2xl text-[--champagne]"></i>
                         <div><p class="text-[10px] font-black uppercase opacity-40">LinkedIn</p><p class="font-bold text-sm">/in/jerwin-lumpay</p></div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <a href="CV_Jerwin_Lumpay_UAE.pdf" download class="flex items-center gap-5 group">
+                            <i class="fas fa-file-pdf text-2xl text-[--champagne] group-hover:scale-110 transition-all"></i>
+                            <div><p class="text-[10px] font-black uppercase opacity-40">Full Resume</p><p class="font-bold text-sm border-b-2 border-[--champagne]">Download Document</p></div>
+                        </a>
                     </div>
                 </div>
             </div>
