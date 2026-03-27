@@ -11,86 +11,83 @@
     
     <style>
         :root { 
-            --onyx: #000000;          
-            --velvet: #2D3D62;       
             --silk: #EEE5D9;         
-            --champagne: #DEB58A;    
-            --pearl: #FFFFFF;        
+            --marble: #EBE4E0;       
+            --champagne: #D2B68A;    
+            --pearl: #FDFFFF;        
+            --velvet: #222D52;       
+            --onyx: #000000;         
         }
 
         html { scroll-behavior: smooth; }
         body { background-color: var(--silk); color: var(--velvet); font-family: 'P22 Underground', sans-serif; margin: 0; overflow-x: hidden; }
         
-        .logo-style { 
-            width: 160px; height: auto; transition: 0.3s;
-            filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1185%) hue-rotate(349deg) brightness(93%) contrast(89%);
-        }
+        /* SIDEBAR NAV */
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid var(--champagne); }
+        .nav-link { font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--marble); opacity: 0.5; transition: 0.4s; margin-bottom: 25px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { color: var(--champagne); opacity: 1; transform: translateX(5px); }
 
-        /* SIDEBAR */
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background: var(--onyx); display: none; flex-direction: column; padding: 40px; z-index: 100; border-right: 1px solid rgba(222, 181, 138, 0.05); }
-        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; }
+        /* MOBILE HEADER */
+        .mobile-header { display: flex; position: fixed; top: 0; width: 100%; height: 70px; background: var(--onyx); align-items: center; justify-content: space-between; padding: 0 25px; z-index: 110; border-bottom: 1px solid var(--champagne); }
         
-        .main-content { width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding-top: 70px; }
+        .main-content { width: 100%; min-height: 100vh; padding-top: 70px; }
         @media (min-width: 1024px) {
             .sidebar { display: flex; }
             .mobile-header { display: none; }
             .main-content { margin-left: 280px; width: calc(100% - 280px); padding-top: 0; }
         }
 
-        /* NAVIGATION */
-        .nav-link { 
-            font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; 
-            color: rgba(238, 229, 217, 0.3); transition: all 0.4s ease; 
-            margin-bottom: 30px; display: block; text-decoration: none;
-        }
-        .nav-link.active { color: var(--champagne); transform: translateX(10px); text-shadow: 0 0 15px rgba(222, 181, 138, 0.4); }
+        /* SECTION STYLES */
+        section { min-height: 100vh; position: relative; padding: 80px 25px; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(34, 45, 82, 0.05); }
+        @media (min-width: 1024px) { section { padding: 100px 80px; } }
 
-        /* CARDS */
-        .award-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .award-card:hover { transform: translateY(-10px); }
+        /* NAVIGATION ARROW */
+        .next-section { position: absolute; bottom: 40px; right: 40px; width: 50px; height: 50px; background: var(--velvet); color: var(--champagne); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; animation: bounce 2s infinite; z-index: 10; }
+        .next-section:hover { background: var(--champagne); color: var(--onyx); }
 
-        /* SECTION PADDING */
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 25px; border-bottom: 1px solid rgba(0,0,0,0.02); }
-        @media (min-width: 1024px) { section { padding: 120px 80px; } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+        /* CARD STYLES */
+        .luxury-card { background: var(--pearl); border: 1px solid var(--marble); border-radius: 4px; padding: 40px; transition: 0.4s; }
+        .luxury-card:hover { border-color: var(--champagne); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(34, 45, 82, 0.05); }
+        
+        .competency-icon { width: 60px; height: 60px; background: var(--onyx); color: var(--champagne); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 25px; }
 
         /* MOBILE MENU */
-        #mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
-        #mobile-menu.active { right: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 115; display: none; }
+        #mobile-menu { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: var(--onyx); z-index: 120; transition: 0.4s; padding: 40px; }
+        #mobile-menu.active { left: 0; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 115; display: none; }
         .overlay.active { display: block; }
-        
-        .gold-text { color: var(--champagne); }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
         <div class="mb-20">
-            <a href="#home"><img src="logo1.png" alt="jerwinlumpay" class="logo-style"></a>
+            <img src="logo1.png" alt="Jerwin" style="width: 120px; filter: brightness(0) invert(1);">
         </div>
         <nav>
             <a href="#home" class="nav-link active">Home</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#experience" class="nav-link">Experience</a>
-            <a href="achievements.html" class="nav-link">Achievements</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <div class="mt-auto">
-            <a href="https://linkedin.com/in/jerwin-lumpay" class="bg-white text-black p-4 rounded-full font-black text-[11px] block text-center uppercase tracking-widest hover:bg-[--champagne] transition-colors">LinkedIn Profile</a>
+            <p class="text-[10px] text-[--champagne] uppercase font-bold tracking-widest">Dubai, UAE</p>
         </div>
     </aside>
 
     <div class="mobile-header">
-        <img src="logo1.png" alt="logo" class="logo-style" style="width: 80px;">
-        <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
+        <img src="logo1.png" alt="logo" style="width: 60px; filter: brightness(0) invert(1);">
+        <button onclick="toggleMenu()" class="text-[--champagne] text-2xl"><i class="fas fa-bars"></i></button>
     </div>
 
     <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-12">
-            <span class="text-white font-black italic tracking-widest">MENU</span>
-            <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
+             <span class="text-[--champagne] font-black italic">JERWIN</span>
+             <button onclick="toggleMenu()" class="text-white text-2xl"><i class="fas fa-times"></i></button>
         </div>
         <nav class="flex flex-col">
             <a href="#home" onclick="toggleMenu()" class="nav-link">Home</a>
@@ -103,139 +100,87 @@
 
     <main class="main-content">
         <section id="home">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-5 order-2 lg:order-1">
-                    <img src="jerwindp.jpg" alt="Jerwin" class="rounded-2xl w-full border border-black/5 shadow-2xl">
-                </div>
-                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
-                    <h2 class="text-[--velvet] opacity-60 uppercase tracking-[0.5em] text-[13px] font-black italic">Office Administration | Customer Experience | Operations</h2>
-                    <h1 class="text-7xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet]">
-                        Jerwin <br><span class="gold-text">Lumpay.</span>
-                    </h1>
-                    <p class="text-lg text-[--velvet] font-light leading-relaxed max-w-2xl">
-                        Versatile professional with over <strong>10 years of experience</strong> in Office Administration, Compliance, and Customer Operations. Expert in managing high-volume operations and leading teams to exceed KPIs.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="Jerwin_Lumpay_CV.pdf" download class="inline-flex items-center gap-3 border-2 border-black px-10 py-4 rounded-full font-black uppercase text-[11px] tracking-widest hover:bg-black hover:text-white transition-all">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                        <a href="mailto:support@jerwinlumpay.com" class="inline-flex items-center gap-3 bg-[--velvet] text-white px-10 py-4 rounded-full font-black uppercase text-[11px] tracking-widest hover:opacity-90 transition-all">
-                            Hire Me
-                        </a>
-                    </div>
-                </div>
+            <div class="max-w-4xl">
+                <h2 class="text-[--champagne] uppercase tracking-[0.4em] text-sm font-bold mb-6">Operations Specialist</h2>
+                <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter mb-8">
+                    Jerwin <br><span style="color: var(--champagne)">Lumpay.</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mb-10">
+                    Over 10 years of mastery in <strong>Office Administration</strong> and <strong>Compliance</strong>, leading teams of 15+ to exceed global KPIs[cite: 4, 5].
+                </p>
+                <a href="#portfolio" class="inline-block border-2 border-[--velvet] px-12 py-4 font-black uppercase text-xs tracking-widest hover:bg-[--velvet] hover:text-white transition-all">Explore Expertise</a>
             </div>
+            <a href="#portfolio" class="next-section"><i class="fas fa-arrow-down"></i></a>
         </section>
 
-        <section id="portfolio" class="space-y-20">
-            <div>
-                <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-10">Core Competencies</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="award-card bg-black p-10 rounded-2xl border border-white/5 group hover:border-[--champagne] transition-all">
-                        <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[--champagne]/20 transition-colors">
-                            <i class="fas fa-user-tie text-[--champagne] text-2xl"></i>
-                        </div>
-                        <h3 class="text-white font-black italic uppercase text-3xl mb-4">Administration</h3>
-                        <p class="text-white/60 leading-relaxed">High-level Executive Support, Calendar Management, Travel Coordination, and Strategic Meeting Minutes.</p>
-                    </div>
-                    <div class="award-card bg-black p-10 rounded-2xl border border-white/5 group hover:border-[--champagne] transition-all">
-                        <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[--champagne]/20 transition-colors">
-                            <i class="fas fa-cog text-[--champagne] text-2xl"></i>
-                        </div>
-                        <h3 class="text-white font-black italic uppercase text-3xl mb-4">Operations</h3>
-                        <p class="text-white/60 leading-relaxed">Expertise in E-Verify/I-9 Compliance, Workflow Optimization, and Scalable Resource Allocation.</p>
-                    </div>
+        <section id="portfolio" style="background: var(--marble)">
+            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-16">Core Competencies [cite: 7]</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="luxury-card">
+                    <div class="competency-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="text-3xl font-black italic uppercase mb-4">Administration [cite: 8]</h3>
+                    <p class="opacity-70 leading-relaxed">High-level Executive Support, Calendar Management, Travel Coordination, and Strategic Meeting Minutes[cite: 8].</p>
+                </div>
+                <div class="luxury-card">
+                    <div class="competency-icon"><i class="fas fa-gears"></i></div>
+                    <h3 class="text-3xl font-black italic uppercase mb-4">Operations [cite: 8]</h3>
+                    <p class="opacity-70 leading-relaxed">Expertise in E-Verify/I-9 Compliance, Workflow Optimization, and Scalable Resource Allocation[cite: 8].</p>
                 </div>
             </div>
-
-            <div>
-                <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-10">Expertise Architecture</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-10 rounded-2xl shadow-sm border border-black/5 hover:shadow-2xl transition-all group">
-                        <span class="text-[10px] font-black uppercase tracking-widest opacity-30 group-hover:text-[--champagne] transition-all">Project 01</span>
-                        <h4 class="text-2xl font-black italic uppercase text-[--velvet] mt-2 mb-4">Executive Administration</h4>
-                        <p class="text-[--velvet]/70 mb-6 leading-relaxed">Managing end-to-end booking schedules and ticketing for high-volume operations with meticulous precision.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[9px] font-black uppercase bg-[--silk] px-3 py-1 rounded-full">Calendar Mgmt</span>
-                            <span class="text-[9px] font-black uppercase bg-[--silk] px-3 py-1 rounded-full">Booking</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-10 rounded-2xl shadow-sm border border-black/5 hover:shadow-2xl transition-all group">
-                        <span class="text-[10px] font-black uppercase tracking-widest opacity-30 group-hover:text-[--champagne] transition-all">Project 02</span>
-                        <h4 class="text-2xl font-black italic uppercase text-[--velvet] mt-2 mb-4">Compliance Mastery</h4>
-                        <p class="text-[--velvet]/70 mb-6 leading-relaxed">Oversight of USCIS Form I-9 and E-Verify compliance for major international clients ensuring 100% audit readiness.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[9px] font-black uppercase bg-[--silk] px-3 py-1 rounded-full">E-Verify</span>
-                            <span class="text-[9px] font-black uppercase bg-[--silk] px-3 py-1 rounded-full">Legal Risk</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="#skills" class="next-section"><i class="fas fa-arrow-down"></i></a>
         </section>
 
         <section id="skills">
-            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-10">Technical Proficiencies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fab fa-microsoft text-3xl text-blue-600 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">M365 Expert</p>
+            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-16">Technical Ecosystem [cite: 10]</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-8 bg-[--pearl] border border-[--marble] text-center">
+                    <i class="fab fa-microsoft text-3xl mb-4" style="color: #00A4EF"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Microsoft 365 [cite: 14]</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fas fa-database text-3xl text-blue-400 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">Salesforce</p>
+                <div class="p-8 bg-[--pearl] border border-[--marble] text-center">
+                    <i class="fas fa-database text-3xl mb-4" style="color: #0077B5"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Salesforce [cite: 11]</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fas fa-robot text-3xl text-teal-500 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">AI Tools</p>
+                <div class="p-8 bg-[--pearl] border border-[--marble] text-center">
+                    <i class="fas fa-robot text-3xl mb-4" style="color: #10a37f"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">AI Productivity [cite: 14]</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fas fa-chart-pie text-3xl text-orange-500 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">Tableau</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fab fa-aws text-3xl text-yellow-600 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">AWS</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                    <i class="fas fa-project-diagram text-3xl text-red-500 mb-4"></i>
-                    <p class="text-[10px] font-black uppercase tracking-widest">Jira/Monday</p>
+                <div class="p-8 bg-[--pearl] border border-[--marble] text-center">
+                    <i class="fas fa-chart-line text-3xl mb-4" style="color: #E64848"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Tableau [cite: 16]</p>
                 </div>
             </div>
+            <a href="#experience" class="next-section"><i class="fas fa-arrow-down"></i></a>
         </section>
 
-        <section id="experience">
-            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-10">Professional Timeline</h2>
+        <section id="experience" style="background: var(--marble)">
+            <h2 class="text-[--velvet] opacity-40 uppercase tracking-[0.5em] text-[12px] font-black mb-16">Professional Timeline [cite: 17]</h2>
             <div class="space-y-12">
-                <div class="border-l-2 border-[--champagne] pl-8 relative">
-                    <div class="absolute w-4 h-4 bg-[--champagne] rounded-full -left-[9px] top-1"></div>
-                    <h3 class="text-2xl font-black uppercase italic">Purple Desk | Front Desk Rep</h3>
-                    <p class="gold-text font-bold text-sm">Dubai, UAE | 2025 - Present</p>
-                    <p class="mt-4 text-[--velvet]/70 max-w-3xl">Managing end-to-end booking schedules using Roller CRM. Handled 10,000+ calls contributing $80K in revenue.</p>
+                <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-[--velvet]/10 pb-8">
+                    <div>
+                        <h3 class="text-2xl font-black italic uppercase">Purple Desk </h3>
+                        <p class="text-[--champagne] font-bold uppercase text-xs tracking-widest">Front Desk Representative | 2025 - Present </p>
+                    </div>
+                    <p class="text-sm mt-4 md:mt-0 opacity-60 max-w-md">Managing end-to-end booking schedules and handling 10,000+ calls[cite: 19, 20].</p>
                 </div>
-                <div class="border-l-2 border-[--champagne] pl-8 relative">
-                    <div class="absolute w-4 h-4 bg-[--champagne] rounded-full -left-[9px] top-1"></div>
-                    <h3 class="text-2xl font-black uppercase italic">ADP | Client Services Specialist</h3>
-                    <p class="gold-text font-bold text-sm">2022 - 2025</p>
-                    <p class="mt-4 text-[--velvet]/70 max-w-3xl">Oversaw E-Verify compliance for major US clients like Sodexo and Siemens. Maintained audit-ready records.</p>
-                </div>
-                <div class="border-l-2 border-[--champagne] pl-8 relative opacity-60">
-                    <div class="absolute w-4 h-4 bg-[--champagne] rounded-full -left-[9px] top-1"></div>
-                    <h3 class="text-2xl font-black uppercase italic">ibex | Customer Service Team Lead</h3>
-                    <p class="gold-text font-bold text-sm">2018 - 2022</p>
-                    <p class="mt-4 text-[--velvet]/70 max-w-3xl">Led a team of 15+ agents for GoDaddy and AT&T. Awarded VIP Award 2021.</p>
+                <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-[--velvet]/10 pb-8">
+                    <div>
+                        <h3 class="text-2xl font-black italic uppercase">ADP </h3>
+                        <p class="text-[--champagne] font-bold uppercase text-xs tracking-widest">Compliance Specialist | 2022 - 2025 </p>
+                    </div>
+                    <p class="text-sm mt-4 md:mt-0 opacity-60 max-w-md">Overseeing USCIS Form I-9 and E-Verify compliance for major US clients[cite: 23].</p>
                 </div>
             </div>
+            <a href="#contact" class="next-section"><i class="fas fa-arrow-down"></i></a>
         </section>
 
-        <section id="contact" class="text-center">
-            <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-none tracking-tighter text-[--velvet] mb-10">
-                Let's <br><span class="gold-text">Connect.</span>
-            </h1>
-            <p class="text-xl mb-12">Available for strategic roles in Dubai and globally.</p>
-            <div class="flex justify-center gap-6">
-                <a href="mailto:support@jerwinlumpay.com" class="text-3xl hover:text-[--champagne] transition-colors"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/jerwin-lumpay" class="text-3xl hover:text-[--champagne] transition-colors"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/971544609927" class="text-3xl hover:text-[--champagne] transition-colors"><i class="fab fa-whatsapp"></i></a>
+        <section id="contact" style="background: var(--onyx); color: var(--marble);">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter mb-12">Let's <br><span style="color: var(--champagne)">Build Together.</span></h1>
+                <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+                    <a href="mailto:support@jerwinlumpay.com" class="text-xl font-bold border-b-2 border-[--champagne] pb-2 hover:text-[--champagne] transition-all">support@jerwinlumpay.com [cite: 2]</a>
+                    <a href="https://wa.me/971544609927" class="text-xl font-bold border-b-2 border-[--champagne] pb-2 hover:text-[--champagne] transition-all">+971 54 460 9927 [cite: 2]</a>
+                </div>
             </div>
         </section>
     </main>
