@@ -45,17 +45,17 @@
             transform: translateX(10px); 
         }
 
-        /* HEADERS */
+        /* HEADERS - Adjusted for top alignment */
         .section-header {
             text-align: center; font-size: 3rem; font-weight: 900; 
             text-transform: uppercase; letter-spacing: 0.1em; color: var(--velvet);
-            margin-bottom: 4rem; position: relative;
+            margin-bottom: 3rem; position: relative;
         }
         .section-header::after {
-            content: ''; display: block; width: 60px; height: 4px; background: var(--champagne); margin: 20px auto 0;
+            content: ''; display: block; width: 60px; height: 4px; background: var(--champagne); margin: 15px auto 0;
         }
 
-        /* TECH ICONS COLORED */
+        /* TECH ICONS */
         .fa-salesforce { color: #00A1E0; }
         .fa-jira { color: #0052CC; }
         .fa-aws { color: #FF9900; }
@@ -63,8 +63,8 @@
         .fa-google { color: #4285F4; }
         .fa-slack { color: #4A154B; }
         .fa-windows { color: #0078D4; }
-        .fa-robot { color: #10a37f; } /* ChatGPT Green */
-        .fa-palette { color: #00C4CC; } /* Canva Blue */
+        .fa-robot { color: #10a37f; }
+        .fa-palette { color: #00C4CC; }
 
         .tech-card { background: var(--pearl); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; align-items: center; transition: 0.4s; }
         .tech-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
@@ -72,18 +72,53 @@
 
         .timeline-item { border-left: 2px solid var(--champagne); padding-left: 30px; position: relative; margin-bottom: 30px; }
         
-        section { min-height: 100vh; padding: 60px 25px; display: flex; flex-direction: column; }
-        @media (min-width: 1024px) { section { padding: 80px 80px; } }
+        /* SECTION PADDING ADJUSTED */
+        section { min-height: 100vh; padding: 40px 25px; display: flex; flex-direction: column; }
+        @media (min-width: 1024px) { section { padding: 60px 80px; } }
 
-        .scroll-indicator {
-            display: inline-flex; align-items: center; gap: 10px; margin-top: 40px;
-            font-weight: 900; text-transform: uppercase; font-size: 10px; letter-spacing: 3px;
-            color: var(--velvet); transition: 0.3s; text-decoration: none;
+        /* FLOATING INTERACTIVE BUTTON */
+        .nav-trigger {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--velvet);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pearl);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: none;
+            outline: none;
         }
-        .scroll-indicator:hover { color: var(--champagne); transform: translateY(5px); }
+
+        .nav-trigger:hover {
+            background-color: var(--onyx);
+            color: var(--champagne);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--champagne);
+        }
+
+        .nav-trigger i {
+            transition: transform 0.4s ease;
+        }
+
+        .scroll-up i {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body>
+
+    <button id="nextSectionBtn" class="nav-trigger" onclick="scrollToNext()">
+        <i class="fas fa-arrow-down"></i>
+    </button>
 
     <aside class="sidebar">
         <div class="mb-16 text-center">
@@ -170,7 +205,7 @@
         </section>
 
         <section id="experience">
-            <h3 class="section-header">Professional Career Walkthrough</h3>
+            <h3 class="section-header">Professional Experience</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <div>
                     <div class="timeline-item">
@@ -210,7 +245,7 @@
         </section>
 
         <section id="achievements">
-            <h3 class="section-header">Education, Certifications & Awards</h3>
+            <h3 class="section-header">Education & Awards</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <div class="bg-[--velvet] p-12 rounded-[50px] text-white">
                     <h4 class="font-black uppercase tracking-widest mb-6 text-[--champagne]">Education</h4>
@@ -230,7 +265,7 @@
         </section>
 
         <section id="contact">
-            <h3 class="section-header">Contact Information</h3>
+            <h3 class="section-header">Get In Touch</h3>
             <div class="max-w-4xl mx-auto bg-white rounded-[60px] p-16 shadow-2xl text-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
                     <div class="flex items-center gap-6">
@@ -255,19 +290,47 @@
     </main>
 
     <script>
-        const sections = document.querySelectorAll("section");
+        const sections = Array.from(document.querySelectorAll("section"));
         const navLinks = document.querySelectorAll(".nav-link");
+        const nextBtn = document.getElementById("nextSectionBtn");
 
         window.addEventListener("scroll", () => {
             let current = "";
-            sections.forEach((section) => {
-                if (pageYOffset >= section.offsetTop - 200) { current = section.getAttribute("id"); }
+            let currentIdx = 0;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 250) { 
+                    current = section.getAttribute("id"); 
+                    currentIdx = index;
+                }
             });
+
             navLinks.forEach((link) => {
                 link.classList.remove("active");
                 if (link.getAttribute("href").includes(current)) { link.classList.add("active"); }
             });
+
+            // Toggle button direction if at the last section
+            if (currentIdx === sections.length - 1) {
+                nextBtn.classList.add("scroll-up");
+            } else {
+                nextBtn.classList.remove("scroll-up");
+            }
         });
+
+        function scrollToNext() {
+            let currentIdx = 0;
+            sections.forEach((section, index) => {
+                if (pageYOffset >= section.offsetTop - 250) { currentIdx = index; }
+            });
+
+            if (currentIdx < sections.length - 1) {
+                sections[currentIdx + 1].scrollIntoView({ behavior: 'smooth' });
+            } else {
+                sections[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
