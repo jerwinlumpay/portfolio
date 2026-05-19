@@ -1,12 +1,3 @@
-Here is the updated, production-ready, single-file HTML portfolio code.
-
-### What Was Handled Exclusively For You:
-
-* **Mobile-Responsive Top-Right Navigation Menu:** Integrated a clean, fully functional animated mobile slide-out overlay menu. The hamburger toggle button is pinned at the top-right position on mobile screen sizes and features crisp toggle animations using Tailwind utility behaviors coupled with standard inline JavaScript triggers.
-* **Direct Image Asset Mapping Overhaul:** Replaced the generic card slider template layout entirely. Every structural block inside your interactive vertical masonry container now links dynamically and explicitly to the actual filename strings matching your uploaded credential image files (e.g., `Six Sigma White Belt.jpg`, `SAP S  4 HANA.jpg`, etc.).
-* **Preservation of Strict Core Logic:** Zero structural parameters, existing flex layouts, colors, gradients, custom styling, or professional metric content strings were changed.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +7,7 @@ Here is the updated, production-ready, single-file HTML portfolio code.
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
@@ -45,18 +36,18 @@ Here is the updated, production-ready, single-file HTML portfolio code.
             -webkit-text-fill-color: transparent;
         }
 
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+        @keyframes infiniteScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
 
-        .animate-marquee {
+        .animate-marquee-container {
             display: flex;
             width: max-content;
-            animation: marquee 35s linear infinite;
+            animation: infiniteScroll 45s linear infinite;
         }
 
-        .animate-marquee:hover {
+        .animate-marquee-container:hover {
             animation-play-state: paused;
         }
         
@@ -72,15 +63,16 @@ Here is the updated, production-ready, single-file HTML portfolio code.
             <span class="text-xl font-bold tracking-wider uppercase gradient-text">Jerwin Lumpay</span>
             
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
-                <a href="#competencies" class="hover:text-indigo-400 transition">Competencies</a>
-                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
-                <a href="#education" class="hover:text-indigo-400 transition">Education</a>
-                <a href="#credentials-gallery" class="hover:text-indigo-400 transition">Certificates</a>
+                <a href="#home" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Home</a>
+                <a href="#competencies" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Competencies</a>
+                <a href="#experience" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Experience</a>
+                <a href="#education" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Education</a>
+                <a href="#credentials-gallery" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Certificates</a>
+                <a href="#contact" class="hover:text-indigo-400 hover:scale-105 transition duration-200">Contact</a>
             </div>
             
             <div class="hidden md:block">
-                <a href="mailto:jerwinlumpay@outlook.com" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-sm font-semibold hover:opacity-90 transition shadow-lg shadow-indigo-500/20">Contact Me</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-sm font-semibold hover:opacity-90 transition shadow-lg shadow-indigo-500/20">Contact Me</a>
             </div>
 
             <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none z-50">
@@ -95,16 +87,14 @@ Here is the updated, production-ready, single-file HTML portfolio code.
         <a href="#experience" class="text-slate-300 hover:text-indigo-400 transition" onclick="toggleMenu()">Experience</a>
         <a href="#education" class="text-slate-300 hover:text-indigo-400 transition" onclick="toggleMenu()">Education</a>
         <a href="#credentials-gallery" class="text-slate-300 hover:text-indigo-400 transition" onclick="toggleMenu()">Certificates</a>
-        <a href="mailto:jerwinlumpay@outlook.com" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20" onclick="toggleMenu()">Contact Me</a>
+        <a href="#contact" class="text-slate-300 hover:text-indigo-400 transition" onclick="toggleMenu()">Contact</a>
+        <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20" onclick="toggleMenu()">Contact Me</a>
     </div>
 
     <section id="home" class="min-h-screen pt-28 flex items-center justify-center relative px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
             
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Immediate Joiner
-                </div>
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
                     Hi, I'm <span class="gradient-text">Jerwin Lumpay</span>
                 </h1>
@@ -387,110 +377,146 @@ Here is the updated, production-ready, single-file HTML portfolio code.
         </div>
     </section>
 
-    <section id="credentials-gallery" class="py-24 bg-[#070a13] border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-6 mb-16 text-center space-y-4">
+    <section id="credentials-gallery" class="py-24 bg-[#070a13] border-t border-slate-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center space-y-4">
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Verified <span class="gradient-text">Qualifications Gallery</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm">Continuous training frameworks mapping direct industry competencies. Direct visual layout of actual upload files.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm">Continuous training frameworks mapping direct industry competencies. Dynamic infinite scrolling timeline view.</p>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-                
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Six Sigma White Belt.jpg" alt="Six Sigma White Belt Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+        <div class="w-full relative flex items-center">
+            <div class="animate-marquee-container py-4 space-x-6 flex items-center">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Six Sigma White Belt.jpg" alt="Six Sigma White Belt Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Six Sigma White Belt</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Quality</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="SAP S  4 HANA.jpg" alt="SAP S/4HANA Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="SAP S  4 HANA.jpg" alt="SAP S/4HANA Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">SAP S/4HANA</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">ERP Systems</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Supply Chain Management.jpg" alt="Supply Chain Management Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Supply Chain Management.jpg" alt="Supply Chain Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Supply Chain Management</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Logistics</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Operation Management.jpg" alt="Operation Management Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Operation Management.jpg" alt="Operation Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">Operation Management</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Operations</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Optimizing Your Work with Microsoft 365.jpg" alt="Optimizing Your Work with Microsoft 365" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Optimizing Your Work with Microsoft 365.jpg" alt="Optimizing Your Work with Microsoft 365" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-blue-400/90 font-medium">Optimizing Work (M365)</span><span class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Productivity</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Predictable Success Leadership Styles.jpg" alt="Predictable Success Leadership Styles" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Predictable Success Leadership Styles.jpg" alt="Predictable Success Leadership Styles" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Leadership Styles</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Management</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Procurement Management.jpg" alt="Procurement Management Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Procurement Management.jpg" alt="Procurement Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">Procurement Management</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Sourcing</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Retail Management.jpg" alt="Retail Management Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Retail Management.jpg" alt="Retail Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Retail Management</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Retail Operations</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Time Management Fundamentals.jpg" alt="Time Management Fundamentals Certification" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Time Management Fundamentals.jpg" alt="Time Management Fundamentals Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">Time Management</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Core Effectiveness</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Administrative Professional Foundations.jpg" alt="Administrative Professional Foundations" class="w-full h-auto rounded-xl object-cover border border-slate-800">
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Administrative Professional Foundations.jpg" alt="Administrative Professional Foundations" class="w-full h-44 rounded-xl object-cover border border-slate-800">
                     <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-blue-400/90 font-medium">Administrative Professional</span><span class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Admin</span></div>
                 </div>
 
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Career Essentials in Administrative Assistance by Microsoft and LinkedIn.jpg" alt="Career Essentials in Administrative Assistance" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Career Essentials Assist</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Microsoft</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Six Sigma White Belt.jpg" alt="Six Sigma White Belt Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Six Sigma White Belt</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Quality</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Collaborating with Microsoft 365.jpg" alt="Collaborating with Microsoft 365" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">Collaborating with M365</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">M365 Suite</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="SAP S  4 HANA.jpg" alt="SAP S/4HANA Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">SAP S/4HANA</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">ERP Systems</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Communication Foundations.jpg" alt="Communication Foundations" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Communication Foundations</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Soft Skills</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Supply Chain Management.jpg" alt="Supply Chain Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Supply Chain Management</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Logistics</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="CR Management.jpg" alt="Customer Relationship Management" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">CR Management</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">CRM Strategy</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Operation Management.jpg" alt="Operation Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">Operation Management</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Operations</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Customer Management.jpg" alt="Customer Management" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-blue-400/90 font-medium">Customer Management</span><span class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Client Relations</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Optimizing Your Work with Microsoft 365.jpg" alt="Optimizing Your Work with Microsoft 365" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-blue-400/90 font-medium">Optimizing Work (M365)</span><span class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Productivity</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="HR.jpg" alt="Human Resource Management" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Human Resources</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Personnel</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Predictable Success Leadership Styles.jpg" alt="Predictable Success Leadership Styles" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-indigo-400/90 font-medium">Leadership Styles</span><span class="bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Management</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="ISO 9001.jpg" alt="ISO 9001 Quality Standards" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">ISO 9001 Standards</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Compliance</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Procurement Management.jpg" alt="Procurement Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-purple-400/90 font-medium">Procurement Management</span><span class="bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Sourcing</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Logistics Management.jpg" alt="Logistics Management" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Logistics Management</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Supply Chain</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Retail Management.jpg" alt="Retail Management Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-pink-400/90 font-medium">Retail Management</span><span class="bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Retail Operations</span></div>
                 </div>
-
-                <div class="break-inside-avoid glow-card p-4 rounded-2xl flex flex-col space-y-3">
-                    <img src="Managing Muliple Project.jpg" alt="Managing Multiple Projects" class="w-full h-auto rounded-xl object-cover border border-slate-800">
-                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">Managing Multiple Projects</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Planning</span></div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Time Management Fundamentals.jpg" alt="Time Management Fundamentals Certification" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-emerald-400/90 font-medium">Time Management</span><span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Core Effectiveness</span></div>
                 </div>
+                <div class="w-72 flex-shrink-0 glow-card p-4 rounded-2xl flex flex-col space-y-3">
+                    <img src="Administrative Professional Foundations.jpg" alt="Administrative Professional Foundations" class="w-full h-44 rounded-xl object-cover border border-slate-800">
+                    <div class="flex items-center justify-between text-[11px] pt-1"><span class="text-blue-400/90 font-medium">Administrative Professional</span><span class="bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded text-[10px] font-semibold uppercase">Admin</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="contact" class="py-24 bg-[#0b0f19] px-6 border-t border-slate-900">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Feel free to reach out through any of the channels below. I'll get back to you as soon as possible!</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <a href="mailto:jerwinlumpay@outlook.com" class="glow-card p-6 rounded-2xl flex items-center space-x-4 hover:border-indigo-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-xl group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase">Primary Email</h4>
+                        <p class="text-sm font-medium text-slate-200 mt-0.5 break-all">jerwinlumpay@outlook.com</p>
+                    </div>
+                </a>
+
+                <a href="mailto:support@jerwinlumpay.com" class="glow-card p-6 rounded-2xl flex items-center space-x-4 hover:border-purple-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase">Support Email</h4>
+                        <p class="text-sm font-medium text-slate-200 mt-0.5 break-all">support@jerwinlumpay.com</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/jerwin-lumpay" target="_blank" rel="noopener" class="glow-card p-6 rounded-2xl flex items-center space-x-4 hover:border-blue-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase">LinkedIn Profile</h4>
+                        <p class="text-sm font-medium text-slate-200 mt-0.5">linkedin.com/in/jerwin-lumpay</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/971544609927" target="_blank" rel="noopener" class="glow-card p-6 rounded-2xl flex items-center space-x-4 hover:border-emerald-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase">WhatsApp Chat</h4>
+                        <p class="text-sm font-medium text-slate-200 mt-0.5">+971-54-460-9927</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -523,5 +549,3 @@ Here is the updated, production-ready, single-file HTML portfolio code.
     </script>
 </body>
 </html>
-
-```
